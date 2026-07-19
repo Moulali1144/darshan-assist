@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "Darshan Assist",
+  "version": "1.0.0",
+  "description": "Fastest TTD Tirumala Darshan booking assistant with 1-click Tatkal autofill, CAPTCHA focus, release countdowns & trip planning.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/extension/popup/index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Darshan Assist – TTD Booking Assistant"
+  },
+  "options_page": "src/dashboard/index.html",
+  "background": {
+    "service_worker": "src/extension/background/serviceWorker.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.ttdsevaonline.com/*",
+        "https://ttdevasthanams.ap.gov.in/*",
+        "https://tirupatibalaji.ap.gov.in/*"
+      ],
+      "js": [
+        "src/extension/content/autofill.ts",
+        "src/extension/content/availabilityDetector.ts"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.ttdsevaonline.com/*",
+    "https://ttdevasthanams.ap.gov.in/*",
+    "https://tirupatibalaji.ap.gov.in/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
