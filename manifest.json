@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Darshan Assist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fastest TTD Tirumala Darshan booking assistant with 1-click Tatkal autofill, CAPTCHA focus, release countdowns & trip planning.",
   "icons": {
     "16": "icons/icon16.png",
@@ -42,8 +42,6 @@
     "storage",
     "alarms",
     "notifications",
-    "activeTab",
-    "scripting",
     "tabs"
   ],
   "host_permissions": [
