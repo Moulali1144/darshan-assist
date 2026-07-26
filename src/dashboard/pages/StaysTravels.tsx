@@ -1119,13 +1119,46 @@ export default function StaysTravelsPage(): JSX.Element {
             <div style={{
               position: 'absolute',
               inset: 0,
-              opacity: 0.15,
+              opacity: 0.1,
               backgroundImage: `
                 linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
               `,
               backgroundSize: '24px 24px'
             }} />
+
+            {/* Detailed Styled Vector Map of Tirumala Hills */}
+            <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }} viewBox="0 0 800 200" preserveAspectRatio="none">
+              {/* Forest / Green zones */}
+              <rect x="0" y="0" width="800" height="200" fill="#141915" />
+              <path d="M-50,150 Q100,80 250,160 T600,120 T900,180 L900,200 L-50,200 Z" fill="#1a251e" />
+              <path d="M100,-20 Q250,50 400,-10 T700,40 T900,-30 L900,0 L100,0 Z" fill="#1a251e" />
+
+              {/* Water bodies (Pushkarini / Rivers) */}
+              <path d="M 350,30 Q 380,45 370,60 T 330,70 Z" fill="#1e2d3b" opacity="0.8" />
+              <text x="330" y="45" fill="#3b82f6" fontSize="8" fontWeight="bold" opacity="0.5">Pushkarini</text>
+
+              {/* Main Roads / Highway Networks */}
+              {/* Alipiri Ghat Road */}
+              <path d="M 50,220 Q 120,130 200,150 T 400,110 T 600,120 T 850,70" fill="none" stroke="#222" strokeWidth="8" strokeLinecap="round" />
+              <path d="M 50,220 Q 120,130 200,150 T 400,110 T 600,120 T 850,70" fill="none" stroke="#2c2c2c" strokeWidth="6" strokeLinecap="round" />
+              
+              {/* Ring Roads */}
+              <path d="M 300,150 C 350,70 550,70 600,140 C 650,200 450,220 300,150" fill="none" stroke="#282828" strokeWidth="4" />
+              <path d="M 300,150 C 350,70 550,70 600,140 C 650,200 450,220 300,150" fill="none" stroke="#F59E0B" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
+
+              {/* Srivari Mettu Path */}
+              <path d="M 280,200 L 320,130 T 360,90" fill="none" stroke="#243427" strokeWidth="3" strokeDasharray="2,2" />
+
+              {/* Other Hills landmarks */}
+              <g opacity="0.3" fill="#FFF" fontSize="8" fontWeight="600" fontFamily="sans-serif">
+                <text x="80" y="110">Gali Gopuram</text>
+                <text x="180" y="170">Alipiri Walkway</text>
+                <text x="680" y="60">Srivari Padalu</text>
+                <text x="690" y="145">Papavinasanam</text>
+                <text x="500" y="30">SMC Complex</text>
+              </g>
+            </svg>
 
             {/* Central Temple Pin */}
             <div style={{
