@@ -32,9 +32,12 @@ interface PlaceItem {
   contactEmail: string;
   website: string;
   image: string; // Real CDN Unsplash photo representing the property/travels
+  mapX: string;  // X position on the interactive map mockup (percentage)
+  mapY: string;  // Y position on the interactive map mockup (percentage)
 }
 
 const PLACES_DATA: PlaceItem[] = [
+  // --- STAYS (21 Items) ---
   {
     id: 'h1',
     name: 'Hill View Cottage (HVC)',
@@ -49,7 +52,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 94403 89812',
     contactEmail: 'bookings@hillviewcottages.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop&q=80',
+    mapX: '38%',
+    mapY: '52%'
   },
   {
     id: 'h2',
@@ -65,7 +70,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 226 3120',
     contactEmail: 'rambagicha.help@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&h=300&fit=crop&q=80',
+    mapX: '45%',
+    mapY: '43%'
   },
   {
     id: 'h3',
@@ -81,7 +88,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 226 3000',
     contactEmail: 'svgh.booking@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=300&fit=crop&q=80',
+    mapX: '42%',
+    mapY: '46%'
   },
   {
     id: 'h4',
@@ -97,7 +106,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 227 7777',
     contactEmail: 'panchajanyam.mgr@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&fit=crop&q=80',
+    mapX: '49%',
+    mapY: '47%'
   },
   {
     id: 'h5',
@@ -113,7 +124,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 668 0000',
     contactEmail: 'reservations.tirupati@tajhotels.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop&q=80',
+    mapX: '22%',
+    mapY: '85%'
   },
   {
     id: 'h6',
@@ -129,7 +142,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 226 3133',
     contactEmail: 'kousthubham.booking@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop&q=80',
+    mapX: '46%',
+    mapY: '41%'
   },
   {
     id: 'h7',
@@ -145,7 +160,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 226 3221',
     contactEmail: 'padmavathigh@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=300&fit=crop&q=80',
+    mapX: '51%',
+    mapY: '50%'
   },
   {
     id: 'h8',
@@ -161,7 +178,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 226 3244',
     contactEmail: 'varahagh@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1606046604972-77cc76aee944?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1606046604972-77cc76aee944?w=400&h=300&fit=crop&q=80',
+    mapX: '44%',
+    mapY: '38%'
   },
   {
     id: 'h9',
@@ -177,7 +196,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 228 7771',
     contactEmail: 'srinivasam.allot@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=400&h=300&fit=crop&q=80',
+    mapX: '20%',
+    mapY: '78%'
   },
   {
     id: 'h10',
@@ -193,7 +214,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 228 7775',
     contactEmail: 'vishnunivasam@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&h=300&fit=crop&q=80',
+    mapX: '18%',
+    mapY: '76%'
   },
   {
     id: 'h11',
@@ -209,7 +232,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 228 7780',
     contactEmail: 'madhavam@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop&q=80',
+    mapX: '25%',
+    mapY: '80%'
   },
   {
     id: 'h12',
@@ -225,7 +250,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 226 3311',
     contactEmail: 'gokulam@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=300&fit=crop&q=80',
+    mapX: '41%',
+    mapY: '39%'
   },
   {
     id: 'h13',
@@ -241,7 +268,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 226 3345',
     contactEmail: 'sapthagirichatram@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop&q=80',
+    mapX: '46%',
+    mapY: '44%'
   },
   {
     id: 'h14',
@@ -257,7 +286,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 226 3390',
     contactEmail: 'vakulamata@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop&q=80',
+    mapX: '36%',
+    mapY: '54%'
   },
   {
     id: 'h15',
@@ -273,7 +304,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 228 3400',
     contactEmail: 'alipirigh@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&h=300&fit=crop&q=80',
+    mapX: '30%',
+    mapY: '68%'
   },
   {
     id: 'h16',
@@ -289,7 +322,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 228 5555',
     contactEmail: 'reservations.gr@fortunehotels.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&fit=crop&q=80',
+    mapX: '28%',
+    mapY: '88%'
   },
   {
     id: 'h17',
@@ -305,7 +340,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 666 0000',
     contactEmail: 'mtp@sarovarhotels.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=300&fit=crop&q=80',
+    mapX: '32%',
+    mapY: '70%'
   },
   {
     id: 'h18',
@@ -321,7 +358,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 223 7773',
     contactEmail: 'reservations@hotelbliss.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=400&h=300&fit=crop&q=80',
+    mapX: '21%',
+    mapY: '82%'
   },
   {
     id: 'h19',
@@ -337,7 +376,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 228 6161',
     contactEmail: 'reservations.tpt@minervagrand.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&h=300&fit=crop&q=80',
+    mapX: '23%',
+    mapY: '84%'
   },
   {
     id: 'h20',
@@ -353,8 +394,30 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 228 0800',
     contactEmail: 'guestline.tirupati@rameehotels.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop&q=80',
+    mapX: '26%',
+    mapY: '72%'
   },
+  {
+    id: 'h21',
+    name: 'Shankarnarayana Rest House',
+    type: 'guesthouse',
+    rating: 4.0,
+    reviews: 1980,
+    priceLevel: '₹',
+    description: 'Budget-friendly rest house managed by TTD. Simple, clean rooms near local shopping stalls and queue points.',
+    distance: '0.5 km from main Tirumala Temple',
+    amenities: ['Parking', 'Subsidized Food', '24/7 Water'],
+    benefits: ['Walking distance to multiple canteens', 'Friendly TTD reception service', 'Budget-friendly single rooms'],
+    contactPhone: '+91 877 226 3450',
+    contactEmail: 'shankarnarayana@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop&q=80',
+    mapX: '43%',
+    mapY: '40%'
+  },
+
+  // --- TRAVELS (20 Items) ---
   {
     id: 't1',
     name: 'Tirumala Balaji Travels',
@@ -369,7 +432,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 98850 12345',
     contactEmail: 'info@balajitravels.co.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop&q=80',
+    mapX: '17%',
+    mapY: '74%'
   },
   {
     id: 't2',
@@ -385,7 +450,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 99630 67890',
     contactEmail: 'contact@srinivasatours.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80',
+    mapX: '12%',
+    mapY: '90%'
   },
   {
     id: 't3',
@@ -401,7 +468,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 94412 34567',
     contactEmail: 'bookings@venkatadricabs.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=300&fit=crop&q=80',
+    mapX: '20%',
+    mapY: '79%'
   },
   {
     id: 't4',
@@ -417,7 +486,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 98480 98765',
     contactEmail: 'guidance@sevenhillstours.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=400&h=300&fit=crop&q=80',
+    mapX: '45%',
+    mapY: '48%'
   },
   {
     id: 't5',
@@ -433,7 +504,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 94405 67890',
     contactEmail: 'bookings@balajicartravels.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop&q=80',
+    mapX: '19%',
+    mapY: '81%'
   },
   {
     id: 't6',
@@ -449,7 +522,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 90001 23456',
     contactEmail: 'support@garudatravels.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=400&h=300&fit=crop&q=80',
+    mapX: '21%',
+    mapY: '83%'
   },
   {
     id: 't7',
@@ -465,7 +540,9 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 91770 12345',
     contactEmail: 'booking@tirupatitravels.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80',
+    mapX: '16%',
+    mapY: '72%'
   },
   {
     id: 't8',
@@ -481,7 +558,225 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 94901 23456',
     contactEmail: 'srinivasataxis@gmail.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=300&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=300&fit=crop&q=80',
+    mapX: '18%',
+    mapY: '75%'
+  },
+  {
+    id: 't9',
+    name: 'Sri Balaji Tour Operator',
+    type: 'travels',
+    rating: 4.6,
+    reviews: 640,
+    priceLevel: '₹₹',
+    description: 'Custom travel operator providing verified tours to Kalahasti and surrounding temples with local English/Telugu translators.',
+    distance: 'Pickup from any hotel in Tirupati town',
+    amenities: ['AC Sedans', 'Translator Guide', 'Toll Fees Paid'],
+    benefits: ['Excellent guides explain history of major spots', 'Clean vehicles with premium charging ports', 'Direct coordination with temple reception desks'],
+    contactPhone: '+91 94406 12345',
+    contactEmail: 'booking@balajitouroperators.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop&q=80',
+    mapX: '22%',
+    mapY: '80%'
+  },
+  {
+    id: 't10',
+    name: 'Srivari Cabs Tirupati',
+    type: 'travels',
+    rating: 4.7,
+    reviews: 820,
+    priceLevel: '₹₹',
+    description: 'Dedicated car rentals specializing in high-end luxury transits. Large collection of SUVs suitable for large family groups.',
+    distance: 'Airport terminal pickup ready',
+    amenities: ['Luxury SUVs', 'AC', 'Mineral Water', 'Chargers'],
+    benefits: ['First class pick-up and hospitality services', 'Clean vehicles sanitized before every run', 'Assistance with large luggage and strollers'],
+    contactPhone: '+91 94411 98765',
+    contactEmail: 'rentals@srivaricabs.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=400&h=300&fit=crop&q=80',
+    mapX: '24%',
+    mapY: '78%'
+  },
+  {
+    id: 't11',
+    name: 'Tirupati Tour Packages',
+    type: 'travels',
+    rating: 4.8,
+    reviews: 1400,
+    priceLevel: '₹₹₹',
+    description: 'One-stop agency offering all-inclusive Tirupati darshan packages from major cities including lodging, transport, and guide assistance.',
+    distance: 'Pickup hubs near bypass bypass roads',
+    amenities: ['Volvo Sleeper', 'Guide support', 'Hotels included'],
+    benefits: ['Bypasses standard transport search stress', 'Includes traditional breakfast and lunch blocks', 'Guided walk up the Alipiri steps if requested'],
+    contactPhone: '+91 99000 12345',
+    contactEmail: 'packages@tirupatitours.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80',
+    mapX: '25%',
+    mapY: '82%'
+  },
+  {
+    id: 't12',
+    name: 'Balaji Cabs and Travels',
+    type: 'travels',
+    rating: 4.6,
+    reviews: 730,
+    priceLevel: '₹₹',
+    description: 'Local taxi service providing reliable outstation cars and daily local drops. Renowned for prompt arrivals and verified drivers.',
+    distance: 'Walkable from Tirupati Central Bus stand',
+    amenities: ['AC Hatchbacks', 'Flat Rates', 'Local drivers'],
+    benefits: ['Very prompt arrival (under 10 minutes locally)', 'Subsidized rates for temple drop-offs', 'Polite, safe local drivers'],
+    contactPhone: '+91 98490 12345',
+    contactEmail: 'balajitaxis@tpt.co.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=300&fit=crop&q=80',
+    mapX: '15%',
+    mapY: '71%'
+  },
+  {
+    id: 't13',
+    name: 'Sri Venkateswara Car Travels',
+    type: 'travels',
+    rating: 4.7,
+    reviews: 990,
+    priceLevel: '₹₹',
+    description: 'Premium cab booking services with a high-end luxury vehicle selection. Offers customized temple sightseeing plans.',
+    distance: 'Railway station terminal gate 2',
+    amenities: ['AC Sedans', 'Uniformed Driver', 'Custom Routes'],
+    benefits: ['Zero cancellation rate guarantee', 'Clean premium interiors', 'Drivers double as local shopping guides'],
+    contactPhone: '+91 94407 11223',
+    contactEmail: 'svtravels@tirupati.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=400&h=300&fit=crop&q=80',
+    mapX: '19%',
+    mapY: '73%'
+  },
+  {
+    id: 't14',
+    name: 'Padmavathi Travels',
+    type: 'travels',
+    rating: 4.5,
+    reviews: 810,
+    priceLevel: '₹',
+    description: 'Extremely budget taxi rentals operating flat-fare drops to Alipiri and Srivani Mettu walk paths. Renders 24/7 online dispatch.',
+    distance: 'Tirupati town main circle pickup',
+    amenities: ['AC Hatchbacks', 'Locker service link', 'Fast dispatch'],
+    benefits: ['Cheapest standard rates for local transits', 'Assistance with luggage lockers', 'Direct drops at step entrances'],
+    contactPhone: '+91 98480 12344',
+    contactEmail: 'bookings@padmavathitravels.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=300&fit=crop&q=80',
+    mapX: '21%',
+    mapY: '76%'
+  },
+  {
+    id: 't15',
+    name: 'Govinda Travels Tirupati',
+    type: 'travels',
+    rating: 4.8,
+    reviews: 1350,
+    priceLevel: '₹₹',
+    description: 'Trusted tour agency offering customized one-day packages. Features premium tourist vans for multi-family groups.',
+    distance: 'Pickup from bypass road junctions',
+    amenities: ['AC Tempo Traveller', 'Guide On-board', 'Snacks'],
+    benefits: ['Guided sightseeing of surrounding forest points', 'Ideal for family groups of 10-15 members', 'Zero toll/parking headache (all pre-cleared)'],
+    contactPhone: '+91 90100 12345',
+    contactEmail: 'tours@govindatravels.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80',
+    mapX: '23%',
+    mapY: '79%'
+  },
+  {
+    id: 't16',
+    name: 'Tirupati Car Rentals',
+    type: 'travels',
+    rating: 4.6,
+    reviews: 690,
+    priceLevel: '₹₹',
+    description: 'Professional rent-a-car agency with self-drive options. Features a large catalog of reliable hatchbacks and compact SUVs.',
+    distance: 'Office opposite RTC Bus Stand',
+    amenities: ['Self-drive Option', 'GPS Installed', 'AC'],
+    benefits: ['Full flexibility to explore surrounding hills', '100% verified vehicle papers and insurance', '24/7 breakdown roadside support'],
+    contactPhone: '+91 98852 11223',
+    contactEmail: 'rentals@tirupaticars.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop&q=80',
+    mapX: '26%',
+    mapY: '81%'
+  },
+  {
+    id: 't17',
+    name: 'Balaji Darshan Travels',
+    type: 'travels',
+    rating: 4.7,
+    reviews: 950,
+    priceLevel: '₹₹',
+    description: 'One of the oldest travel services in Tirupati. Specializes in direct outstation packages (Chennai, Vellore, Kalahasti).',
+    distance: 'Central booking counter near railway terminal',
+    amenities: ['Volvo Coaches', 'AC Sedans', 'Guide'],
+    benefits: ['Guides assist with offline queue entry points', 'Highly reliable, punctually scheduled departures', 'Multi-lingual driver options available'],
+    contactPhone: '+91 99490 12345',
+    contactEmail: 'info@balajidarshantravels.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80',
+    mapX: '27%',
+    mapY: '84%'
+  },
+  {
+    id: 't18',
+    name: 'Tirumala Cabs & Packages',
+    type: 'travels',
+    rating: 4.8,
+    reviews: 1820,
+    priceLevel: '₹₹',
+    description: 'Provides premium class airport transits and custom VIP temple packages. Features clean vehicles equipped with mobile chargers and water.',
+    distance: 'Renigunta Airport arrivals bay',
+    amenities: ['Luxury SUVs', 'Wi-Fi', 'Bottled Water', 'AC'],
+    benefits: ['Real-time airport arrival flight tracking', 'Direct drop at VIP queue entry points in Tirumala', 'Priority baggage handling assistance'],
+    contactPhone: '+91 99660 12345',
+    contactEmail: 'bookings@tirumalacabs.co.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=400&h=300&fit=crop&q=80',
+    mapX: '29%',
+    mapY: '86%'
+  },
+  {
+    id: 't19',
+    name: 'Sapthagiri Cabs & Tours',
+    type: 'travels',
+    rating: 4.6,
+    reviews: 790,
+    priceLevel: '₹₹',
+    description: 'Affordable family cabs offering flat rates for sightseeing. Specializes in multi-stop temple tours covering surrounding districts.',
+    distance: 'Office at Alipiri Toll Gate link road',
+    amenities: ['AC Multi-Utility Vehicles', 'Tolls Included', 'Tour Guides'],
+    benefits: ['Covers Kalahasti, Kanipakam, and Srinivasa Mangapuram', 'Drivers handle local hill pass permit registration', 'Ideal for family groups of 6-8 members'],
+    contactPhone: '+91 98855 98765',
+    contactEmail: 'tours@sapthagiritravels.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=300&fit=crop&q=80',
+    mapX: '31%',
+    mapY: '88%'
+  },
+  {
+    id: 't20',
+    name: 'Tirupati Divine Travels',
+    type: 'travels',
+    rating: 4.7,
+    reviews: 1050,
+    priceLevel: '₹₹',
+    description: 'Premium pilgrim transport service offering Volvo buses and AC tempo travellers for corporate groups and large family groups.',
+    distance: 'RTC Bus Stand platform boarding area',
+    amenities: ['Volvo Sleeper', 'Push-back seats', 'AC', 'Video entertainment'],
+    benefits: ['On-board spiritual video guides and documentations', 'Assistance with TTD laddu container booking', 'Comfortable sleeper berths for night travel'],
+    contactPhone: '+91 90599 12345',
+    contactEmail: 'support@divinetravels.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80',
+    mapX: '33%',
+    mapY: '90%'
   }
 ];
 
@@ -552,7 +847,7 @@ export default function StaysTravelsPage(): JSX.Element {
             📍 Stays & Travel Directory
           </h1>
           <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-muted)' }}>
-            Verified cottage guest houses, TTD complexes, and local travels near Tirumala (28+ Places)
+            Verified cottage guest houses, TTD complexes, and local travels near Tirumala (41+ Places)
           </p>
         </div>
 
@@ -594,7 +889,7 @@ export default function StaysTravelsPage(): JSX.Element {
               boxShadow: '0 4px 15px rgba(245, 158, 11, 0.3)'
             }}
           >
-            <Lock size={14} /> Unlock 28+ Stays & Tours (₹399/yr)
+            <Lock size={14} /> Unlock 41+ Stays & Tours (₹399/yr)
           </button>
         )}
       </div>
@@ -620,7 +915,7 @@ export default function StaysTravelsPage(): JSX.Element {
               <Search size={16} style={{ position: 'absolute', left: '12px', top: '11px', color: 'rgba(255,255,255,0.3)' }} />
               <input
                 type="text"
-                placeholder={isUnlocked ? "Search 28+ hotels, travels..." : "Search locked stays & travels..."}
+                placeholder={isUnlocked ? "Search 41+ hotels, travels..." : "Search locked stays & travels..."}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 style={{
@@ -774,21 +1069,22 @@ export default function StaysTravelsPage(): JSX.Element {
                         </div>
                       </div>
 
-                      {/* HIGH-VISIBILITY HIGHLIGHTED DISTANCE BADGE */}
+                      {/* PREMIUM CLEAN HIGH-VISIBILITY DISTANCE BADGE */}
                       <div style={{
                         display: 'inline-flex',
                         alignItems: 'center',
                         alignSelf: 'flex-start',
                         gap: '4px',
-                        background: 'rgba(245, 158, 11, 0.12)',
-                        border: '1.5px solid rgba(245, 158, 11, 0.4)',
+                        background: '#1F1F1F',
+                        border: '1px solid rgba(245, 158, 11, 0.4)',
                         padding: '3px 8px',
                         borderRadius: '6px',
                         fontSize: '11px',
                         fontWeight: 'bold',
                         color: '#FBBF24',
-                        boxShadow: '0 2px 8px rgba(245, 158, 11, 0.15)',
-                        marginTop: '2px'
+                        boxShadow: '0 2px 6px rgba(0, 0, 0, 0.4)',
+                        marginTop: '2px',
+                        width: 'fit-content'
                       }}>
                         <MapPin size={11} color="#F59E0B" />
                         {place.distance.split('(')[0].trim()}
@@ -809,7 +1105,7 @@ export default function StaysTravelsPage(): JSX.Element {
           gap: '16px',
           overflow: 'hidden'
         }}>
-          {/* Top: Mock Interactive Map */}
+          {/* Top: Mock Interactive Map (PINS FETCH DYNAMICALLY PER HOTEL SELECT) */}
           <div style={{
             height: '200px',
             background: 'radial-gradient(circle at center, #1E1E1E 0%, #141414 100%)',
@@ -858,14 +1154,15 @@ export default function StaysTravelsPage(): JSX.Element {
               <div style={{ width: '8px', height: '8px', background: '#EF4444', borderRadius: '50%', margin: '4px auto 0', boxShadow: '0 0 8px #EF4444' }} />
             </div>
 
-            {/* Active Place Marker */}
+            {/* DYNAMIC PLACE MARKER - UPDATE POSITIONS ACCORDING TO SELECTED ITEM */}
             <div style={{
               position: 'absolute',
-              top: '60%',
-              left: '30%',
+              top: selectedPlace.mapY,
+              left: selectedPlace.mapX,
               transform: 'translate(-50%, -50%)',
               textAlign: 'center',
               zIndex: 6,
+              transition: 'top 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), left 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)',
               animation: 'bounce 2s infinite'
             }}>
               <div style={{
@@ -960,19 +1257,19 @@ export default function StaysTravelsPage(): JSX.Element {
                     <span className="badge badge-saffron" style={{ textTransform: 'capitalize', flexShrink: 0 }}>
                       {selectedPlace.type === 'guesthouse' ? 'TTD Rest House' : selectedPlace.type === 'travels' ? 'Verified Travels' : 'Private Hotel'}
                     </span>
-                    {/* HIGHLIGHTED DISTANCE IN DETAILS PANE */}
+                    {/* PREMIUM CLEAN HIGH-VISIBILITY DISTANCE INDICATOR */}
                     <span style={{
-                      fontSize: '12px',
+                      fontSize: '11.5px',
                       fontWeight: 'bold',
                       color: '#FBBF24',
-                      background: 'rgba(245, 158, 11, 0.15)',
+                      background: '#1F1F1F',
                       border: '1px solid rgba(245, 158, 11, 0.4)',
                       padding: '3px 8px',
                       borderRadius: '6px',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '3px',
-                      boxShadow: '0 2px 6px rgba(245, 158, 11, 0.15)'
+                      boxShadow: '0 2px 6px rgba(0, 0, 0, 0.4)'
                     }}>
                       <MapPin size={11} color="#F59E0B" />
                       {selectedPlace.distance}
@@ -1144,7 +1441,7 @@ export default function StaysTravelsPage(): JSX.Element {
                       boxShadow: '0 2px 10px rgba(200,134,10,0.4)'
                     }}
                   >
-                    ⚡ Unlock 28+ Stays for ₹399/yr
+                    ⚡ Unlock 41+ Stays for ₹399/yr
                   </button>
                 </div>
               </div>
@@ -1177,7 +1474,7 @@ export default function StaysTravelsPage(): JSX.Element {
 
       </div>
 
-      {/* 💳 MOCK UPI / RAZORPAY PAYMENT GATEWAY MODAL */}
+      {/* 💳 MOCK UPI / RAZORPAY PAYMENT GATEWAY MODAL (REDESIGNED FOR ELEGANCE AND HIGH CONTRAST POLICY VISIBILITY) */}
       {showPaymentModal && (
         <div style={{
           position: 'fixed',
@@ -1258,66 +1555,80 @@ export default function StaysTravelsPage(): JSX.Element {
                   </div>
                 </div>
 
-                {/* Subscription Notice Warning */}
+                {/* HIGH-CONTRAST SUBSCRIPTION POLICY WARNING BOX */}
                 <div style={{
-                  background: 'rgba(239, 68, 68, 0.06)',
-                  border: '1px solid rgba(239, 68, 68, 0.15)',
-                  padding: '12px',
-                  borderRadius: '10px',
+                  background: 'rgba(239, 68, 68, 0.08)',
+                  borderLeft: '4px solid #EF4444',
+                  padding: '12px 16px',
+                  borderRadius: '8px',
                   display: 'flex',
-                  gap: '8px',
+                  gap: '10px',
                   alignItems: 'flex-start'
                 }}>
-                  <AlertCircle size={16} color="#EF4444" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <AlertCircle size={18} color="#EF4444" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div>
-                    <div style={{ fontSize: '11.5px', fontWeight: 700, color: '#EF4444' }}>Important Policy Info:</div>
-                    <p style={{ margin: '2px 0 0', fontSize: '10px', color: 'rgba(255,255,255,0.6)', lineHeight: '1.4' }}>
+                    <div style={{ fontSize: '13px', fontWeight: 700, color: '#EF4444' }}>Important Policy Info:</div>
+                    <p style={{ margin: '4px 0 0', fontSize: '11.5px', color: 'rgba(255,255,255,0.95)', lineHeight: '1.4' }}>
                       All pilgrim data and license details are stored locally. If you uninstall the extension, this premium license status will be permanently reset.
                     </p>
                   </div>
                 </div>
 
-                {/* Simulated UPI Selection */}
+                {/* CLEAN TONED-DOWN UPI APP SELECTION LIST */}
                 <div>
                   <label style={{ fontSize: '11px', fontWeight: 700, color: '#C8860A', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '6px' }}>
                     Select UPI App (Instant sandbox)
                   </label>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     {[
-                      { id: 'gpay', name: 'Google Pay', color: '#1A73E8', badge: '⚡ instant check' },
-                      { id: 'phonepe', name: 'PhonePe', color: '#5F259F', badge: 'popular' },
-                      { id: 'paytm', name: 'Paytm Wallet', color: '#00B9F5', badge: 'wallet' },
-                      { id: 'bhim', name: 'BHIM UPI', color: '#F5A623', badge: 'government secure' }
-                    ].map((app) => (
-                      <div
-                        key={app.id}
-                        onClick={() => setSelectedUpiApp(app.id)}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'space-between',
-                          padding: '10px 14px',
-                          borderRadius: '8px',
-                          cursor: 'pointer',
-                          background: selectedUpiApp === app.id ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.01)',
-                          border: selectedUpiApp === app.id ? `1.5px solid ${app.color}` : '1.5px solid rgba(255,255,255,0.05)',
-                          transition: 'all 0.15s'
-                        }}
-                      >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                          <div style={{
-                            width: '6px',
-                            height: '6px',
-                            borderRadius: '50%',
-                            background: app.color
-                          }} />
-                          <span style={{ fontSize: '12px', fontWeight: 600, color: 'white' }}>{app.name}</span>
+                      { id: 'gpay', name: 'Google Pay', badge: '⚡ instant check' },
+                      { id: 'phonepe', name: 'PhonePe', badge: 'popular' },
+                      { id: 'paytm', name: 'Paytm Wallet', badge: 'wallet' },
+                      { id: 'bhim', name: 'BHIM UPI', badge: 'government secure' }
+                    ].map((app) => {
+                      const isSelected = selectedUpiApp === app.id;
+                      return (
+                        <div
+                          key={app.id}
+                          onClick={() => setSelectedUpiApp(app.id)}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            padding: '10px 14px',
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                            background: isSelected ? 'rgba(245, 158, 11, 0.08)' : 'rgba(255,255,255,0.01)',
+                            border: isSelected ? '1.5px solid #F59E0B' : '1.5px solid rgba(255,255,255,0.05)',
+                            boxShadow: isSelected ? '0 0 12px rgba(245, 158, 11, 0.15)' : 'none',
+                            transition: 'all 0.15s'
+                          }}
+                        >
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <div style={{
+                              width: '12px',
+                              height: '12px',
+                              borderRadius: '50%',
+                              border: isSelected ? '3.5px solid #F59E0B' : '1.5px solid rgba(255,255,255,0.3)',
+                              background: 'transparent',
+                              transition: 'all 0.15s'
+                            }} />
+                            <span style={{ fontSize: '12.5px', fontWeight: 600, color: isSelected ? '#FBBF24' : 'white' }}>{app.name}</span>
+                          </div>
+                          <span style={{
+                            fontSize: '9px',
+                            background: isSelected ? 'rgba(245, 158, 11, 0.15)' : 'rgba(255,255,255,0.04)',
+                            color: isSelected ? '#FBBF24' : 'rgba(255,255,255,0.4)',
+                            padding: '2px 5px',
+                            borderRadius: '3px',
+                            textTransform: 'uppercase',
+                            fontWeight: 700
+                          }}>
+                            {app.badge}
+                          </span>
                         </div>
-                        <span style={{ fontSize: '8px', background: `${app.color}20`, color: app.color, padding: '2px 5px', borderRadius: '3px', textTransform: 'uppercase', fontWeight: 700 }}>
-                          {app.badge}
-                        </span>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
 
