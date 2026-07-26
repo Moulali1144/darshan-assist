@@ -418,6 +418,70 @@ const PLACES_DATA: PlaceItem[] = [
     contactEmail: 'guidance@sevenhillstours.com',
     website: 'https://ttdevasthanams.ap.gov.in',
     image: 'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 't5',
+    name: 'Balaji Car Travels Tirupati',
+    type: 'travels',
+    rating: 4.9,
+    reviews: 3200,
+    priceLevel: '₹₹',
+    description: 'Premier tour operators with custom packages for family groups. Offers clean, luxury multi-utility vehicles (MUVs) with experienced English/Hindi speaking guides.',
+    distance: 'Available at Airport, Bypass, and Railway Station',
+    amenities: ['AC Innova Crysta', 'Wi-Fi On-board', 'Local Guide', 'Toll Free'],
+    benefits: ['100% verified temple drop-off permission', 'Accommodates senior citizens with wheelchair helpers', 'Zero cancellations and prompt round-the-clock service'],
+    contactPhone: '+91 94405 67890',
+    contactEmail: 'bookings@balajicartravels.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 't6',
+    name: 'Garuda Travels Tirupati',
+    type: 'travels',
+    rating: 4.6,
+    reviews: 1100,
+    priceLevel: '₹₹₹',
+    description: 'Renders excellent outstation tours and local packages. Well-known for luxury sedans and premium tempo travellers for large families.',
+    distance: 'Central office near Tirupati Bus Stand',
+    amenities: ['Luxury Sedans', 'Mineral Water', 'AC', '24/7 Helpline'],
+    benefits: ['Assistance with TTD tonsure and darshan tickets', 'Uniformed, multilingual professional drivers', 'Renders drop-offs to all surrounding temples (Kalahasti, Kanipakam)'],
+    contactPhone: '+91 90001 23456',
+    contactEmail: 'support@garudatravels.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 't7',
+    name: 'Tirumala Tirupati Travels',
+    type: 'travels',
+    rating: 4.8,
+    reviews: 2150,
+    priceLevel: '₹₹',
+    description: 'Expert local cabs operator offering fast Airport transfers, railway station pick-ups, and one-day Tirumala pilgrimage packages.',
+    distance: 'Pickup zones at Renigunta Airport & Station',
+    amenities: ['Tempo Traveller', 'Srinivasam Boarding', 'Tolls Included'],
+    benefits: ['Specialized child-friendly seat configurations', 'Guides assist with offline ticket checking and locker collection', 'Direct drop at main accommodation reception in Tirumala'],
+    contactPhone: '+91 91770 12345',
+    contactEmail: 'booking@tirupatitravels.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 't8',
+    name: 'Srinivasa Travels',
+    type: 'travels',
+    rating: 4.5,
+    reviews: 930,
+    priceLevel: '₹',
+    description: 'Highly economical, clean, budget taxi rentals. Best suited for single travelers and families looking for safe, basic transport.',
+    distance: 'Tirupati Railway Station platform gate 1',
+    amenities: ['Non-AC Cabs', 'Hatchbacks', 'Luggage Carrier'],
+    benefits: ['Subsidized flat fares for TTD pilgrims', 'Drivers help guide local route paths and shortcuts', 'Direct drop at Alipiri Step entrance'],
+    contactPhone: '+91 94901 23456',
+    contactEmail: 'srinivasataxis@gmail.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=300&fit=crop&q=80'
   }
 ];
 
@@ -488,7 +552,7 @@ export default function StaysTravelsPage(): JSX.Element {
             📍 Stays & Travel Directory
           </h1>
           <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-muted)' }}>
-            Verified cottage guest houses, TTD complexes, and local travels near Tirumala (25+ Places)
+            Verified cottage guest houses, TTD complexes, and local travels near Tirumala (28+ Places)
           </p>
         </div>
 
@@ -530,7 +594,7 @@ export default function StaysTravelsPage(): JSX.Element {
               boxShadow: '0 4px 15px rgba(245, 158, 11, 0.3)'
             }}
           >
-            <Lock size={14} /> Unlock 25+ Stays & Tours (₹399/yr)
+            <Lock size={14} /> Unlock 28+ Stays & Tours (₹399/yr)
           </button>
         )}
       </div>
@@ -556,7 +620,7 @@ export default function StaysTravelsPage(): JSX.Element {
               <Search size={16} style={{ position: 'absolute', left: '12px', top: '11px', color: 'rgba(255,255,255,0.3)' }} />
               <input
                 type="text"
-                placeholder={isUnlocked ? "Search 25+ hotels, travels..." : "Search locked stays & travels..."}
+                placeholder={isUnlocked ? "Search 28+ hotels, travels..." : "Search locked stays & travels..."}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 style={{
@@ -675,53 +739,59 @@ export default function StaysTravelsPage(): JSX.Element {
                       )}
                     </div>
 
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <h3 style={{
-                        fontSize: '13px',
-                        fontWeight: 700,
-                        margin: '0 0 2px',
-                        color: isSelected ? '#F59E0B' : 'var(--color-text)',
-                        whiteSpace: 'nowrap',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis'
-                      }}>
-                        {getObfuscatedName(place)}
-                      </h3>
+                    <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                      <div>
+                        <h3 style={{
+                          fontSize: '13px',
+                          fontWeight: 700,
+                          margin: '0 0 2px',
+                          color: isSelected ? '#F59E0B' : 'var(--color-text)',
+                          whiteSpace: 'nowrap',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis'
+                        }}>
+                          {getObfuscatedName(place)}
+                        </h3>
 
-                      {/* Rating block */}
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '4px' }}>
-                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text)' }}>{place.rating}</span>
-                        <div style={{ display: 'flex', gap: '1px' }}>
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              size={10}
-                              fill={i < Math.floor(place.rating) ? '#F59E0B' : 'transparent'}
-                              color="#F59E0B"
-                            />
-                          ))}
+                        {/* Rating block */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '2px' }}>
+                          <span style={{ fontSize: '11.5px', fontWeight: 600, color: 'var(--color-text)' }}>{place.rating}</span>
+                          <div style={{ display: 'flex', gap: '1px' }}>
+                            {[...Array(5)].map((_, i) => (
+                              <Star
+                                key={i}
+                                size={10}
+                                fill={i < Math.floor(place.rating) ? '#F59E0B' : 'transparent'}
+                                color="#F59E0B"
+                              />
+                            ))}
+                          </div>
+                          <span style={{ fontSize: '10.5px', color: 'var(--color-text-muted)' }}>({place.reviews})</span>
                         </div>
-                        <span style={{ fontSize: '11px', color: 'var(--color-text-muted)' }}>({place.reviews})</span>
+
+                        <div style={{ fontSize: '10.5px', color: 'var(--color-text-muted)', marginBottom: '4px' }}>
+                          {place.type === 'guesthouse' ? 'TTD Rest House' : place.type === 'travels' ? 'Private Travels' : 'Premium Hotel'} · {place.priceLevel}
+                        </div>
                       </div>
 
-                      <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '4px' }}>
-                        {place.type === 'guesthouse' ? 'TTD Rest House' : place.type === 'travels' ? 'Private Travels' : 'Premium Hotel'} · {place.priceLevel}
-                      </div>
-
-                      {/* Distance pill */}
+                      {/* HIGH-VISIBILITY HIGHLIGHTED DISTANCE BADGE */}
                       <div style={{
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '2px',
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.06)',
-                        padding: '2px 6px',
+                        alignSelf: 'flex-start',
+                        gap: '4px',
+                        background: 'rgba(245, 158, 11, 0.12)',
+                        border: '1.5px solid rgba(245, 158, 11, 0.4)',
+                        padding: '3px 8px',
                         borderRadius: '6px',
-                        fontSize: '10px',
-                        color: '#FBBF24'
+                        fontSize: '11px',
+                        fontWeight: 'bold',
+                        color: '#FBBF24',
+                        boxShadow: '0 2px 8px rgba(245, 158, 11, 0.15)',
+                        marginTop: '2px'
                       }}>
-                        <MapPin size={10} />
-                        {place.distance.split('(')[0]}
+                        <MapPin size={11} color="#F59E0B" />
+                        {place.distance.split('(')[0].trim()}
                       </div>
                     </div>
                   </div>
@@ -741,7 +811,7 @@ export default function StaysTravelsPage(): JSX.Element {
         }}>
           {/* Top: Mock Interactive Map */}
           <div style={{
-            height: '220px',
+            height: '200px',
             background: 'radial-gradient(circle at center, #1E1E1E 0%, #141414 100%)',
             border: '1px solid var(--color-border)',
             borderRadius: '16px',
@@ -878,7 +948,7 @@ export default function StaysTravelsPage(): JSX.Element {
                     fontFamily: 'Poppins, sans-serif',
                     fontSize: '18px',
                     fontWeight: 700,
-                    margin: '0 0 4px',
+                    margin: '0 0 6px',
                     color: 'var(--color-text)',
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
@@ -886,12 +956,26 @@ export default function StaysTravelsPage(): JSX.Element {
                   }}>
                     {getObfuscatedName(selectedPlace)}
                   </h2>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span className="badge badge-saffron" style={{ textTransform: 'capitalize' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                    <span className="badge badge-saffron" style={{ textTransform: 'capitalize', flexShrink: 0 }}>
                       {selectedPlace.type === 'guesthouse' ? 'TTD Rest House' : selectedPlace.type === 'travels' ? 'Verified Travels' : 'Private Hotel'}
                     </span>
-                    <span style={{ fontSize: '11.5px', color: 'var(--color-text-muted)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                      📍 {selectedPlace.distance}
+                    {/* HIGHLIGHTED DISTANCE IN DETAILS PANE */}
+                    <span style={{
+                      fontSize: '12px',
+                      fontWeight: 'bold',
+                      color: '#FBBF24',
+                      background: 'rgba(245, 158, 11, 0.15)',
+                      border: '1px solid rgba(245, 158, 11, 0.4)',
+                      padding: '3px 8px',
+                      borderRadius: '6px',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '3px',
+                      boxShadow: '0 2px 6px rgba(245, 158, 11, 0.15)'
+                    }}>
+                      <MapPin size={11} color="#F59E0B" />
+                      {selectedPlace.distance}
                     </span>
                   </div>
                 </div>
@@ -1060,7 +1144,7 @@ export default function StaysTravelsPage(): JSX.Element {
                       boxShadow: '0 2px 10px rgba(200,134,10,0.4)'
                     }}
                   >
-                    ⚡ Unlock 25+ Stays for ₹399/yr
+                    ⚡ Unlock 28+ Stays for ₹399/yr
                   </button>
                 </div>
               </div>
