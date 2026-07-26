@@ -788,6 +788,7 @@ export default function StaysTravelsPage(): JSX.Element {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [paymentStep, setPaymentStep] = useState<'options' | 'simulating' | 'success'>('options');
   const [selectedUpiApp, setSelectedUpiApp] = useState<string>('gpay');
+  const [zoomLevel, setZoomLevel] = useState<number>(15);
 
   // Load premium state
   useEffect(() => {
@@ -892,6 +893,26 @@ export default function StaysTravelsPage(): JSX.Element {
             <Lock size={14} /> Unlock 41+ Stays & Tours (₹399/yr)
           </button>
         )}
+      </div>
+
+      {/* TTD Official Policy Compliance Disclaimer */}
+      <div style={{
+        background: 'rgba(200, 134, 10, 0.05)',
+        border: '1px solid rgba(200, 134, 10, 0.2)',
+        borderRadius: '12px',
+        padding: '10px 14px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+        fontSize: '12px',
+        color: 'var(--color-text-muted)',
+        lineHeight: '1.4',
+        flexShrink: 0
+      }}>
+        <ShieldCheck size={18} color="#F59E0B" style={{ flexShrink: 0 }} />
+        <div>
+          <strong style={{ color: '#F59E0B' }}>Official TTD Compliance Notice:</strong> All booking transactions, ticket issues, room allotments, and Sevas are handled exclusively by Tirumala Tirupati Devasthanams (TTD) via their official portal (<a href="https://ttdevasthanams.ap.gov.in" target="_blank" rel="noopener noreferrer" style={{ color: '#FBBF24', textDecoration: 'underline' }}>ttdevasthanams.ap.gov.in</a>). Darshan Assist provides helper tools, autofill, and quota alerts to assist devotees without bypassing TTD policies.
+        </div>
       </div>
 
       {/* Main Split Layout */}
@@ -1105,159 +1126,96 @@ export default function StaysTravelsPage(): JSX.Element {
           gap: '16px',
           overflow: 'hidden'
         }}>
-          {/* Top: Mock Interactive Map (PINS FETCH DYNAMICALLY PER HOTEL SELECT) */}
+          {/* Top: REAL INTERACTIVE GOOGLE MAPS IFRAME WITH WORKING ZOOM */}
           <div style={{
-            height: '200px',
-            background: '#F4F3F0',
-            border: '1px solid rgba(0,0,0,0.12)',
+            height: '210px',
+            background: '#E5E3DF',
+            border: '1px solid rgba(0,0,0,0.15)',
             borderRadius: '16px',
             position: 'relative',
             overflow: 'hidden',
             flexShrink: 0
           }}>
-            {/* Styled Map Background Grid */}
-            <div style={{
-              position: 'absolute',
-              inset: 0,
-              opacity: 0.25,
-              backgroundImage: `
-                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
-              `,
-              backgroundSize: '24px 24px'
-            }} />
+            {/* Real Interactive Google Maps Iframe */}
+            <iframe
+              key={`${selectedPlace.id}-${zoomLevel}`}
+              title="Google Maps Location"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: 'contrast(1.05)' }}
+              loading="lazy"
+              allowFullScreen
+              src={`https://maps.google.com/maps?q=${encodeURIComponent((isUnlocked ? selectedPlace.name : 'Tirumala') + ' Tirupati')}&t=&z=${zoomLevel}&ie=UTF8&iwloc=&output=embed`}
+            />
 
-            {/* Detailed Styled Vector Map of Tirumala Hills (Google Maps Theme) */}
-            <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }} viewBox="0 0 800 200" preserveAspectRatio="none">
-              {/* Forest / Green zones */}
-              <rect x="0" y="0" width="800" height="200" fill="#F4F3F0" />
-              <path d="M-50,150 Q100,80 250,160 T600,120 T900,180 L900,200 L-50,200 Z" fill="#E2F0D9" />
-              <path d="M100,-20 Q250,50 400,-10 T700,40 T900,-30 L900,0 L100,0 Z" fill="#E2F0D9" />
-
-              {/* Water bodies (Pushkarini / Rivers) */}
-              <path d="M 350,30 Q 380,45 370,60 T 330,70 Z" fill="#AAD3DF" stroke="#8CBCCB" strokeWidth="1" />
-              <text x="330" y="45" fill="#1A73E8" fontSize="8.5" fontWeight="bold" fontFamily="sans-serif">Pushkarini</text>
-
-              {/* Main Roads / Highway Networks */}
-              {/* Alipiri Ghat Road */}
-              <path d="M 50,220 Q 120,130 200,150 T 400,110 T 600,120 T 850,70" fill="none" stroke="#E5C79E" strokeWidth="8" strokeLinecap="round" />
-              <path d="M 50,220 Q 120,130 200,150 T 400,110 T 600,120 T 850,70" fill="none" stroke="#FFEFA6" strokeWidth="5" strokeLinecap="round" />
-              
-              {/* Ring Roads */}
-              <path d="M 300,150 C 350,70 550,70 600,140 C 650,200 450,220 300,150" fill="none" stroke="#E0E0E0" strokeWidth="5" />
-              <path d="M 300,150 C 350,70 550,70 600,140 C 650,200 450,220 300,150" fill="none" stroke="#FFFFFF" strokeWidth="3" />
-
-              {/* Srivari Mettu Path */}
-              <path d="M 280,200 L 320,130 T 360,90" fill="none" stroke="#8C9C8D" strokeWidth="2.5" strokeDasharray="3,3" />
-
-              {/* Other Hills landmarks (High Visibility with Halo Shadow) */}
-              <g fill="#4A4A4A" fontSize="9" fontWeight="700" fontFamily="sans-serif">
-                <text x="80" y="110" stroke="#FFF" strokeWidth="2" paintOrder="stroke" strokeLinejoin="round">Gali Gopuram</text>
-                <text x="180" y="170" stroke="#FFF" strokeWidth="2" paintOrder="stroke" strokeLinejoin="round">Alipiri Walkway</text>
-                <text x="660" y="60" stroke="#FFF" strokeWidth="2" paintOrder="stroke" strokeLinejoin="round">Srivari Padalu</text>
-                <text x="690" y="145" stroke="#FFF" strokeWidth="2" paintOrder="stroke" strokeLinejoin="round">Papavinasanam</text>
-                <text x="500" y="30" stroke="#FFF" strokeWidth="2" paintOrder="stroke" strokeLinejoin="round">SMC Complex</text>
-              </g>
-            </svg>
-
-            {/* Central Temple Pin */}
-            <div style={{
-              position: 'absolute',
-              top: '40%',
-              left: '48%',
-              transform: 'translate(-50%, -50%)',
-              textAlign: 'center',
-              zIndex: 5
-            }}>
-              <div style={{
-                background: '#EF4444',
-                color: 'white',
-                padding: '4px 8px',
-                borderRadius: '6px',
-                fontSize: '11px',
-                fontWeight: 700,
-                boxShadow: '0 4px 10px rgba(239, 68, 68, 0.4)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '2px',
-                whiteSpace: 'nowrap'
-              }}>
-                🕉️ Tirumala Temple
-              </div>
-              <div style={{ width: '8px', height: '8px', background: '#EF4444', borderRadius: '50%', margin: '4px auto 0', boxShadow: '0 0 8px #EF4444' }} />
+            {/* Working Zoom Controls (+ / -) */}
+            <div style={{ position: 'absolute', right: '12px', bottom: '12px', display: 'flex', flexDirection: 'column', gap: '6px', zIndex: 10 }}>
+              <button
+                onClick={() => setZoomLevel((z) => Math.min(18, z + 1))}
+                title="Zoom In"
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '8px',
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(0,0,0,0.2)',
+                  color: '#333333',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.25)',
+                  transition: 'transform 0.1s'
+                }}
+              >
+                +
+              </button>
+              <button
+                onClick={() => setZoomLevel((z) => Math.max(11, z - 1))}
+                title="Zoom Out"
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '8px',
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(0,0,0,0.2)',
+                  color: '#333333',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 4px 10px rgba(0,0,0,0.25)',
+                  transition: 'transform 0.1s'
+                }}
+              >
+                −
+              </button>
             </div>
 
-            {/* DYNAMIC PLACE MARKER - UPDATE POSITIONS ACCORDING TO SELECTED ITEM */}
-            <div style={{
-              position: 'absolute',
-              top: selectedPlace.mapY,
-              left: selectedPlace.mapX,
-              transform: 'translate(-50%, -50%)',
-              textAlign: 'center',
-              zIndex: 6,
-              transition: 'top 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), left 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)',
-              animation: 'bounce 2s infinite'
-            }}>
-              <div style={{
-                background: 'linear-gradient(135deg, #C8860A, #F59E0B)',
-                color: 'white',
-                padding: '4px 8px',
-                borderRadius: '6px',
-                fontSize: '11px',
-                fontWeight: 700,
-                boxShadow: '0 4px 10px rgba(200,134,10, 0.5)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '4px',
-                whiteSpace: 'nowrap'
-              }}>
-                📍 {isUnlocked ? selectedPlace.name : 'Selected Spot'}
-              </div>
-              <div style={{ width: '8px', height: '8px', background: '#F59E0B', borderRadius: '50%', margin: '4px auto 0', boxShadow: '0 0 8px #F59E0B' }} />
-            </div>
-
-            {/* Map Controls (Google Maps White Buttons style) */}
-            <div style={{ position: 'absolute', right: '12px', bottom: '12px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              {['+', '−'].map((ctrl) => (
-                <button
-                  key={ctrl}
-                  style={{
-                    width: '28px',
-                    height: '28px',
-                    borderRadius: '6px',
-                    background: '#FFFFFF',
-                    border: '1px solid rgba(0,0,0,0.12)',
-                    color: '#555555',
-                    fontWeight: 'bold',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
-                  }}
-                >
-                  {ctrl}
-                </button>
-              ))}
-            </div>
-
-            {/* GPS Compass Label (Google Maps white pill style) */}
+            {/* Live GPS / Map Info Pill */}
             <div style={{
               position: 'absolute',
               left: '12px',
               bottom: '12px',
               background: 'rgba(255,255,255,0.95)',
-              border: '1px solid rgba(0,0,0,0.12)',
-              padding: '4px 8px',
-              borderRadius: '6px',
-              fontSize: '10px',
+              border: '1px solid rgba(0,0,0,0.15)',
+              padding: '5px 10px',
+              borderRadius: '8px',
+              fontSize: '11px',
+              fontWeight: 600,
               color: '#333333',
               display: 'flex',
               alignItems: 'center',
-              gap: '4px',
-              boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
+              gap: '6px',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+              zIndex: 10
             }}>
-              <Compass size={12} /> Live GPS Coordinates (Tirumala Hills)
+              <Compass size={14} color="#C8860A" />
+              <span>Real Google Map · Zoom Level {zoomLevel}x</span>
             </div>
           </div>
 

@@ -117,13 +117,57 @@ export default function NotificationsPage(): JSX.Element {
             Configure alerts before ticket releases
           </p>
         </div>
-        <button
-          onClick={() => setShowForm(true)}
-          className="btn-primary"
-          style={{ padding: '12px 24px', fontSize: '14px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}
-        >
-          + Add Rule
-        </button>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button
+            onClick={async () => {
+              const title = '🙏 Darshan Assist - TTD Quota Alert';
+              const message = '₹300 Special Entry Darshan tickets release in 15 minutes! Open portal to prepare Tatkal autofill.';
+              if (typeof chrome !== 'undefined' && chrome.notifications) {
+                chrome.notifications.create({
+                  type: 'basic',
+                  iconUrl: 'icons/icon128.png',
+                  title,
+                  message,
+                  priority: 2,
+                });
+                alert('✅ Live Chrome Desktop Notification sent! Check your system tray.');
+              } else if ('Notification' in window) {
+                const permission = await Notification.requestPermission();
+                if (permission === 'granted') {
+                  new Notification(title, { body: message });
+                  alert('✅ Live Desktop Notification sent!');
+                } else {
+                  alert('⚠️ Please enable notifications in your browser settings.');
+                }
+              } else {
+                alert('ℹ️ Notification triggered: ' + message);
+              }
+            }}
+            style={{
+              padding: '12px 18px',
+              fontSize: '13.5px',
+              fontWeight: 600,
+              borderRadius: '12px',
+              background: 'rgba(200,134,10,0.12)',
+              border: '1px solid rgba(200,134,10,0.3)',
+              color: '#F59E0B',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              transition: 'all 0.2s'
+            }}
+          >
+            🔔 Test Live Notification
+          </button>
+          <button
+            onClick={() => setShowForm(true)}
+            className="btn-primary"
+            style={{ padding: '12px 24px', fontSize: '14px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}
+          >
+            + Add Rule
+          </button>
+        </div>
       </div>
 
       {/* Upcoming Releases Preview */}
