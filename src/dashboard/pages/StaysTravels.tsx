@@ -31,8 +31,7 @@ interface PlaceItem {
   contactPhone: string;
   contactEmail: string;
   website: string;
-  imageColor: string;
-  svgIcon: string;
+  image: string; // Real CDN Unsplash photo representing the property/travels
 }
 
 const PLACES_DATA: PlaceItem[] = [
@@ -50,8 +49,7 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 94403 89812',
     contactEmail: 'bookings@hillviewcottages.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    imageColor: 'linear-gradient(135deg, #FF9933 0%, #FF5500 100%)',
-    svgIcon: 'cottage'
+    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop&q=80'
   },
   {
     id: 'h2',
@@ -67,8 +65,7 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 226 3120',
     contactEmail: 'rambagicha.help@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    imageColor: 'linear-gradient(135deg, #C8860A 0%, #E5A93C 100%)',
-    svgIcon: 'temple'
+    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&h=300&fit=crop&q=80'
   },
   {
     id: 'h3',
@@ -84,8 +81,7 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 226 3000',
     contactEmail: 'svgh.booking@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    imageColor: 'linear-gradient(135deg, #8B0000 0%, #D32F2F 100%)',
-    svgIcon: 'palace'
+    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=300&fit=crop&q=80'
   },
   {
     id: 'h4',
@@ -101,8 +97,7 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 227 7777',
     contactEmail: 'panchajanyam.mgr@ttd.gov.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    imageColor: 'linear-gradient(135deg, #1B5E20 0%, #4CAF50 100%)',
-    svgIcon: 'building'
+    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&fit=crop&q=80'
   },
   {
     id: 'h5',
@@ -118,8 +113,247 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 877 668 0000',
     contactEmail: 'reservations.tirupati@tajhotels.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    imageColor: 'linear-gradient(135deg, #0D47A1 0%, #1976D2 100%)',
-    svgIcon: 'luxury'
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h6',
+    name: 'Kousthubham Rest House',
+    type: 'guesthouse',
+    rating: 4.2,
+    reviews: 8210,
+    priceLevel: '₹',
+    description: 'Centrally located TTD guest house with easy access to central reception office. Highly recommended for couples and small families.',
+    distance: '0.5 km from main Tirumala Temple',
+    amenities: ['Parking', 'Hot Water', 'Drinking Water', 'AC Rooms'],
+    benefits: ['Near TTD main enquiry desk', 'Biometric validation counters on ground floor', 'Fast allocation processing'],
+    contactPhone: '+91 877 226 3133',
+    contactEmail: 'kousthubham.booking@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h7',
+    name: 'Padmavathi Guest House',
+    type: 'guesthouse',
+    rating: 4.1,
+    reviews: 5420,
+    priceLevel: '₹',
+    description: 'Well-ventilated guest house managed by TTD. Known for its quiet surroundings and proximity to natural parks.',
+    distance: '0.9 km from main Tirumala Temple',
+    amenities: ['Garden', 'Parking', '24/7 Water', 'Canteen'],
+    benefits: ['Quiet forest view surrounding', 'Less crowded allotment block', 'Close to Outer Ring Road'],
+    contactPhone: '+91 877 226 3221',
+    contactEmail: 'padmavathigh@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h8',
+    name: 'Varahaswamy Guest House',
+    type: 'guesthouse',
+    rating: 4.0,
+    reviews: 3190,
+    priceLevel: '₹',
+    description: 'Located right next to the sacred Varahaswamy Temple. Offers standard rooms at highly subsidized TTD prices.',
+    distance: '0.4 km from main Tirumala Temple',
+    amenities: ['Parking', 'Subsidized Canteen', 'Luggage Room'],
+    benefits: ['Next to Pushkarini (holy temple tank)', 'Easiest access to Varahaswamy darshan', 'Walking path directly to temple queue'],
+    contactPhone: '+91 877 226 3244',
+    contactEmail: 'varahagh@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1606046604972-77cc76aee944?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h9',
+    name: 'Srinivasam Complex (TTD)',
+    type: 'guesthouse',
+    rating: 4.1,
+    reviews: 25420,
+    priceLevel: '₹',
+    description: 'A massive transit lodging complex run by TTD in Tirupati town. Ideal for fresh-up and overnight stays before climbing the hills.',
+    distance: '20.5 km from Tirumala (Near Tirupati Railway Station)',
+    amenities: ['AC Rooms', 'Locker Facility', 'Bus Stand Access', 'Pure Veg Canteen'],
+    benefits: ['Direct TTD ticket counters inside complex', 'Walkable from Railway Station', 'Free shuttle boarding point'],
+    contactPhone: '+91 877 228 7771',
+    contactEmail: 'srinivasam.allot@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h10',
+    name: 'Vishnu Nivasam (TTD)',
+    type: 'guesthouse',
+    rating: 4.2,
+    reviews: 20120,
+    priceLevel: '₹',
+    description: 'Directly opposite Tirupati Railway Station. Renders quick accommodation facilities and locker services for transit pilgrims.',
+    distance: '20.2 km from Tirumala (Opposite Railway Station)',
+    amenities: ['Locker Rooms', 'Elevators', 'Canteen', 'Transport Desk'],
+    benefits: ['Right in front of Tirupati main station exit', 'Instant allotment check-in available', 'APSRTC booking counter inside'],
+    contactPhone: '+91 877 228 7775',
+    contactEmail: 'vishnunivasam@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h11',
+    name: 'Madhavam Guest House (TTD)',
+    type: 'guesthouse',
+    rating: 4.3,
+    reviews: 4102,
+    priceLevel: '₹₹',
+    description: 'Premium TTD guest house in Tirupati featuring fully air-conditioned deluxe suites and a modern dining lounge.',
+    distance: '20.8 km from Tirumala (Tirupati Bypass)',
+    amenities: ['Central AC', 'Deluxe Suites', 'Parking', 'Room Service'],
+    benefits: ['Extremely clean and premium interiors', 'Online pre-booking allowed via official site', 'Peaceful garden area'],
+    contactPhone: '+91 877 228 7780',
+    contactEmail: 'madhavam@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h12',
+    name: 'Gokulam Rest House',
+    type: 'guesthouse',
+    rating: 4.2,
+    reviews: 8500,
+    priceLevel: '₹',
+    description: 'Spacious TTD residential block adjacent to the main administrative buildings in Tirumala. Safe environment for single lady pilgrims.',
+    distance: '0.7 km from main Tirumala Temple',
+    amenities: ['Parking', '24/7 Security', 'Locker Room'],
+    benefits: ['Strict biometric security gate', 'Close to central TTD administrative office', 'Clean vegetarian dining nearby'],
+    contactPhone: '+91 877 226 3311',
+    contactEmail: 'gokulam@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h13',
+    name: 'Sapthagiri Chatrams',
+    type: 'guesthouse',
+    rating: 3.9,
+    reviews: 6112,
+    priceLevel: '₹',
+    description: 'Traditional TTD free/subsidized locker rooms and hall systems. Best suited for single travelers and backpacker pilgrims.',
+    distance: '0.2 km from main Tirumala Temple',
+    amenities: ['Free Lockers', 'Common Bathrooms', 'Drinking Water'],
+    benefits: ['Closest possible accommodation to main queue line', 'Virtually free boarding options', 'Direct queue updates audible'],
+    contactPhone: '+91 877 226 3345',
+    contactEmail: 'sapthagirichatram@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h14',
+    name: 'Vakula Mata Rest House',
+    type: 'guesthouse',
+    rating: 4.0,
+    reviews: 1540,
+    priceLevel: '₹',
+    description: 'Standard guest house named after Mother Vakula Devi. Known for its quiet, non-commercial atmosphere.',
+    distance: '1.1 km from main Tirumala Temple',
+    amenities: ['Parking', 'Hot Water', 'Purified Water'],
+    benefits: ['Spacious surroundings', 'Close to peaceful woodland paths', 'Easy parking for outstation private cars'],
+    contactPhone: '+91 877 226 3390',
+    contactEmail: 'vakulamata@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h15',
+    name: 'Alipiri Guest House (TTD)',
+    type: 'guesthouse',
+    rating: 4.0,
+    reviews: 2110,
+    priceLevel: '₹',
+    description: 'TTD reception guest house located right at the starting point of Alipiri walk path. Perfect for midnight trek starters.',
+    distance: '18.5 km from Tirumala Temple (Tirupati Foothills)',
+    amenities: ['Parking', 'Luggage Desk', 'Footpath Access'],
+    benefits: ['At the start of the 3550 steps walking path', 'Locker options to store excess luggage', 'Medical first-aid counter nearby'],
+    contactPhone: '+91 877 228 3400',
+    contactEmail: 'alipirigh@ttd.gov.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h16',
+    name: 'Fortune Select Grand Ridge',
+    type: 'hotel',
+    rating: 4.5,
+    reviews: 8921,
+    priceLevel: '₹₹₹',
+    description: 'Upscale hotel situated near the Bypass road. Renders a luxury gateway experience with pure vegetarian fine dining.',
+    distance: '21.5 km from Tirumala Temple (Tirupati Bypass)',
+    amenities: ['Pool', 'Wi-Fi', 'Gym', 'Vegetarian Canteen', 'Spa'],
+    benefits: ['Award-winning multi-cuisine veg dining', 'Custom temple sightseeing assistance', 'Express check-in/out'],
+    contactPhone: '+91 877 228 5555',
+    contactEmail: 'reservations.gr@fortunehotels.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h17',
+    name: 'Marasa Sarovar Premiere',
+    type: 'hotel',
+    rating: 4.4,
+    reviews: 6510,
+    priceLevel: '₹₹₹',
+    description: 'Tirupati first theme hotel inspired by the 10 avatars of Lord Vishnu. Spectacular design elements and premium pool stays.',
+    distance: '19.5 km from Tirumala Temple (Alipiri Road)',
+    amenities: ['Infinity Pool', 'Wi-Fi', 'Bar', 'Gym', 'Kids Zone'],
+    benefits: ['Theme architecture inspired by traditional mythology', 'Closest private luxury hotel to Alipiri Footpath', 'Premium ayurvedic spa services'],
+    contactPhone: '+91 877 666 0000',
+    contactEmail: 'mtp@sarovarhotels.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h18',
+    name: 'Hotel Bliss',
+    type: 'hotel',
+    rating: 4.1,
+    reviews: 8410,
+    priceLevel: '₹₹',
+    description: 'Renowned 3-star luxury hotel in the heart of Tirupati. Renowned for its traditional South Indian food and rooftop banquet halls.',
+    distance: '20.6 km from Tirumala (Ramanuja Circle)',
+    amenities: ['Wi-Fi', 'AC Rooms', 'Rooftop dining', 'Parking'],
+    benefits: ['Legendary traditional pure veg restaurant on-site', 'Central location close to local bazaars', 'Complimentary railway station shuttle'],
+    contactPhone: '+91 877 223 7773',
+    contactEmail: 'reservations@hotelbliss.in',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h19',
+    name: 'Minerva Grand Tirupati',
+    type: 'hotel',
+    rating: 4.2,
+    reviews: 5610,
+    priceLevel: '₹₹',
+    description: 'A boutique business hotel providing luxury rooms, multi-cuisine restaurants, and excellent travel desk services.',
+    distance: '20.4 km from Tirumala (Renigunta Road)',
+    amenities: ['Business Center', 'Wi-Fi', 'Gym', 'Fine Dine Veg'],
+    benefits: ['Excellent travel concierge to arrange tickets', 'Located close to local shopping centers', 'Fast airport connectivity access'],
+    contactPhone: '+91 877 228 6161',
+    contactEmail: 'reservations.tpt@minervagrand.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 'h20',
+    name: 'Ramee Guestline Tirupati',
+    type: 'hotel',
+    rating: 4.0,
+    reviews: 4230,
+    priceLevel: '₹₹',
+    description: 'A quiet resort-style hotel featuring spacious lawn areas, large swimming pool, and comfortable family cottages.',
+    distance: '19.0 km from Tirumala (Karakambadi Road)',
+    amenities: ['Swimming Pool', 'Large Lawns', 'Wi-Fi', 'AC Cottages'],
+    benefits: ['Spacious garden walks for elderly pilgrims', 'Away from heavy city noise and traffic', 'Kids playground area'],
+    contactPhone: '+91 877 228 0800',
+    contactEmail: 'guestline.tirupati@rameehotels.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop&q=80'
   },
   {
     id: 't1',
@@ -135,8 +369,7 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 98850 12345',
     contactEmail: 'info@balajitravels.co.in',
     website: 'https://ttdevasthanams.ap.gov.in',
-    imageColor: 'linear-gradient(135deg, #3E2723 0%, #5D4037 100%)',
-    svgIcon: 'car'
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop&q=80'
   },
   {
     id: 't2',
@@ -152,8 +385,39 @@ const PLACES_DATA: PlaceItem[] = [
     contactPhone: '+91 99630 67890',
     contactEmail: 'contact@srinivasatours.com',
     website: 'https://ttdevasthanams.ap.gov.in',
-    imageColor: 'linear-gradient(135deg, #4A148C 0%, #7B1FA2 100%)',
-    svgIcon: 'bus'
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 't3',
+    name: 'Sri Venkatadri Cabs',
+    type: 'travels',
+    rating: 4.7,
+    reviews: 980,
+    priceLevel: '₹₹',
+    description: 'Affordable local cab service with a fleet of modern, clean sedans and SUVs. Renders direct airport transits.',
+    distance: 'Tirupati Station & Bypass pick-up available',
+    amenities: ['Clean Sedans', 'Toll Fees Included', 'Mobile Charger'],
+    benefits: ['No hidden charges (tolls and hill permit included)', 'Uniformed, polite drivers', 'GPS tracked vehicles'],
+    contactPhone: '+91 94412 34567',
+    contactEmail: 'bookings@venkatadricabs.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&h=300&fit=crop&q=80'
+  },
+  {
+    id: 't4',
+    name: 'Seven Hills Pilgrimage Tours',
+    type: 'travels',
+    rating: 4.5,
+    reviews: 750,
+    priceLevel: '₹₹',
+    description: 'Provides customized heritage walk guides and shared transport vehicles to all major sightseeing areas in Tirumala hills.',
+    distance: 'Tirumala central bus station desk',
+    amenities: ['Shared Coach', 'Local Guides', 'Traditional Wear Help'],
+    benefits: ['Guided sightseeing of Srivari Padalu, Papavinasanam, and Akasa Ganga', 'Free traditional dress consultation', 'Assistance with tonsure (head shaving) slots'],
+    contactPhone: '+91 98480 98765',
+    contactEmail: 'guidance@sevenhillstours.com',
+    website: 'https://ttdevasthanams.ap.gov.in',
+    image: 'https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=400&h=300&fit=crop&q=80'
   }
 ];
 
@@ -203,33 +467,15 @@ export default function StaysTravelsPage(): JSX.Element {
     setPaymentStep('options');
   };
 
-  // Helper to render icon based on type
-  const renderSvgPlaceholder = (color: string, icon: string) => {
-    let emoji = '🏨';
-    if (icon === 'temple') emoji = '⛩️';
-    if (icon === 'palace') emoji = '🏛️';
-    if (icon === 'building') emoji = '🏢';
-    if (icon === 'luxury') emoji = '👑';
-    if (icon === 'car') emoji = '🚗';
-    if (icon === 'bus') emoji = '🚌';
-    if (icon === 'cottage') emoji = '🏡';
-
-    return (
-      <div style={{
-        width: '84px',
-        height: '84px',
-        borderRadius: '12px',
-        background: color,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: '36px',
-        flexShrink: 0,
-        boxShadow: '0 4px 14px rgba(0,0,0,0.3)',
-      }}>
-        {emoji}
-      </div>
-    );
+  // Helper to format generic/obfuscated titles for locked states
+  const getObfuscatedName = (place: PlaceItem) => {
+    if (isUnlocked) return place.name;
+    
+    // Generic display when locked
+    const typeLabel = place.type === 'hotel' ? 'Premium Hotel Stay' : place.type === 'guesthouse' ? 'TTD Allotment Rest House' : 'Verified Taxi & Travels';
+    const match = place.distance.match(/^([\d.]+)\s*km/);
+    const distText = match ? `${match[1]} km` : 'Near Temple';
+    return `🔒 ${typeLabel} (${distText})`;
   };
 
   return (
@@ -242,7 +488,7 @@ export default function StaysTravelsPage(): JSX.Element {
             📍 Stays & Travel Directory
           </h1>
           <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-muted)' }}>
-            Google Maps verified stays, cottage houses, and local operators near Tirumala
+            Verified cottage guest houses, TTD complexes, and local travels near Tirumala (25+ Places)
           </p>
         </div>
 
@@ -284,7 +530,7 @@ export default function StaysTravelsPage(): JSX.Element {
               boxShadow: '0 4px 15px rgba(245, 158, 11, 0.3)'
             }}
           >
-            <Lock size={14} /> Unlock Directory (₹399)
+            <Lock size={14} /> Unlock 25+ Stays & Tours (₹399/yr)
           </button>
         )}
       </div>
@@ -294,7 +540,7 @@ export default function StaysTravelsPage(): JSX.Element {
         
         {/* Left column - List (40% width) */}
         <div style={{
-          width: '380px',
+          width: '390px',
           background: 'var(--color-card)',
           border: '1px solid var(--color-border)',
           borderRadius: '16px',
@@ -310,7 +556,7 @@ export default function StaysTravelsPage(): JSX.Element {
               <Search size={16} style={{ position: 'absolute', left: '12px', top: '11px', color: 'rgba(255,255,255,0.3)' }} />
               <input
                 type="text"
-                placeholder="Search hotels, cottages, travels..."
+                placeholder={isUnlocked ? "Search 25+ hotels, travels..." : "Search locked stays & travels..."}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 style={{
@@ -343,7 +589,7 @@ export default function StaysTravelsPage(): JSX.Element {
                   transition: 'all 0.2s'
                 }}
               >
-                🏨 Hotels & Stays
+                🏨 Hotels & Stays ({PLACES_DATA.filter(p => p.type !== 'travels').length})
               </button>
               <button
                 onClick={() => setActiveTab('travels')}
@@ -360,7 +606,7 @@ export default function StaysTravelsPage(): JSX.Element {
                   transition: 'all 0.2s'
                 }}
               >
-                🚌 Tours & Travels
+                🚌 Tours & Travels ({PLACES_DATA.filter(p => p.type === 'travels').length})
               </button>
             </div>
           </div>
@@ -398,19 +644,48 @@ export default function StaysTravelsPage(): JSX.Element {
                       if (!isSelected) e.currentTarget.style.background = 'transparent';
                     }}
                   >
-                    {renderSvgPlaceholder(place.imageColor, place.svgIcon)}
+                    {/* Real Image of Hotel / Travels (or Blurred version if locked) */}
+                    <div style={{ position: 'relative', flexShrink: 0 }}>
+                      <img
+                        src={place.image}
+                        alt="place thumbnail"
+                        style={{
+                          width: '84px',
+                          height: '84px',
+                          borderRadius: '12px',
+                          objectFit: 'cover',
+                          filter: isUnlocked ? 'none' : 'blur(5px) grayscale(50%)',
+                          border: '1px solid rgba(255,255,255,0.08)',
+                          boxShadow: '0 4px 14px rgba(0,0,0,0.3)',
+                          transition: 'filter 0.3s'
+                        }}
+                      />
+                      {!isUnlocked && (
+                        <div style={{
+                          position: 'absolute',
+                          inset: 0,
+                          background: 'rgba(0,0,0,0.3)',
+                          borderRadius: '12px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}>
+                          <Lock size={12} color="white" />
+                        </div>
+                      )}
+                    </div>
 
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <h3 style={{
-                        fontSize: '13.5px',
+                        fontSize: '13px',
                         fontWeight: 700,
                         margin: '0 0 2px',
-                        color: 'var(--color-text)',
+                        color: isSelected ? '#F59E0B' : 'var(--color-text)',
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis'
                       }}>
-                        {place.name}
+                        {getObfuscatedName(place)}
                       </h3>
 
                       {/* Rating block */}
@@ -430,7 +705,7 @@ export default function StaysTravelsPage(): JSX.Element {
                       </div>
 
                       <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '4px' }}>
-                        {place.type === 'guesthouse' ? 'Guest house' : place.type === 'travels' ? 'Taxi operator' : '3-star hotel'} · {place.priceLevel}
+                        {place.type === 'guesthouse' ? 'TTD Rest House' : place.type === 'travels' ? 'Private Travels' : 'Premium Hotel'} · {place.priceLevel}
                       </div>
 
                       {/* Distance pill */}
@@ -466,7 +741,7 @@ export default function StaysTravelsPage(): JSX.Element {
         }}>
           {/* Top: Mock Interactive Map */}
           <div style={{
-            height: '240px',
+            height: '220px',
             background: 'radial-gradient(circle at center, #1E1E1E 0%, #141414 100%)',
             border: '1px solid var(--color-border)',
             borderRadius: '16px',
@@ -485,13 +760,6 @@ export default function StaysTravelsPage(): JSX.Element {
               `,
               backgroundSize: '24px 24px'
             }} />
-
-            {/* Simulated Roads */}
-            <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none', opacity: 0.25 }}>
-              <path d="M 0,100 Q 150,120 300,100 T 600,150 T 900,80" fill="none" stroke="#FFF" strokeWidth="4" />
-              <path d="M 120,0 L 150,240" fill="none" stroke="#FFF" strokeWidth="3" />
-              <path d="M 450,0 Q 400,120 480,240" fill="none" stroke="#FFF" strokeWidth="3" />
-            </svg>
 
             {/* Central Temple Pin */}
             <div style={{
@@ -543,7 +811,7 @@ export default function StaysTravelsPage(): JSX.Element {
                 gap: '4px',
                 whiteSpace: 'nowrap'
               }}>
-                📍 {selectedPlace.name}
+                📍 {isUnlocked ? selectedPlace.name : 'Selected Spot'}
               </div>
               <div style={{ width: '8px', height: '8px', background: '#F59E0B', borderRadius: '50%', margin: '4px auto 0', boxShadow: '0 0 8px #F59E0B' }} />
             </div>
@@ -597,174 +865,206 @@ export default function StaysTravelsPage(): JSX.Element {
             background: 'var(--color-card)',
             border: '1px solid var(--color-border)',
             borderRadius: '16px',
-            padding: '24px',
+            padding: '20px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '16px',
+            gap: '12px',
             overflowY: 'auto'
           }}>
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px' }}>
-                <div>
-                  <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '20px', fontWeight: 700, margin: '0 0 4px', color: 'var(--color-text)' }}>
-                    {selectedPlace.name}
+                <div style={{ minWidth: 0 }}>
+                  <h2 style={{
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '18px',
+                    fontWeight: 700,
+                    margin: '0 0 4px',
+                    color: 'var(--color-text)',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
+                  }}>
+                    {getObfuscatedName(selectedPlace)}
                   </h2>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span className="badge badge-saffron" style={{ textTransform: 'capitalize' }}>
                       {selectedPlace.type === 'guesthouse' ? 'TTD Rest House' : selectedPlace.type === 'travels' ? 'Verified Travels' : 'Private Hotel'}
                     </span>
-                    <span style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>
+                    <span style={{ fontSize: '11.5px', color: 'var(--color-text-muted)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                       📍 {selectedPlace.distance}
                     </span>
                   </div>
                 </div>
 
-                <div style={{ textAlign: 'right' }}>
+                <div style={{ textAlign: 'right', flexShrink: 0 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '4px', justifyContent: 'flex-end' }}>
-                    <Star size={16} fill="#F59E0B" color="#F59E0B" />
-                    <span style={{ fontSize: '15px', fontWeight: 700 }}>{selectedPlace.rating}</span>
+                    <Star size={14} fill="#F59E0B" color="#F59E0B" />
+                    <span style={{ fontSize: '14px', fontWeight: 700 }}>{selectedPlace.rating}</span>
                   </div>
-                  <span style={{ fontSize: '11px', color: 'var(--color-text-muted)' }}>({selectedPlace.reviews} Google reviews)</span>
+                  <span style={{ fontSize: '10.5px', color: 'var(--color-text-muted)' }}>({selectedPlace.reviews} reviews)</span>
                 </div>
               </div>
             </div>
 
             <hr style={{ border: 'none', borderTop: '1px solid var(--color-border)', margin: 0 }} />
 
-            {/* Description */}
-            <div>
-              <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#C8860A', margin: '0 0 6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                Overview
-              </h3>
-              <p style={{ margin: 0, fontSize: '13px', color: 'var(--color-text-muted)', lineHeight: '1.6' }}>
-                {selectedPlace.description}
-              </p>
-            </div>
-
-            {/* Dynamic Content Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-              {/* Pilgrim Benefits */}
-              <div>
-                <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#C8860A', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                  🎁 Pilgrim Benefits
-                </h3>
-                <ul style={{ paddingLeft: '16px', margin: 0, display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                  {selectedPlace.benefits.map((benefit, i) => (
-                    <li key={i} style={{ fontSize: '12.5px', color: 'var(--color-text-muted)', lineHeight: '1.4' }}>
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Amenities */}
-              <div>
-                <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#C8860A', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                  ⚙️ Amenities & Facilities
-                </h3>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                  {selectedPlace.amenities.map((amenity, i) => (
-                    <span key={i} style={{
-                      background: 'rgba(255,255,255,0.04)',
-                      border: '1px solid var(--color-border)',
-                      padding: '6px 12px',
-                      borderRadius: '8px',
-                      fontSize: '11.5px',
-                      color: 'var(--color-text)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '4px'
-                    }}>
-                      {amenity === 'Wi-Fi' && <Wifi size={12} />}
-                      {amenity === 'Air Conditioning' && <Wind size={12} />}
-                      {amenity === 'AC Vehicles' && <Car size={12} />}
-                      {amenity}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <hr style={{ border: 'none', borderTop: '1px solid var(--color-border)', margin: 0 }} />
-
-            {/* Contact Details with paywall block */}
-            <div style={{ position: 'relative' }}>
-              <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#C8860A', margin: '0 0 10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                📞 Verified Contact Directory
-              </h3>
-
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '16px',
-                filter: isUnlocked ? 'none' : 'blur(4px)',
-                pointerEvents: isUnlocked ? 'auto' : 'none',
-                opacity: isUnlocked ? 1 : 0.4,
-                transition: 'filter 0.3s'
-              }}>
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '10px', border: '1px solid var(--color-border)' }}>
-                  <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '4px' }}>Phone Number</div>
-                  <a href={`tel:${selectedPlace.contactPhone}`} style={{ color: '#F59E0B', textDecoration: 'none', fontWeight: 600, fontSize: '14px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <Phone size={14} /> {selectedPlace.contactPhone}
-                  </a>
-                </div>
-
-                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '10px', border: '1px solid var(--color-border)' }}>
-                  <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '4px' }}>Support Email</div>
-                  <div style={{ color: 'var(--color-text)', fontWeight: 600, fontSize: '13.5px', wordBreak: 'break-all' }}>
-                    {selectedPlace.contactEmail}
-                  </div>
-                </div>
-              </div>
-
-              {/* Paywall Overlay */}
+            {/* Real Full-size image preview */}
+            <div style={{ height: '140px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--color-border)', position: 'relative', flexShrink: 0 }}>
+              <img
+                src={selectedPlace.image}
+                alt={selectedPlace.name}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  filter: isUnlocked ? 'none' : 'blur(8px) brightness(60%)',
+                  transition: 'filter 0.3s'
+                }}
+              />
               {!isUnlocked && (
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  background: 'transparent',
-                  padding: '8px'
-                }}>
-                  <div style={{
-                    background: 'rgba(30,30,30,0.85)',
-                    border: '1.5px solid rgba(200,134,10,0.3)',
-                    borderRadius: '12px',
-                    padding: '16px 20px',
-                    textAlign: 'center',
-                    maxWidth: '480px',
-                    boxShadow: '0 8px 30px rgba(0,0,0,0.6)',
-                    backdropFilter: 'blur(4px)'
-                  }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginBottom: '8px' }}>
-                      <Lock size={14} color="#F59E0B" />
-                      <span style={{ fontSize: '13px', fontWeight: 700, color: '#F59E0B' }}>Contact Directory Locked</span>
-                    </div>
-                    <p style={{ margin: '0 0 12px', fontSize: '11.5px', color: 'var(--color-text-muted)', lineHeight: '1.4' }}>
-                      Unlock official phone numbers, direct reservation links, WhatsApp travel guides, and TTD recommendation letter drafts.
-                    </p>
-                    <button
-                      onClick={() => {
-                        setPaymentStep('options');
-                        setShowPaymentModal(true);
-                      }}
-                      className="btn-primary"
-                      style={{
-                        padding: '8px 18px',
-                        fontSize: '12.5px',
-                        fontWeight: 700,
-                        borderRadius: '8px',
-                        boxShadow: '0 2px 10px rgba(200,134,10,0.4)'
-                      }}
-                    >
-                      ⚡ Unlock for ₹399
-                    </button>
+                <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.4)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '6px 12px', background: 'rgba(0,0,0,0.7)', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <Lock size={12} color="#F59E0B" />
+                    <span style={{ fontSize: '11px', fontWeight: 600, color: 'white' }}>Original Photo Hidden</span>
                   </div>
                 </div>
               )}
             </div>
+
+            {/* Details Pane with Paywall Filter */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px',
+              filter: isUnlocked ? 'none' : 'blur(4px)',
+              pointerEvents: isUnlocked ? 'auto' : 'none',
+              opacity: isUnlocked ? 1 : 0.35,
+              transition: 'all 0.3s'
+            }}>
+              {/* Description */}
+              <div>
+                <h3 style={{ fontSize: '11.5px', fontWeight: 700, color: '#C8860A', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  Overview & Location
+                </h3>
+                <p style={{ margin: 0, fontSize: '12px', color: 'var(--color-text-muted)', lineHeight: '1.5' }}>
+                  {selectedPlace.description}
+                </p>
+              </div>
+
+              {/* Dynamic Content Grid */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                {/* Pilgrim Benefits */}
+                <div>
+                  <h3 style={{ fontSize: '11.5px', fontWeight: 700, color: '#C8860A', margin: '0 0 6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    🎁 Pilgrim Benefits
+                  </h3>
+                  <ul style={{ paddingLeft: '14px', margin: 0, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    {selectedPlace.benefits.map((benefit, i) => (
+                      <li key={i} style={{ fontSize: '11.5px', color: 'var(--color-text-muted)', lineHeight: '1.3' }}>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Amenities */}
+                <div>
+                  <h3 style={{ fontSize: '11.5px', fontWeight: 700, color: '#C8860A', margin: '0 0 6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    ⚙️ Amenities & Facilities
+                  </h3>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                    {selectedPlace.amenities.map((amenity, i) => (
+                      <span key={i} style={{
+                        background: 'rgba(255,255,255,0.04)',
+                        border: '1px solid var(--color-border)',
+                        padding: '4px 8px',
+                        borderRadius: '6px',
+                        fontSize: '10.5px',
+                        color: 'var(--color-text)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px'
+                      }}>
+                        {amenity}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Verified Contact Directory */}
+              <div>
+                <h3 style={{ fontSize: '11.5px', fontWeight: 700, color: '#C8860A', margin: '0 0 6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  📞 Verified Contact Directory
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+                    <div style={{ fontSize: '10px', color: 'var(--color-text-muted)', marginBottom: '2px' }}>Phone Number</div>
+                    <a href={`tel:${selectedPlace.contactPhone}`} style={{ color: '#F59E0B', textDecoration: 'none', fontWeight: 600, fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Phone size={12} /> {selectedPlace.contactPhone}
+                    </a>
+                  </div>
+
+                  <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '8px', border: '1px solid var(--color-border)' }}>
+                    <div style={{ fontSize: '10px', color: 'var(--color-text-muted)', marginBottom: '2px' }}>Support Email</div>
+                    <div style={{ color: 'var(--color-text)', fontWeight: 600, fontSize: '12px', wordBreak: 'break-all' }}>
+                      {selectedPlace.contactEmail}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Paywall Overlay */}
+            {!isUnlocked && (
+              <div style={{
+                position: 'absolute',
+                left: '20px',
+                right: '20px',
+                bottom: '20px',
+                top: '180px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'rgba(15,15,15,0.1)',
+                zIndex: 10
+              }}>
+                <div style={{
+                  background: 'rgba(30,30,30,0.95)',
+                  border: '1.5px solid rgba(200,134,10,0.35)',
+                  borderRadius: '12px',
+                  padding: '16px 20px',
+                  textAlign: 'center',
+                  maxWidth: '440px',
+                  boxShadow: '0 8px 30px rgba(0,0,0,0.6)',
+                  backdropFilter: 'blur(3px)'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginBottom: '8px' }}>
+                    <Lock size={14} color="#F59E0B" />
+                    <span style={{ fontSize: '13px', fontWeight: 700, color: '#F59E0B' }}>Details & Contacts Locked</span>
+                  </div>
+                  <p style={{ margin: '0 0 12px', fontSize: '11px', color: 'var(--color-text-muted)', lineHeight: '1.4' }}>
+                    Unlock real hotel/travel operator names, original photos, verified booking phone numbers, and direct reservation links.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setPaymentStep('options');
+                      setShowPaymentModal(true);
+                    }}
+                    className="btn-primary"
+                    style={{
+                      padding: '8px 18px',
+                      fontSize: '12.5px',
+                      fontWeight: 700,
+                      borderRadius: '8px',
+                      boxShadow: '0 2px 10px rgba(200,134,10,0.4)'
+                    }}
+                  >
+                    ⚡ Unlock 25+ Stays for ₹399/yr
+                  </button>
+                </div>
+              </div>
+            )}
 
             {/* Direct Booking Link (Visible only if unlocked) */}
             {isUnlocked && (
@@ -772,18 +1072,19 @@ export default function StaysTravelsPage(): JSX.Element {
                 onClick={() => window.open(selectedPlace.website, '_blank')}
                 className="btn-secondary"
                 style={{
-                  padding: '12px',
-                  borderRadius: '10px',
+                  padding: '10px',
+                  borderRadius: '8px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '6px',
-                  fontSize: '13px',
+                  fontSize: '12.5px',
                   fontWeight: 600,
-                  marginTop: 'auto'
+                  marginTop: 'auto',
+                  flexShrink: 0
                 }}
               >
-                Open Official Reservation Portal <ExternalLink size={14} />
+                Open Official Reservation Portal <ExternalLink size={12} />
               </button>
             )}
 
@@ -851,7 +1152,8 @@ export default function StaysTravelsPage(): JSX.Element {
 
             {/* Body */}
             {paymentStep === 'options' && (
-              <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                
                 {/* Product details */}
                 <div style={{
                   background: 'rgba(200,134,10,0.06)',
@@ -864,17 +1166,39 @@ export default function StaysTravelsPage(): JSX.Element {
                 }}>
                   <div>
                     <div style={{ fontSize: '14px', fontWeight: 700, color: 'white' }}>Premium Stay & Travel Pack</div>
-                    <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginTop: '2px' }}>Verified Directory + Offline Assistance</div>
+                    <div style={{ fontSize: '11px', color: '#F59E0B', marginTop: '2px', fontWeight: 600 }}>1-Year Active Subscription</div>
                   </div>
-                  <div style={{ fontSize: '18px', fontWeight: 800, color: '#F59E0B' }}>₹399</div>
+                  <div style={{ textAlign: 'right' }}>
+                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#F59E0B' }}>₹399</div>
+                    <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.4)', marginTop: '2px' }}>Per Year</div>
+                  </div>
+                </div>
+
+                {/* Subscription Notice Warning */}
+                <div style={{
+                  background: 'rgba(239, 68, 68, 0.06)',
+                  border: '1px solid rgba(239, 68, 68, 0.15)',
+                  padding: '12px',
+                  borderRadius: '10px',
+                  display: 'flex',
+                  gap: '8px',
+                  alignItems: 'flex-start'
+                }}>
+                  <AlertCircle size={16} color="#EF4444" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <div>
+                    <div style={{ fontSize: '11.5px', fontWeight: 700, color: '#EF4444' }}>Important Policy Info:</div>
+                    <p style={{ margin: '2px 0 0', fontSize: '10px', color: 'rgba(255,255,255,0.6)', lineHeight: '1.4' }}>
+                      All pilgrim data and license details are stored locally. If you uninstall the extension, this premium license status will be permanently reset.
+                    </p>
+                  </div>
                 </div>
 
                 {/* Simulated UPI Selection */}
                 <div>
-                  <label style={{ fontSize: '11.5px', fontWeight: 600, color: '#C8860A', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '8px' }}>
-                    Select UPI App (Instant Sandbox Simulation)
+                  <label style={{ fontSize: '11px', fontWeight: 700, color: '#C8860A', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block', marginBottom: '6px' }}>
+                    Select UPI App (Instant sandbox)
                   </label>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     {[
                       { id: 'gpay', name: 'Google Pay', color: '#1A73E8', badge: '⚡ instant check' },
                       { id: 'phonepe', name: 'PhonePe', color: '#5F259F', badge: 'popular' },
@@ -888,24 +1212,24 @@ export default function StaysTravelsPage(): JSX.Element {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'space-between',
-                          padding: '12px 16px',
-                          borderRadius: '10px',
+                          padding: '10px 14px',
+                          borderRadius: '8px',
                           cursor: 'pointer',
                           background: selectedUpiApp === app.id ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.01)',
                           border: selectedUpiApp === app.id ? `1.5px solid ${app.color}` : '1.5px solid rgba(255,255,255,0.05)',
                           transition: 'all 0.15s'
                         }}
                       >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                           <div style={{
-                            width: '8px',
-                            height: '8px',
+                            width: '6px',
+                            height: '6px',
                             borderRadius: '50%',
                             background: app.color
                           }} />
-                          <span style={{ fontSize: '13px', fontWeight: 600, color: 'white' }}>{app.name}</span>
+                          <span style={{ fontSize: '12px', fontWeight: 600, color: 'white' }}>{app.name}</span>
                         </div>
-                        <span style={{ fontSize: '9px', background: `${app.color}20`, color: app.color, padding: '2px 6px', borderRadius: '4px', textTransform: 'uppercase', fontWeight: 700 }}>
+                        <span style={{ fontSize: '8px', background: `${app.color}20`, color: app.color, padding: '2px 5px', borderRadius: '3px', textTransform: 'uppercase', fontWeight: 700 }}>
                           {app.badge}
                         </span>
                       </div>
@@ -917,14 +1241,14 @@ export default function StaysTravelsPage(): JSX.Element {
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '14px',
+                  gap: '12px',
                   background: 'rgba(255,255,255,0.02)',
-                  padding: '14px',
-                  borderRadius: '10px',
+                  padding: '12px',
+                  borderRadius: '8px',
                   border: '1px solid rgba(255,255,255,0.05)'
                 }}>
                   {/* Mock QR SVG */}
-                  <svg width="64" height="64" viewBox="0 0 64 64" style={{ background: 'white', padding: '4px', borderRadius: '6px' }}>
+                  <svg width="48" height="48" viewBox="0 0 64 64" style={{ background: 'white', padding: '4px', borderRadius: '6px', flexShrink: 0 }}>
                     <path d="M4,4h16v16H4V4z M8,8v8h8V8H8z M44,4h16v16H44V4z M48,8v8h8V8H48z M4,44h16v16H4V44z M8,48v8h8v-8H8z M28,4h8v8h-8V4z M28,24h8v8h-8v-8z M24,44h8v8h-8v-8z M44,44h8v8h-8v-8z" fill="#000" />
                     <rect x="12" y="12" width="4" height="4" fill="#000" />
                     <rect x="48" y="12" width="4" height="4" fill="#000" />
@@ -933,8 +1257,8 @@ export default function StaysTravelsPage(): JSX.Element {
                     <rect x="52" y="52" width="4" height="4" fill="#000" />
                   </svg>
                   <div>
-                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'white' }}>Or scan static QR code</div>
-                    <div style={{ fontSize: '10.5px', color: 'var(--color-text-muted)', marginTop: '2px' }}>Supported by all BHIM/UPI apps for instant booking checks.</div>
+                    <div style={{ fontSize: '11px', fontWeight: 600, color: 'white' }}>Scan QR Code</div>
+                    <div style={{ fontSize: '9.5px', color: 'var(--color-text-muted)', marginTop: '2px' }}>Valid for all standard UPI applications in India.</div>
                   </div>
                 </div>
 
@@ -943,10 +1267,10 @@ export default function StaysTravelsPage(): JSX.Element {
                   onClick={handleSimulatePayment}
                   className="btn-primary"
                   style={{
-                    padding: '12px',
-                    fontSize: '14px',
+                    padding: '11px',
+                    fontSize: '13px',
                     fontWeight: 700,
-                    borderRadius: '10px',
+                    borderRadius: '8px',
                     boxShadow: '0 4px 15px rgba(245,158,11, 0.4)',
                     display: 'flex',
                     alignItems: 'center',
@@ -954,7 +1278,7 @@ export default function StaysTravelsPage(): JSX.Element {
                     gap: '6px'
                   }}
                 >
-                  <Unlock size={16} /> Simulate Success Payment
+                  <Unlock size={14} /> Pay ₹399 & Unlock Directory
                 </button>
               </div>
             )}
