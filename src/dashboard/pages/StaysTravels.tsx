@@ -1108,8 +1108,8 @@ export default function StaysTravelsPage(): JSX.Element {
           {/* Top: Mock Interactive Map (PINS FETCH DYNAMICALLY PER HOTEL SELECT) */}
           <div style={{
             height: '200px',
-            background: 'radial-gradient(circle at center, #1E1E1E 0%, #141414 100%)',
-            border: '1px solid var(--color-border)',
+            background: '#F4F3F0',
+            border: '1px solid rgba(0,0,0,0.12)',
             borderRadius: '16px',
             position: 'relative',
             overflow: 'hidden',
@@ -1119,44 +1119,44 @@ export default function StaysTravelsPage(): JSX.Element {
             <div style={{
               position: 'absolute',
               inset: 0,
-              opacity: 0.1,
+              opacity: 0.25,
               backgroundImage: `
-                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
               `,
               backgroundSize: '24px 24px'
             }} />
 
-            {/* Detailed Styled Vector Map of Tirumala Hills */}
+            {/* Detailed Styled Vector Map of Tirumala Hills (Google Maps Theme) */}
             <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }} viewBox="0 0 800 200" preserveAspectRatio="none">
               {/* Forest / Green zones */}
-              <rect x="0" y="0" width="800" height="200" fill="#141915" />
-              <path d="M-50,150 Q100,80 250,160 T600,120 T900,180 L900,200 L-50,200 Z" fill="#1a251e" />
-              <path d="M100,-20 Q250,50 400,-10 T700,40 T900,-30 L900,0 L100,0 Z" fill="#1a251e" />
+              <rect x="0" y="0" width="800" height="200" fill="#F4F3F0" />
+              <path d="M-50,150 Q100,80 250,160 T600,120 T900,180 L900,200 L-50,200 Z" fill="#E2F0D9" />
+              <path d="M100,-20 Q250,50 400,-10 T700,40 T900,-30 L900,0 L100,0 Z" fill="#E2F0D9" />
 
               {/* Water bodies (Pushkarini / Rivers) */}
-              <path d="M 350,30 Q 380,45 370,60 T 330,70 Z" fill="#1e2d3b" opacity="0.8" />
-              <text x="330" y="45" fill="#3b82f6" fontSize="8" fontWeight="bold" opacity="0.5">Pushkarini</text>
+              <path d="M 350,30 Q 380,45 370,60 T 330,70 Z" fill="#AAD3DF" stroke="#8CBCCB" strokeWidth="1" />
+              <text x="330" y="45" fill="#1A73E8" fontSize="8.5" fontWeight="bold" fontFamily="sans-serif">Pushkarini</text>
 
               {/* Main Roads / Highway Networks */}
               {/* Alipiri Ghat Road */}
-              <path d="M 50,220 Q 120,130 200,150 T 400,110 T 600,120 T 850,70" fill="none" stroke="#222" strokeWidth="8" strokeLinecap="round" />
-              <path d="M 50,220 Q 120,130 200,150 T 400,110 T 600,120 T 850,70" fill="none" stroke="#2c2c2c" strokeWidth="6" strokeLinecap="round" />
+              <path d="M 50,220 Q 120,130 200,150 T 400,110 T 600,120 T 850,70" fill="none" stroke="#E5C79E" strokeWidth="8" strokeLinecap="round" />
+              <path d="M 50,220 Q 120,130 200,150 T 400,110 T 600,120 T 850,70" fill="none" stroke="#FFEFA6" strokeWidth="5" strokeLinecap="round" />
               
               {/* Ring Roads */}
-              <path d="M 300,150 C 350,70 550,70 600,140 C 650,200 450,220 300,150" fill="none" stroke="#282828" strokeWidth="4" />
-              <path d="M 300,150 C 350,70 550,70 600,140 C 650,200 450,220 300,150" fill="none" stroke="#F59E0B" strokeWidth="1" strokeDasharray="3,3" opacity="0.4" />
+              <path d="M 300,150 C 350,70 550,70 600,140 C 650,200 450,220 300,150" fill="none" stroke="#E0E0E0" strokeWidth="5" />
+              <path d="M 300,150 C 350,70 550,70 600,140 C 650,200 450,220 300,150" fill="none" stroke="#FFFFFF" strokeWidth="3" />
 
               {/* Srivari Mettu Path */}
-              <path d="M 280,200 L 320,130 T 360,90" fill="none" stroke="#243427" strokeWidth="3" strokeDasharray="2,2" />
+              <path d="M 280,200 L 320,130 T 360,90" fill="none" stroke="#8C9C8D" strokeWidth="2.5" strokeDasharray="3,3" />
 
-              {/* Other Hills landmarks */}
-              <g opacity="0.3" fill="#FFF" fontSize="8" fontWeight="600" fontFamily="sans-serif">
-                <text x="80" y="110">Gali Gopuram</text>
-                <text x="180" y="170">Alipiri Walkway</text>
-                <text x="680" y="60">Srivari Padalu</text>
-                <text x="690" y="145">Papavinasanam</text>
-                <text x="500" y="30">SMC Complex</text>
+              {/* Other Hills landmarks (High Visibility with Halo Shadow) */}
+              <g fill="#4A4A4A" fontSize="9" fontWeight="700" fontFamily="sans-serif">
+                <text x="80" y="110" stroke="#FFF" strokeWidth="2" paintOrder="stroke" strokeLinejoin="round">Gali Gopuram</text>
+                <text x="180" y="170" stroke="#FFF" strokeWidth="2" paintOrder="stroke" strokeLinejoin="round">Alipiri Walkway</text>
+                <text x="660" y="60" stroke="#FFF" strokeWidth="2" paintOrder="stroke" strokeLinejoin="round">Srivari Padalu</text>
+                <text x="690" y="145" stroke="#FFF" strokeWidth="2" paintOrder="stroke" strokeLinejoin="round">Papavinasanam</text>
+                <text x="500" y="30" stroke="#FFF" strokeWidth="2" paintOrder="stroke" strokeLinejoin="round">SMC Complex</text>
               </g>
             </svg>
 
@@ -1216,7 +1216,7 @@ export default function StaysTravelsPage(): JSX.Element {
               <div style={{ width: '8px', height: '8px', background: '#F59E0B', borderRadius: '50%', margin: '4px auto 0', boxShadow: '0 0 8px #F59E0B' }} />
             </div>
 
-            {/* Map Controls */}
+            {/* Map Controls (Google Maps White Buttons style) */}
             <div style={{ position: 'absolute', right: '12px', bottom: '12px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
               {['+', '−'].map((ctrl) => (
                 <button
@@ -1225,14 +1225,15 @@ export default function StaysTravelsPage(): JSX.Element {
                     width: '28px',
                     height: '28px',
                     borderRadius: '6px',
-                    background: '#1E1E1E',
-                    border: '1px solid var(--color-border)',
-                    color: 'white',
+                    background: '#FFFFFF',
+                    border: '1px solid rgba(0,0,0,0.12)',
+                    color: '#555555',
                     fontWeight: 'bold',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
                   }}
                 >
                   {ctrl}
@@ -1240,20 +1241,21 @@ export default function StaysTravelsPage(): JSX.Element {
               ))}
             </div>
 
-            {/* GPS Compass Label */}
+            {/* GPS Compass Label (Google Maps white pill style) */}
             <div style={{
               position: 'absolute',
               left: '12px',
               bottom: '12px',
-              background: 'rgba(0,0,0,0.6)',
-              border: '1px solid var(--color-border)',
+              background: 'rgba(255,255,255,0.95)',
+              border: '1px solid rgba(0,0,0,0.12)',
               padding: '4px 8px',
               borderRadius: '6px',
               fontSize: '10px',
-              color: 'rgba(255,255,255,0.7)',
+              color: '#333333',
               display: 'flex',
               alignItems: 'center',
-              gap: '4px'
+              gap: '4px',
+              boxShadow: '0 2px 6px rgba(0,0,0,0.15)'
             }}>
               <Compass size={12} /> Live GPS Coordinates (Tirumala Hills)
             </div>
