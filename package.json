@@ -1,6 +1,6 @@
 {
   "name": "darshan-assist",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Professional Chrome Extension for TTD Darshan pilgrimage assistance",
   "private": true,
   "scripts": {

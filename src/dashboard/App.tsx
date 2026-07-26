@@ -7,6 +7,7 @@ import ProfilesPage from './pages/Profiles';
 import CalendarPage from './pages/Calendar';
 import HistoryPage from './pages/History';
 import TripPlannerPage from './pages/TripPlanner';
+import StaysTravelsPage from './pages/StaysTravels';
 import NotificationsPage from './pages/Notifications';
 import AnalyticsPage from './pages/Analytics';
 import SettingsPage from './pages/Settings';
@@ -45,6 +46,7 @@ function AppShell(): JSX.Element {
           <Route path="/calendar"      element={<CalendarPage />} />
           <Route path="/history"       element={<HistoryPage />} />
           <Route path="/trip-planner"  element={<TripPlannerPage />} />
+          <Route path="/stays-travels" element={<StaysTravelsPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/analytics"     element={<AnalyticsPage />} />
           <Route path="/settings"      element={<SettingsPage />} />
