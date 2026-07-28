@@ -3,6 +3,7 @@ import { useApp } from '../context/AppContext';
 import { Users, BookOpen, Map, CalendarDays, ExternalLink, Bell, TrendingUp, Clock } from 'lucide-react';
 import { DARSHAN_TYPE_LABELS, TTD_QUICK_LINKS } from '../../shared/utils/releaseCalendar';
 import CountdownTimer from '../components/CountdownTimer';
+import { getStoredLanguage, TRANSLATIONS } from '../../shared/i18n';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -119,6 +120,38 @@ function StatCard({
 
 export default function Dashboard(): JSX.Element {
   const { pilgrims, bookings, releases, trips } = useApp();
+  const lang = getStoredLanguage();
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+
+  // Free Demo State (max 3 free trial uses)
+  const [demoCount, setDemoCount] = React.useState<number>(() => {
+    try {
+      const c = localStorage.getItem('da_free_demo_count');
+      return c ? parseInt(c, 10) : 0;
+    } catch {
+      return 0;
+    }
+  });
+
+  const [isSimulating, setIsSimulating] = React.useState(false);
+  const [simStep, setSimStep] = React.useState(0);
+
+  const handleStartDemo = () => {
+    if (demoCount >= 3) return;
+    setIsSimulating(true);
+    setSimStep(0);
+
+    const timer1 = setTimeout(() => setSimStep(1), 500);
+    const timer2 = setTimeout(() => setSimStep(2), 1000);
+    const timer3 = setTimeout(() => setSimStep(3), 1500);
+    const timer4 = setTimeout(() => {
+      setSimStep(4);
+      setIsSimulating(false);
+      const newCount = demoCount + 1;
+      setDemoCount(newCount);
+      localStorage.setItem('da_free_demo_count', newCount.toString());
+    }, 2200);
+  };
 
   const today = new Date().toLocaleDateString('en-IN', {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
@@ -143,7 +176,7 @@ export default function Dashboard(): JSX.Element {
       {/* ── Hero Section ──────────────────────────────────────────────────── */}
       <div
         style={{
-          marginBottom: '32px',
+          marginBottom: '24px',
           padding: '32px 36px',
           borderRadius: '20px',
           background: 'linear-gradient(135deg, #1A1207 0%, #1E1E1E 50%, #0F0F1A 100%)',
@@ -194,7 +227,7 @@ export default function Dashboard(): JSX.Element {
                   letterSpacing: '0.3px',
                 }}
               >
-                Jai Tirumala Venkateswara 🕉️
+                {t.welcomeGreeting}
               </p>
             </div>
           </div>
