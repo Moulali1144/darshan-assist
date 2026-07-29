@@ -1,9 +1,9 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
-import { Users, BookOpen, Map, CalendarDays, ExternalLink, Bell, TrendingUp, Clock } from 'lucide-react';
+import { Users, BookOpen, Map, CalendarDays, ExternalLink, Bell, TrendingUp, Clock, Play, Sparkles, CheckCircle2, Lock } from 'lucide-react';
 import { DARSHAN_TYPE_LABELS, TTD_QUICK_LINKS } from '../../shared/utils/releaseCalendar';
 import CountdownTimer from '../components/CountdownTimer';
-import { getStoredLanguage, TRANSLATIONS } from '../../shared/i18n';
+import { useLanguage } from '../context/LanguageContext';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -61,15 +61,15 @@ function StatCard({
   return (
     <div
       style={{
-        background: '#1E1E1E',
-        border: '1px solid rgba(255,255,255,0.06)',
+        background: 'var(--color-card)',
+        border: '1px solid var(--color-border)',
         borderRadius: '16px',
         padding: '20px',
         display: 'flex',
         alignItems: 'center',
         gap: '16px',
         transition: 'transform 0.2s, box-shadow 0.2s',
-        boxShadow: '0 4px 24px rgba(0,0,0,0.3)',
+        boxShadow: 'var(--shadow-card)',
       }}
       onMouseEnter={(e) => {
         const el = e.currentTarget as HTMLDivElement;
@@ -102,13 +102,13 @@ function StatCard({
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 700,
             fontSize: '26px',
-            color: '#F5F5F0',
+            color: 'var(--color-text)',
             lineHeight: 1,
           }}
         >
           {value}
         </div>
-        <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: 'rgba(255,255,255,0.45)', marginTop: '4px' }}>
+        <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: 'var(--color-text-muted)', marginTop: '4px' }}>
           {label}
         </div>
       </div>
@@ -120,8 +120,7 @@ function StatCard({
 
 export default function Dashboard(): JSX.Element {
   const { pilgrims, bookings, releases, trips } = useApp();
-  const lang = getStoredLanguage();
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  const { t } = useLanguage();
 
   // Free Demo State (max 3 free trial uses)
   const [demoCount, setDemoCount] = React.useState<number>(() => {

@@ -96,12 +96,14 @@ export default function SettingsPage(): JSX.Element {
                 onClick={() => updateSettings({ theme: t })}
                 style={{
                   padding: '6px 14px', borderRadius: '8px', fontSize: '12px', fontWeight: 600, cursor: 'pointer',
-                  border: settings.theme === t ? '1.5px solid #C8860A' : '1px solid rgba(107,114,128,0.3)',
-                  background: settings.theme === t ? 'rgba(200,134,10,0.12)' : 'transparent',
-                  color: settings.theme === t ? '#C8860A' : 'var(--color-text-muted)',
+                  border: settings.theme === t ? '1.5px solid #C8860A' : '1px solid var(--color-border)',
+                  background: settings.theme === t ? 'rgba(200,134,10,0.12)' : 'var(--color-card)',
+                  color: settings.theme === t ? '#C8860A' : 'var(--color-text)',
+                  transition: 'all 0.2s',
+                  textTransform: 'capitalize'
                 }}
               >
-                {t === 'light' ? '☀️ Light' : t === 'dark' ? '🌙 Dark' : '🖥️ System'}
+                {t === 'light' ? '☀️ Light' : t === 'dark' ? '🌙 Dark' : '💻 System'}
               </button>
             ))}
           </div>

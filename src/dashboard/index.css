@@ -12,13 +12,13 @@
   --color-primary-dark:  #9B6200;
   --color-crimson:       #8B0000;
   --color-surface:       #FFFFFF;
-  --color-bg:            #F5F5F0;
+  --color-bg:            #F9FAFB;
   --color-card:          #FFFFFF;
-  --color-border:        rgba(0,0,0,0.08);
-  --color-text:          #1A1A1A;
-  --color-text-muted:    #6B7280;
+  --color-border:        #E5E7EB;
+  --color-text:          #111827;
+  --color-text-muted:    #4B5563;
   --color-text-faint:    #9CA3AF;
-  --shadow-card:         0 4px 24px rgba(0,0,0,0.08);
+  --shadow-card:         0 4px 20px rgba(0,0,0,0.06);
   --shadow-glow:         0 0 20px rgba(200,134,10,0.25);
   --radius-card:         1rem;
   --radius-btn:          0.75rem;

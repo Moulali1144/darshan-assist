@@ -1,7 +1,8 @@
-// Darshan Assist i18n
+// ─── Darshan Assist i18n (Internationalization) ──────────────────────────────
 export type Language = 'en' | 'te' | 'ta' | 'hi';
 
 export interface Translations {
+  // Navigation & Shell
   appName: string;
   appSubtitle: string;
   dashboard: string;
@@ -14,6 +15,8 @@ export interface Translations {
   analytics: string;
   settings: string;
   trekkingGuide: string;
+
+  // Dashboard
   welcomeGreeting: string;
   nextRelease: string;
   quickLinks: string;
@@ -28,9 +31,29 @@ export interface Translations {
   freeDemoLimitReached: string;
   subscribeToContinue: string;
   demoTitle: string;
-  premiumUnlocked: string;
-  lockDirectory: string;
-  unlockBtn: string;
+
+  // Stays & Travels Directory
+  directoryTitle: string;
+  directorySubtitle: string;
+  hotelsTab: string;
+  travelsTab: string;
+  searchPlaceholder: string;
+  unlockedBadge: string;
+  lockDirectoryBtn: string;
+  unlockDirectoryBtn: string;
+  officialComplianceNotice: string;
+  complianceText: string;
+  distanceFromTemple: string;
+  amenities: string;
+  pilgrimBenefits: string;
+  contactDetails: string;
+  phone: string;
+  email: string;
+  lockedTitle: string;
+  lockedDesc: string;
+  payToUnlock: string;
+
+  // Trekking Guide
   trekkingTitle: string;
   trekkingSubtitle: string;
   alipiriRoute: string;
@@ -41,6 +64,8 @@ export interface Translations {
   difficulty: string;
   checkpoints: string;
   tips: string;
+
+  // Buttons & Labels
   openTTDPortal: string;
   setReminder: string;
   viewAll: string;
@@ -76,9 +101,25 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     freeDemoLimitReached: '🔒 3 Free Demos Used!',
     subscribeToContinue: 'Subscribe ₹399/yr to unlock unlimited autofill for all pilgrim profiles.',
     demoTitle: '🎬 Autofill Demo — Watch 2-Second Fill in Action',
-    premiumUnlocked: 'Premium Unlocked',
-    lockDirectory: 'Lock Directory (Reset)',
-    unlockBtn: 'Unlock 41+ Stays & Tours (₹399/yr)',
+    directoryTitle: '📍 Stays & Travel Directory',
+    directorySubtitle: 'Verified cottage guest houses, TTD complexes, and local travels near Tirumala (41+ Places)',
+    hotelsTab: '🏨 Hotels & Stays',
+    travelsTab: '🚌 Tours & Travels',
+    searchPlaceholder: 'Search stays, travels...',
+    unlockedBadge: 'Premium Unlocked',
+    lockDirectoryBtn: 'Lock Directory (Reset)',
+    unlockDirectoryBtn: 'Unlock 41+ Stays & Tours (₹399/yr)',
+    officialComplianceNotice: 'Official TTD Compliance Notice:',
+    complianceText: 'All booking transactions, ticket issues, room allotments, and Sevas are handled exclusively by Tirumala Tirupati Devasthanams (TTD) via their official portal (ttdevasthanams.ap.gov.in). Darshan Assist provides helper tools, autofill, and quota alerts to assist devotees without bypassing TTD policies.',
+    distanceFromTemple: 'from main Tirumala Temple',
+    amenities: 'Key Amenities',
+    pilgrimBenefits: 'Pilgrim Benefits',
+    contactDetails: 'Verified Contact Details',
+    phone: 'Phone',
+    email: 'Email',
+    lockedTitle: 'Details & Contacts Locked',
+    lockedDesc: 'Unlock real hotel/travel operator names, original photos, verified booking phone numbers.',
+    payToUnlock: 'Pay ₹399 & Unlock Directory',
     trekkingTitle: '🥾 Tirumala Trekking Guide',
     trekkingSubtitle: 'Complete guide to Alipiri and Srivari Mettu footpaths for pilgrims',
     alipiriRoute: 'Alipiri Footpath',
@@ -95,6 +136,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     noBookings: 'No bookings yet',
     language: 'Language',
   },
+
   te: {
     appName: 'దర్శన్ అసిస్ట్',
     appSubtitle: 'TTD బుకింగ్ అసిస్టెంట్',
@@ -122,9 +164,25 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     freeDemoLimitReached: '🔒 3 ఉచిత డెమోలు ముగిశాయి!',
     subscribeToContinue: 'అన్ని ప్రొఫైల్‌లకు అపరిమిత ఆటోఫిల్ అన్‌లాక్ చేయడానికి ₹399/సంవత్సరం సబ్‌స్క్రయిబ్ చేయండి.',
     demoTitle: '🎬 ఆటోఫిల్ డెమో — 2 సెకన్ల ఫిల్ చూడండి',
-    premiumUnlocked: 'ప్రీమియం అన్‌లాక్ అయింది',
-    lockDirectory: 'డైరెక్టరీ లాక్ చేయండి',
-    unlockBtn: '41+ వసతి & ట్రావెల్స్ అన్‌లాక్ (₹399/సంవత్సరం)',
+    directoryTitle: '📍 వసతి & ప్రయాణ డైరెక్టరీ',
+    directorySubtitle: 'తిరుమల సమీపంలోని ధృవీకరించబడిన కాటేజ్ గెస్ట్ హౌస్‌లు, TTD కాంప్లెక్స్‌లు మరియు స్థానిక ప్రయాణాలు (41+ స్థలాలు)',
+    hotelsTab: '🏨 హోటళ్లు & వసతి',
+    travelsTab: '🚌 టూర్స్ & ట్రావెల్స్',
+    searchPlaceholder: 'వసతి, ట్రావెల్స్ వెతకండి...',
+    unlockedBadge: 'ప్రీమియం అన్‌లాక్ అయింది',
+    lockDirectoryBtn: 'డైరెక్టరీ లాక్ చేయండి',
+    unlockDirectoryBtn: '41+ వసతి & ట్రావెల్స్ అన్‌లాక్ (₹399/సంవత్సరం)',
+    officialComplianceNotice: 'అధికారిక TTD నిబంధనల గమనిక:',
+    complianceText: 'అన్ని బుకింగ్ లావాదేవీలు, టిక్కెట్ జారీలు, రూమ్ కేటాయింపులు మరియు సేవలు కేవలం తిరుమల తిరుపతి దేవస్థానాలు (TTD) తమ అధికారిక పోర్టల్ (ttdevasthanams.ap.gov.in) ద్వారా మాత్రమే నిర్వహిస్తాయి.',
+    distanceFromTemple: 'ముఖ్య తిరుమల ఆలయం నుండి',
+    amenities: 'ముఖ్య సౌకర్యాలు',
+    pilgrimBenefits: 'యాత్రికుల ప్రయోజనాలు',
+    contactDetails: 'ధృవీకరించబడిన సంప్రదింపు వివరాలు',
+    phone: 'ఫోన్',
+    email: 'ఈమెయిల్',
+    lockedTitle: 'వివరాలు & కాంటాక్ట్‌లు లాక్ చేయబడ్డాయి',
+    lockedDesc: 'నిజమైన హోటల్/ట్రావెల్ పేర్లు, ఒరిజినల్ ఫోటోలు, బుకింగ్ ఫోన్ నంబర్‌లను అన్‌లాక్ చేయండి.',
+    payToUnlock: '₹399 చెల్లించి డైరెక్టరీని అన్‌లాక్ చేయండి',
     trekkingTitle: '🥾 తిరుమల ట్రెక్కింగ్ గైడ్',
     trekkingSubtitle: 'అలిపిరి మరియు శ్రీవారి మెట్టు పాదమార్గాల పూర్తి గైడ్',
     alipiriRoute: 'అలిపిరి పాదమార్గం',
@@ -141,6 +199,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     noBookings: 'ఇంకా బుకింగ్‌లు లేవు',
     language: 'భాష',
   },
+
   ta: {
     appName: 'தர்சன் அசிஸ்ட்',
     appSubtitle: 'TTD முன்பதிவு உதவியாளர்',
@@ -168,9 +227,25 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     freeDemoLimitReached: '🔒 3 இலவச டெமோக்கள் முடிந்தன!',
     subscribeToContinue: 'அனைத்து சுயவிவரங்களுக்கும் வரம்பற்ற ஆட்டோஃபிலை திறக்க ₹399/ஆண்டு சந்தா செலுத்துங்கள்.',
     demoTitle: '🎬 ஆட்டோஃபில் டெமோ — 2 வினாடி நிரப்புதலை பாருங்கள்',
-    premiumUnlocked: 'பிரீமியம் திறக்கப்பட்டது',
-    lockDirectory: 'அடைவை பூட்டு',
-    unlockBtn: '41+ தங்குமிடம் & பயணம் திறக்கவும் (₹399/ஆண்டு)',
+    directoryTitle: '📍 தங்குமிடம் & பயண அடைவு',
+    directorySubtitle: 'திருமலைக்கு அருகிலுள்ள சரிபார்க்கப்பட்ட தங்குமிடங்கள் & உள்ளூர் பயணங்கள் (41+ இடங்கள்)',
+    hotelsTab: '🏨 ஹோட்டல்கள் & தங்குமிடம்',
+    travelsTab: '🚌 சுற்றுலா & பயணம்',
+    searchPlaceholder: 'தங்குமிடம், பயணங்களை தேடுங்கள்...',
+    unlockedBadge: 'பிரீமியம் திறக்கப்பட்டது',
+    lockDirectoryBtn: 'அடைவை பூட்டு',
+    unlockDirectoryBtn: '41+ தங்குமிடம் திறக்கவும் (₹399/ஆண்டு)',
+    officialComplianceNotice: 'அதிகாரப்பூர்வ TTD அறிவிப்பு:',
+    complianceText: 'அனைத்து முன்பதிவுகளும் திருமலை திருப்பதி தேவஸ்தானம் (TTD) அதன் அதிகாரப்பூர்வ தளம் (ttdevasthanams.ap.gov.in) வழியாக மட்டுமே செய்யப்படுகின்றன.',
+    distanceFromTemple: 'முக்கிய திருமலை கோவிலில் இருந்து',
+    amenities: 'முக்கிய வசதிகள்',
+    pilgrimBenefits: 'யாத்ரீகர் நன்மைகள்',
+    contactDetails: 'சரிபார்க்கப்பட்ட தொடர்பு விவரங்கள்',
+    phone: 'தொலைபேசி',
+    email: 'மின்னஞ்சல்',
+    lockedTitle: 'விவரங்கள் பூட்டப்பட்டுள்ளன',
+    lockedDesc: 'உண்மையான ஹோட்டல் பெயர்கள், புகைப்படங்கள், தொலைபேசி எண்களை திறக்கவும்.',
+    payToUnlock: '₹399 செலுத்தி அடைவை திறக்கவும்',
     trekkingTitle: '🥾 திருமல ட்ரெக்கிங் வழிகாட்டி',
     trekkingSubtitle: 'யாத்திரிகர்களுக்கான அலிபிரி மற்றும் ஸ்ரீவாரி மேட்டு பாதைகளுக்கான முழுமையான வழிகாட்டி',
     alipiriRoute: 'அலிபிரி பாதை',
@@ -187,6 +262,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     noBookings: 'இன்னும் முன்பதிவுகள் இல்லை',
     language: 'மொழி',
   },
+
   hi: {
     appName: 'दर्शन असिस्ट',
     appSubtitle: 'TTD बुकिंग सहायक',
@@ -214,9 +290,25 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     freeDemoLimitReached: '🔒 3 मुफ्त डेमो समाप्त!',
     subscribeToContinue: 'सभी प्रोफाइल के लिए असीमित ऑटोफिल अनलॉक करने के लिए ₹399/वर्ष सब्सक्राइब करें।',
     demoTitle: '🎬 ऑटोफिल डेमो — 2 सेकंड फिल देखें',
-    premiumUnlocked: 'प्रीमियम अनलॉक',
-    lockDirectory: 'डायरेक्टरी लॉक करें',
-    unlockBtn: '41+ आवास अनलॉक करें (₹399/वर्ष)',
+    directoryTitle: '📍 आवास & यात्रा निर्देशिका',
+    directorySubtitle: 'तिरुमला के पास सत्यापित कॉटेज गेस्ट हाउस, TTD परिसर और स्थानीय यात्राएं (41+ स्थान)',
+    hotelsTab: '🏨 होटल & आवास',
+    travelsTab: '🚌 टूर & ट्रैवल्स',
+    searchPlaceholder: 'होटल, ट्रैवल्स खोजें...',
+    unlockedBadge: 'प्रीमियम अनलॉक',
+    lockDirectoryBtn: 'डायरेक्टरी लॉक करें',
+    unlockDirectoryBtn: '41+ आवास अनलॉक करें (₹399/वर्ष)',
+    officialComplianceNotice: 'आधिकारिक TTD अनुपालन नोटिस:',
+    complianceText: 'सभी बुकिंग लेनदेन, टिकट और कमरे आवंटन केवल तिरुमला तिरुपति देवस्थानम (TTD) द्वारा उनके आधिकारिक पोर्टल (ttdevasthanams.ap.gov.in) के माध्यम से नियंत्रित किए जाते हैं।',
+    distanceFromTemple: 'मुख्य तिरुमला मंदिर से',
+    amenities: 'प्रमुख सुविधाएं',
+    pilgrimBenefits: 'तीर्थयात्री लाभ',
+    contactDetails: 'सत्यापित संपर्क विवरण',
+    phone: 'फोन',
+    email: 'ईमेल',
+    lockedTitle: 'विवरण & संपर्क लॉक हैं',
+    lockedDesc: 'वास्तविक होटल/ट्रैवल नाम, मूल फोटो और सत्यापित फोन नंबर अनलॉक करें।',
+    payToUnlock: '₹399 भुगतान करें और अनलॉक करें',
     trekkingTitle: '🥾 तिरुमला ट्रेकिंग गाइड',
     trekkingSubtitle: 'तीर्थयात्रियों के लिए अलिपिरी और श्रीवारी मेट्टु मार्गों की पूर्ण गाइड',
     alipiriRoute: 'अलिपिरी पैदल मार्ग',

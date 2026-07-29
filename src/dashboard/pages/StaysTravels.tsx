@@ -776,11 +776,14 @@ const PLACES_DATA: PlaceItem[] = [
     website: 'https://ttdevasthanams.ap.gov.in',
     image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop&q=80',
     mapX: '33%',
-    mapY: '90%'
+    mapY: '89%'
   }
 ];
 
+import { useLanguage } from '../context/LanguageContext';
+
 export default function StaysTravelsPage(): JSX.Element {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<'stays' | 'travels'>('stays');
   const [selectedPlace, setSelectedPlace] = useState<PlaceItem>(PLACES_DATA[0]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -824,7 +827,6 @@ export default function StaysTravelsPage(): JSX.Element {
   const resetPremiumState = () => {
     localStorage.removeItem('da_premium_unlocked');
     setIsUnlocked(false);
-    setPaymentStep('options');
   };
 
   // Helper to format generic/obfuscated titles for locked states
@@ -845,17 +847,17 @@ export default function StaysTravelsPage(): JSX.Element {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
         <div>
           <h1 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '26px', fontWeight: 700, margin: '0 0 4px', color: 'var(--color-text)' }}>
-            📍 Stays & Travel Directory
+            {t.directoryTitle}
           </h1>
           <p style={{ margin: 0, fontSize: '13.5px', color: 'var(--color-text-muted)' }}>
-            Verified cottage guest houses, TTD complexes, and local travels near Tirumala (41+ Places)
+            {t.directorySubtitle}
           </p>
         </div>
 
         {isUnlocked ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span className="badge badge-green" style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: '6px 12px', fontSize: '12px' }}>
-              <ShieldCheck size={14} /> Premium Unlocked
+              <ShieldCheck size={14} /> {t.unlockedBadge}
             </span>
             <button
               onClick={resetPremiumState}
@@ -870,7 +872,7 @@ export default function StaysTravelsPage(): JSX.Element {
                 cursor: 'pointer'
               }}
             >
-              Lock Directory (Reset)
+              {t.lockDirectoryBtn}
             </button>
           </div>
         ) : (
@@ -890,7 +892,7 @@ export default function StaysTravelsPage(): JSX.Element {
               boxShadow: '0 4px 15px rgba(245, 158, 11, 0.3)'
             }}
           >
-            <Lock size={14} /> Unlock 41+ Stays & Tours (₹399/yr)
+            <Lock size={14} /> {t.unlockDirectoryBtn}
           </button>
         )}
       </div>
@@ -911,7 +913,7 @@ export default function StaysTravelsPage(): JSX.Element {
       }}>
         <ShieldCheck size={18} color="#F59E0B" style={{ flexShrink: 0 }} />
         <div>
-          <strong style={{ color: '#F59E0B' }}>Official TTD Compliance Notice:</strong> All booking transactions, ticket issues, room allotments, and Sevas are handled exclusively by Tirumala Tirupati Devasthanams (TTD) via their official portal (<a href="https://ttdevasthanams.ap.gov.in" target="_blank" rel="noopener noreferrer" style={{ color: '#FBBF24', textDecoration: 'underline' }}>ttdevasthanams.ap.gov.in</a>). Darshan Assist provides helper tools, autofill, and quota alerts to assist devotees without bypassing TTD policies.
+          <strong style={{ color: '#F59E0B' }}>{t.officialComplianceNotice}</strong> {t.complianceText} (<a href="https://ttdevasthanams.ap.gov.in" target="_blank" rel="noopener noreferrer" style={{ color: '#FBBF24', textDecoration: 'underline' }}>ttdevasthanams.ap.gov.in</a>).
         </div>
       </div>
 
@@ -933,10 +935,10 @@ export default function StaysTravelsPage(): JSX.Element {
           <div style={{ padding: '16px', borderBottom: '1px solid var(--color-border)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {/* Search Input */}
             <div style={{ position: 'relative' }}>
-              <Search size={16} style={{ position: 'absolute', left: '12px', top: '11px', color: 'rgba(255,255,255,0.3)' }} />
+              <Search size={16} style={{ position: 'absolute', left: '12px', top: '11px', color: 'var(--color-text-muted)' }} />
               <input
                 type="text"
-                placeholder={isUnlocked ? "Search 41+ hotels, travels..." : "Search locked stays & travels..."}
+                placeholder={t.searchPlaceholder}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 style={{
@@ -969,7 +971,7 @@ export default function StaysTravelsPage(): JSX.Element {
                   transition: 'all 0.2s'
                 }}
               >
-                🏨 Hotels & Stays ({PLACES_DATA.filter(p => p.type !== 'travels').length})
+                {t.hotelsTab} ({PLACES_DATA.filter(p => p.type !== 'travels').length})
               </button>
               <button
                 onClick={() => setActiveTab('travels')}
@@ -986,7 +988,7 @@ export default function StaysTravelsPage(): JSX.Element {
                   transition: 'all 0.2s'
                 }}
               >
-                🚌 Tours & Travels ({PLACES_DATA.filter(p => p.type === 'travels').length})
+                {t.travelsTab} ({PLACES_DATA.filter(p => p.type === 'travels').length})
               </button>
             </div>
           </div>
@@ -1136,37 +1138,49 @@ export default function StaysTravelsPage(): JSX.Element {
             overflow: 'hidden',
             flexShrink: 0
           }}>
-            {/* Real Interactive Google Maps Iframe */}
-            <iframe
-              key={`${selectedPlace.id}-${zoomLevel}`}
-              title="Google Maps Location"
-              width="100%"
-              height="100%"
-              style={{ border: 0, filter: 'contrast(1.05)' }}
-              loading="lazy"
-              allowFullScreen
-              src={`https://maps.google.com/maps?q=${encodeURIComponent((isUnlocked ? selectedPlace.name : 'Tirumala') + ' Tirupati')}&t=&z=${zoomLevel}&ie=UTF8&iwloc=&output=embed`}
-            />
+            {/* Interactive OpenStreetMap Embed with Working Mathematical Zoom */}
+            {(() => {
+              // Center coordinates for Tirumala/Tirupati area (13.6833, 79.35)
+              const mapYVal = parseFloat(String(selectedPlace.mapY || '50').replace('%', ''));
+              const mapXVal = parseFloat(String(selectedPlace.mapX || '50').replace('%', ''));
+              const lat = 13.6780 + (mapYVal - 50) * 0.0008;
+              const lon = 79.3480 + (mapXVal - 50) * 0.0008;
+              // Delta shrinks as zoomLevel increases (zoom in), expands as zoomLevel decreases (zoom out)
+              const delta = 0.04 / Math.pow(1.4, zoomLevel - 12);
+              const bbox = `${lon - delta},${lat - delta},${lon + delta},${lat + delta}`;
+
+              return (
+                <iframe
+                  key={`${selectedPlace.id}-${zoomLevel}`}
+                  title="Interactive Map Location"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: 'contrast(1.05) saturate(1.1)' }}
+                  loading="lazy"
+                  src={`https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lon}`}
+                />
+              );
+            })()}
 
             {/* Working Zoom Controls (+ / -) */}
-            <div style={{ position: 'absolute', right: '12px', bottom: '12px', display: 'flex', flexDirection: 'column', gap: '6px', zIndex: 10 }}>
+            <div style={{ position: 'absolute', right: '12px', bottom: '12px', display: 'flex', flexDirection: 'column', gap: '6px', zIndex: 20 }}>
               <button
                 onClick={() => setZoomLevel((z) => Math.min(18, z + 1))}
                 title="Zoom In"
                 style={{
-                  width: '32px',
-                  height: '32px',
+                  width: '34px',
+                  height: '34px',
                   borderRadius: '8px',
                   background: '#FFFFFF',
-                  border: '1px solid rgba(0,0,0,0.2)',
-                  color: '#333333',
-                  fontSize: '18px',
+                  border: '1.5px solid #C8860A',
+                  color: '#111827',
+                  fontSize: '20px',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 4px 10px rgba(0,0,0,0.25)',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
                   transition: 'transform 0.1s'
                 }}
               >
@@ -1176,19 +1190,19 @@ export default function StaysTravelsPage(): JSX.Element {
                 onClick={() => setZoomLevel((z) => Math.max(11, z - 1))}
                 title="Zoom Out"
                 style={{
-                  width: '32px',
-                  height: '32px',
+                  width: '34px',
+                  height: '34px',
                   borderRadius: '8px',
                   background: '#FFFFFF',
-                  border: '1px solid rgba(0,0,0,0.2)',
-                  color: '#333333',
-                  fontSize: '18px',
+                  border: '1.5px solid #C8860A',
+                  color: '#111827',
+                  fontSize: '20px',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 4px 10px rgba(0,0,0,0.25)',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
                   transition: 'transform 0.1s'
                 }}
               >

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider, useApp } from './context/AppContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import Sidebar from './components/Sidebar';
 import DashboardPage from './pages/Dashboard';
 import ProfilesPage from './pages/Profiles';
@@ -13,21 +14,15 @@ import NotificationsPage from './pages/Notifications';
 import AnalyticsPage from './pages/Analytics';
 import SettingsPage from './pages/Settings';
 import LoadingScreen from './components/LoadingScreen';
-import { getStoredLanguage, storeLanguage, LANGUAGE_NAMES, Language } from '../shared/i18n';
+import { LANGUAGE_NAMES, Language } from '../shared/i18n';
 import { Globe } from 'lucide-react';
 
 // ─── App Shell ───────────────────────────────────────────────────────────────
 
 function AppShell(): JSX.Element {
   const { loading, settings } = useApp();
+  const { lang: currentLang, setLang } = useLanguage();
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [currentLang, setCurrentLang] = useState<Language>(getStoredLanguage());
-
-  const handleLanguageChange = (newLang: Language) => {
-    setCurrentLang(newLang);
-    storeLanguage(newLang);
-    window.location.reload();
-  };
 
   // Apply dark mode class to <html>
   useEffect(() => {
@@ -68,7 +63,7 @@ function AppShell(): JSX.Element {
           <Globe size={14} color="#F59E0B" />
           <select
             value={currentLang}
-            onChange={(e) => handleLanguageChange(e.target.value as Language)}
+            onChange={(e) => setLang(e.target.value as Language)}
             style={{
               background: 'transparent',
               border: 'none',
@@ -111,9 +106,11 @@ function AppShell(): JSX.Element {
 export default function App(): JSX.Element {
   return (
     <AppProvider>
-      <HashRouter>
-        <AppShell />
-      </HashRouter>
+      <LanguageProvider>
+        <HashRouter>
+          <AppShell />
+        </HashRouter>
+      </LanguageProvider>
     </AppProvider>
   );
 }

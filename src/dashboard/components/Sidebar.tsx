@@ -14,26 +14,29 @@ import {
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface SidebarProps {
   open: boolean;
   onToggle: () => void;
 }
 
-const NAV_ITEMS = [
-  { to: '/',              icon: LayoutDashboard, label: 'Dashboard' },
-  { to: '/profiles',      icon: Users,           label: 'Pilgrims' },
-  { to: '/calendar',      icon: Calendar,        label: 'Release Calendar' },
-  { to: '/history',       icon: BookOpen,        label: 'Booking History' },
-  { to: '/trip-planner',  icon: Map,             label: 'Trip Planner' },
-  { to: '/stays-travels', icon: Compass,         label: 'Stays & Travels' },
-  { to: '/trekking-guide',icon: Footprints,      label: 'Trekking Guide' },
-  { to: '/notifications', icon: Bell,            label: 'Notifications' },
-  { to: '/analytics',     icon: BarChart3,       label: 'Analytics' },
-  { to: '/settings',      icon: Settings,        label: 'Settings' },
-];
-
 export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
+  const { t } = useLanguage();
+
+  const navItems = [
+    { to: '/',              icon: LayoutDashboard, label: t.dashboard },
+    { to: '/profiles',      icon: Users,           label: t.pilgrims },
+    { to: '/calendar',      icon: Calendar,        label: t.releaseCalendar },
+    { to: '/history',       icon: BookOpen,        label: t.bookingHistory },
+    { to: '/trip-planner',  icon: Map,             label: t.tripPlanner },
+    { to: '/stays-travels', icon: Compass,         label: t.staysTravels },
+    { to: '/trekking-guide',icon: Footprints,      label: t.trekkingGuide },
+    { to: '/notifications', icon: Bell,            label: t.notifications },
+    { to: '/analytics',     icon: BarChart3,       label: t.analytics },
+    { to: '/settings',      icon: Settings,        label: t.settings },
+  ];
+
   return (
     <aside
       className="sidebar"
@@ -97,7 +100,7 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
                 lineHeight: 1.2,
               }}
             >
-              Darshan Assist
+              {t.appName}
             </div>
             <div
               style={{
@@ -109,7 +112,7 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
                 letterSpacing: '0.4px',
               }}
             >
-              TTD Booking Assistant
+              {t.appSubtitle}
             </div>
           </div>
         )}
@@ -117,7 +120,7 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
 
       {/* Nav Links */}
       <nav style={{ flex: 1, padding: '12px 0', display: 'flex', flexDirection: 'column', gap: '2px' }}>
-        {NAV_ITEMS.map(({ to, icon: Icon, label }) => (
+        {navItems.map(({ to, icon: Icon, label }) => (
           <NavLink
             key={to}
             to={to}
