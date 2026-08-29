@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
+import { Key, CheckCircle2, ExternalLink, Trash2 } from 'lucide-react';
 
 export default function SettingsPage(): JSX.Element {
   const { settings, updateSettings, pilgrims, bookings, releases, trips } = useApp();
   const [exportSuccess, setExportSuccess] = useState(false);
   const [importFile,    setImportFile]    = useState<File | null>(null);
   const [importStatus,  setImportStatus]  = useState('');
+  const [geminiKey,     setGeminiKey]     = useState(() => localStorage.getItem('da_gemini_key') || '');
+  const [showGeminiKey, setShowGeminiKey] = useState(false);
+  const [keySaved,      setKeySaved]      = useState(false);
 
   const cardStyle: React.CSSProperties = {
     background: 'var(--color-card)', border: '1px solid var(--color-border)',
@@ -147,6 +151,164 @@ export default function SettingsPage(): JSX.Element {
             </div>
           </div>
           <span className="badge badge-green">✅ Local Storage Only</span>
+        </div>
+      </div>
+
+      {/* AI & Integrations */}
+      <div style={cardStyle}>
+        <div style={sectionTitle}>🤖 AI &amp; Integrations</div>
+
+        {/* Gemini API Key */}
+        <div style={{ marginBottom: '24px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+            <Key size={15} color="#F59E0B" />
+            <div style={{ fontWeight: 600, fontSize: '14px', color: 'var(--color-text)' }}>
+              Google Gemini API Key
+            </div>
+            {geminiKey && (
+              <span style={{
+                display: 'inline-flex', alignItems: 'center', gap: '3px',
+                fontSize: '10px', fontWeight: 700,
+                color: '#22C55E', background: 'rgba(34,197,94,0.1)',
+                padding: '2px 8px', borderRadius: '100px',
+                border: '1px solid rgba(34,197,94,0.25)',
+              }}>
+                <CheckCircle2 size={10} /> Saved
+              </span>
+            )}
+          </div>
+
+          <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginBottom: '12px', lineHeight: 1.5 }}>
+            Required for the <strong style={{ color: 'var(--color-text)' }}>AI Trip Planner</strong> feature.
+            Get your <strong>free</strong> API key (1,500 requests/day) at{' '}
+            <a
+              href="https://aistudio.google.com/app/apikey"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#F59E0B', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '3px' }}
+            >
+              aistudio.google.com <ExternalLink size={10} />
+            </a>
+            {' '}→ Click <strong style={{ color: 'var(--color-text)' }}>"Create API Key"</strong> → Copy &amp; paste below.
+            <br />
+            <span style={{ color: '#22C55E', fontWeight: 600 }}>🛡️ Stored locally only — never sent to any server.</span>
+          </div>
+
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            <input
+              type={showGeminiKey ? 'text' : 'password'}
+              placeholder="Paste your Gemini API Key here (AIzaSy...)"
+              value={geminiKey}
+              onChange={(e) => setGeminiKey(e.target.value)}
+              style={{
+                flex: 1, minWidth: '200px',
+                padding: '10px 14px', borderRadius: '10px',
+                background: geminiKey
+                  ? 'rgba(34,197,94,0.06)'
+                  : 'var(--color-card)',
+                border: geminiKey
+                  ? '1.5px solid rgba(34,197,94,0.4)'
+                  : '1.5px solid var(--color-border)',
+                color: 'var(--color-text)', fontSize: '13px',
+                fontFamily: "'Inter', sans-serif", outline: 'none',
+                transition: 'border 0.2s',
+              }}
+            />
+            <button
+              onClick={() => setShowGeminiKey(s => !s)}
+              style={{
+                padding: '10px 14px', borderRadius: '10px', cursor: 'pointer',
+                background: 'rgba(200,134,10,0.08)',
+                border: '1px solid rgba(200,134,10,0.2)',
+                color: '#F59E0B', fontSize: '12px', fontWeight: 600,
+                fontFamily: "'Inter', sans-serif", whiteSpace: 'nowrap',
+              }}
+            >
+              {showGeminiKey ? '🙈 Hide' : '👁️ Show'}
+            </button>
+            <button
+              onClick={() => {
+                localStorage.setItem('da_gemini_key', geminiKey);
+                setKeySaved(true);
+                setTimeout(() => setKeySaved(false), 2500);
+              }}
+              style={{
+                padding: '10px 18px', borderRadius: '10px', cursor: 'pointer',
+                background: 'linear-gradient(135deg, #C8860A, #F59E0B)',
+                border: 'none', color: 'white',
+                fontSize: '12px', fontWeight: 700,
+                fontFamily: "'Inter', sans-serif", whiteSpace: 'nowrap',
+                boxShadow: '0 3px 10px rgba(200,134,10,0.35)',
+              }}
+            >
+              💾 Save Key
+            </button>
+            {geminiKey && (
+              <button
+                onClick={() => {
+                  localStorage.removeItem('da_gemini_key');
+                  setGeminiKey('');
+                }}
+                title="Remove API Key"
+                style={{
+                  padding: '10px 12px', borderRadius: '10px', cursor: 'pointer',
+                  background: 'rgba(239,68,68,0.1)',
+                  border: '1px solid rgba(239,68,68,0.25)',
+                  color: '#EF4444', fontSize: '12px',
+                  display: 'flex', alignItems: 'center', gap: '4px',
+                  fontFamily: "'Inter', sans-serif",
+                }}
+              >
+                <Trash2 size={13} /> Remove
+              </button>
+            )}
+          </div>
+
+          {keySaved && (
+            <div style={{
+              marginTop: '10px', display: 'flex', alignItems: 'center', gap: '6px',
+              color: '#22C55E', fontSize: '13px', fontWeight: 600,
+              fontFamily: "'Inter', sans-serif",
+            }}>
+              <CheckCircle2 size={15} /> API Key saved! AI Trip Planner is ready to use.
+            </div>
+          )}
+        </div>
+
+        {/* MakeMyTrip Affiliate Info */}
+        <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+            <span style={{ fontSize: '16px' }}>🏨</span>
+            <div style={{ fontWeight: 600, fontSize: '14px', color: 'var(--color-text)' }}>
+              MakeMyTrip Affiliate
+            </div>
+            <span style={{
+              fontSize: '10px', fontWeight: 700, color: '#FF5A00',
+              background: 'rgba(255,90,0,0.1)', padding: '2px 8px',
+              borderRadius: '100px', border: '1px solid rgba(255,90,0,0.2)',
+            }}>
+              Active ✓
+            </span>
+          </div>
+          <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>
+            Your MakeMyTrip affiliate link is embedded across the extension — in the Dashboard, Stays &amp; Travels, and AI Trip Planner.
+            Every hotel booking made by your users through these links earns you <strong style={{ color: 'var(--color-text)' }}>3–5% commission</strong>.
+          </div>
+          <a
+            href="https://bitli.in/sLSXr5T"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              marginTop: '10px', display: 'inline-flex', alignItems: 'center', gap: '6px',
+              padding: '7px 14px', borderRadius: '8px',
+              background: 'linear-gradient(135deg, rgba(255,90,0,0.12), rgba(255,140,0,0.08))',
+              border: '1px solid rgba(255,100,0,0.25)', textDecoration: 'none',
+              color: '#FF5A00', fontSize: '12px', fontWeight: 700,
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            🔗 Preview Your Affiliate Link <ExternalLink size={11} />
+          </a>
         </div>
       </div>
 
