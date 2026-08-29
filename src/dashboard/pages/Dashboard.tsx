@@ -3,6 +3,7 @@ import { useApp } from '../context/AppContext';
 import { Users, BookOpen, Map, CalendarDays, ExternalLink, Bell, TrendingUp, Clock, Play, Sparkles, CheckCircle2, Lock } from 'lucide-react';
 import { DARSHAN_TYPE_LABELS, TTD_QUICK_LINKS } from '../../shared/utils/releaseCalendar';
 import CountdownTimer from '../components/CountdownTimer';
+import MMTWidget, { MMTServiceStrip } from '../components/MMTWidget';
 import { useLanguage } from '../context/LanguageContext';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -557,6 +558,34 @@ export default function Dashboard(): JSX.Element {
               </a>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* ── Book Your Trip ─────────────────────────────────────────────── */}
+      <div
+        style={{
+          background: 'var(--color-card)',
+          border: '1px solid var(--color-border)',
+          borderRadius: '20px',
+          padding: '24px',
+          boxShadow: 'var(--shadow-card)',
+        }}
+      >
+        <h2 style={{
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: '16px',
+          fontWeight: 700,
+          color: 'var(--color-text)',
+          margin: '0 0 16px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+        }}>
+          🏨 Book Your Pilgrimage Trip
+        </h2>
+        <MMTServiceStrip />
+        <div style={{ marginTop: '12px' }}>
+          <MMTWidget variant="banner" />
         </div>
       </div>
 

@@ -13,6 +13,7 @@ import TrekkingGuidePage from './pages/TrekkingGuide';
 import NotificationsPage from './pages/Notifications';
 import AnalyticsPage from './pages/Analytics';
 import SettingsPage from './pages/Settings';
+import AIPlannerPage from './pages/AIPlannerPage';
 import LoadingScreen from './components/LoadingScreen';
 import { LANGUAGE_NAMES, Language } from '../shared/i18n';
 import { Globe } from 'lucide-react';
@@ -91,6 +92,7 @@ function AppShell(): JSX.Element {
           <Route path="/trip-planner"  element={<TripPlannerPage />} />
           <Route path="/stays-travels" element={<StaysTravelsPage />} />
           <Route path="/trekking-guide"element={<TrekkingGuidePage />} />
+          <Route path="/ai-planner"    element={<AIPlannerPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/analytics"     element={<AnalyticsPage />} />
           <Route path="/settings"      element={<SettingsPage />} />

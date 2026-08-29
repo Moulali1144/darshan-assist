@@ -15,6 +15,7 @@ export interface Translations {
   analytics: string;
   settings: string;
   trekkingGuide: string;
+  aiPlanner: string;
 
   // Dashboard
   welcomeGreeting: string;
@@ -135,6 +136,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     viewAll: 'View All',
     noBookings: 'No bookings yet',
     language: 'Language',
+    aiPlanner: 'AI Trip Planner',
   },
 
   te: {
@@ -198,6 +200,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     viewAll: 'అన్నీ చూడండి',
     noBookings: 'ఇంకా బుకింగ్‌లు లేవు',
     language: 'భాష',
+    aiPlanner: 'AI ట్రిప్ ప్లానర్',
   },
 
   ta: {
@@ -261,6 +264,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     viewAll: 'அனைத்தையும் பார்',
     noBookings: 'இன்னும் முன்பதிவுகள் இல்லை',
     language: 'மொழி',
+    aiPlanner: 'AI பயண திட்டமிடல்',
   },
 
   hi: {
@@ -324,6 +328,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     viewAll: 'सभी देखें',
     noBookings: 'अभी तक कोई बुकिंग नहीं',
     language: 'भाषा',
+    aiPlanner: 'AI यात्रा योजनाकार',
   },
 };
 

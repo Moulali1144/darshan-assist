@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import MMTWidget from '../components/MMTWidget';
 import {
   MapPin,
   Star,
@@ -916,6 +917,9 @@ export default function StaysTravelsPage(): JSX.Element {
           <strong style={{ color: '#F59E0B' }}>{t.officialComplianceNotice}</strong> {t.complianceText} (<a href="https://ttdevasthanams.ap.gov.in" target="_blank" rel="noopener noreferrer" style={{ color: '#FBBF24', textDecoration: 'underline' }}>ttdevasthanams.ap.gov.in</a>).
         </div>
       </div>
+
+      {/* MakeMyTrip Affiliate Banner — Earn commission on hotel bookings */}
+      <MMTWidget variant="banner" />
 
       {/* Main Split Layout */}
       <div style={{ display: 'flex', flex: 1, gap: '16px', overflow: 'hidden' }}>

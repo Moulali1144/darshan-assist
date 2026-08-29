@@ -13,6 +13,7 @@ import {
   Settings,
   ChevronLeft,
   ChevronRight,
+  Sparkles,
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -32,6 +33,7 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
     { to: '/trip-planner',  icon: Map,             label: t.tripPlanner },
     { to: '/stays-travels', icon: Compass,         label: t.staysTravels },
     { to: '/trekking-guide',icon: Footprints,      label: t.trekkingGuide },
+    { to: '/ai-planner',    icon: Sparkles,        label: t.aiPlanner },
     { to: '/notifications', icon: Bell,            label: t.notifications },
     { to: '/analytics',     icon: BarChart3,       label: t.analytics },
     { to: '/settings',      icon: Settings,        label: t.settings },
@@ -226,7 +228,7 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
               letterSpacing: '0.5px',
             }}
           >
-            Version 1.0.0
+          Version 1.2.0
           </div>
         )}
       </div>
