@@ -105,46 +105,80 @@ export default function AIPlannerPage(): JSX.Element {
   const updateForm = (field: keyof TripFormData, value: string) =>
     setForm((prev) => ({ ...prev, [field]: value }));
 
-  // ─── Call Gemini API ──────────────────────────────────────────────────────
+  // ─── Call Gemini API or Vercel Proxy ───────────────────────────────────────
   const handleGenerate = async () => {
-    if (!apiKey.trim()) {
-      setError('Please enter your Gemini API Key in Settings or the field above.');
-      return;
-    }
     setLoading(true);
     setError('');
     setItinerary('');
 
     try {
-      const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey.trim()}`,
-        {
+      let generatedText = '';
+
+      if (apiKey.trim()) {
+        // Mode A: Direct call using user's custom API key
+        const models = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-2.5-flash'];
+        let lastErr = '';
+
+        for (const model of models) {
+          try {
+            const res = await fetch(
+              `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey.trim()}`,
+              {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  contents: [{ parts: [{ text: buildPrompt(form) }] }],
+                  generationConfig: { temperature: 0.7, maxOutputTokens: 3000 },
+                }),
+              }
+            );
+
+            if (res.ok) {
+              const data = await res.json();
+              generatedText = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+              if (generatedText) break;
+            } else {
+              const errData = await res.json().catch(() => ({}));
+              lastErr = errData?.error?.message || `HTTP ${res.status}`;
+            }
+          } catch (e: any) {
+            lastErr = e.message;
+          }
+        }
+
+        if (!generatedText) {
+          throw new Error(lastErr || 'Gemini API request failed. Please check your key.');
+        }
+      } else {
+        // Mode B: Seamless Vercel Serverless Proxy call (Zero setup for Web Store users)
+        const proxyUrl = 'https://darshan-assist.vercel.app/api/planner';
+        const res = await fetch(proxyUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: buildPrompt(form) }] }],
-            generationConfig: {
-              temperature: 0.7,
-              maxOutputTokens: 3000,
-            },
-          }),
-        }
-      );
+          body: JSON.stringify({ form }),
+        });
 
-      if (!res.ok) {
-        const errData = await res.json().catch(() => ({}));
-        throw new Error(errData?.error?.message || `API error ${res.status}`);
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(
+            errData?.error ||
+              'Proxy service offline. Please add your free Gemini key in Settings.'
+          );
+        }
+
+        const data = await res.json();
+        generatedText = data?.text || '';
+        if (!generatedText) throw new Error('Empty response from AI planner.');
       }
 
-      const data = await res.json();
-      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
-      if (!text) throw new Error('Empty response from Gemini. Please try again.');
-
-      setItinerary(text);
+      setItinerary(generatedText);
       setShowForm(false);
       setTimeout(() => resultRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'Unknown error. Please check your API key.';
+      const msg =
+        err instanceof Error
+          ? err.message
+          : 'Unable to generate trip plan. Please try again.';
       setError(msg);
     } finally {
       setLoading(false);
