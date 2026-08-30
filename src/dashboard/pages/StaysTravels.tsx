@@ -1500,20 +1500,20 @@ export default function StaysTravelsPage(): JSX.Element {
         }} onClick={(e) => e.target === e.currentTarget && setShowPaymentModal(false)}>
           
           <div style={{
-            background: '#181818',
-            border: '1px solid rgba(255,255,255,0.08)',
+            background: '#FFFFFF',
+            border: '1px solid #E2E8F0',
             borderRadius: '20px',
             width: '100%',
             maxWidth: '440px',
             overflow: 'hidden',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.7)'
+            boxShadow: '0 20px 50px rgba(0,0,0,0.15)'
           }}>
             
             {/* Header */}
             <div style={{
-              background: '#0F0F0F',
+              background: '#F8FAFC',
               padding: '20px 24px',
-              borderBottom: '1px solid rgba(255,255,255,0.06)',
+              borderBottom: '1px solid #E2E8F0',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between'
@@ -1523,7 +1523,7 @@ export default function StaysTravelsPage(): JSX.Element {
                   <div style={{ width: '28px', height: '28px', borderRadius: '6px', background: 'linear-gradient(135deg, #C8860A, #F59E0B)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px' }}>
                     🙏
                   </div>
-                  <span style={{ fontSize: '14.5px', fontWeight: 700, color: 'white', fontFamily: 'Poppins, sans-serif' }}>
+                  <span style={{ fontSize: '14.5px', fontWeight: 700, color: '#0F172A', fontFamily: 'Poppins, sans-serif' }}>
                     Darshan Assist Secure Pay
                   </span>
                 </div>
@@ -1533,7 +1533,7 @@ export default function StaysTravelsPage(): JSX.Element {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#888',
+                  color: '#64748B',
                   fontSize: '20px',
                   cursor: 'pointer'
                 }}
@@ -1549,7 +1549,7 @@ export default function StaysTravelsPage(): JSX.Element {
                 {/* Product details */}
                 <div style={{
                   background: 'rgba(200,134,10,0.06)',
-                  border: '1px solid rgba(200,134,10,0.15)',
+                  border: '1px solid rgba(200,134,10,0.2)',
                   padding: '16px',
                   borderRadius: '12px',
                   display: 'flex',
@@ -1557,18 +1557,18 @@ export default function StaysTravelsPage(): JSX.Element {
                   alignItems: 'center'
                 }}>
                   <div>
-                    <div style={{ fontSize: '14px', fontWeight: 700, color: 'white' }}>Premium Stay & Travel Pack</div>
-                    <div style={{ fontSize: '11px', color: '#F59E0B', marginTop: '2px', fontWeight: 600 }}>1-Year Active Subscription</div>
+                    <div style={{ fontSize: '14px', fontWeight: 700, color: '#0F172A' }}>Premium Stay & Travel Pack</div>
+                    <div style={{ fontSize: '11px', color: '#C8860A', marginTop: '2px', fontWeight: 600 }}>1-Year Active Subscription</div>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#F59E0B' }}>₹399</div>
-                    <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.4)', marginTop: '2px' }}>Per Year</div>
+                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#C8860A' }}>₹399</div>
+                    <div style={{ fontSize: '9px', color: '#64748B', marginTop: '2px' }}>Per Year</div>
                   </div>
                 </div>
 
                 {/* HIGH-CONTRAST SUBSCRIPTION POLICY WARNING BOX */}
                 <div style={{
-                  background: 'rgba(239, 68, 68, 0.08)',
+                  background: 'rgba(239, 68, 68, 0.06)',
                   borderLeft: '4px solid #EF4444',
                   padding: '12px 16px',
                   borderRadius: '8px',
@@ -1578,8 +1578,8 @@ export default function StaysTravelsPage(): JSX.Element {
                 }}>
                   <AlertCircle size={18} color="#EF4444" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div>
-                    <div style={{ fontSize: '13px', fontWeight: 700, color: '#EF4444' }}>Important Policy Info:</div>
-                    <p style={{ margin: '4px 0 0', fontSize: '11.5px', color: 'rgba(255,255,255,0.95)', lineHeight: '1.4' }}>
+                    <div style={{ fontSize: '13px', fontWeight: 700, color: '#DC2626' }}>Important Policy Info:</div>
+                    <p style={{ margin: '4px 0 0', fontSize: '11.5px', color: '#334155', lineHeight: '1.4' }}>
                       All pilgrim data and license details are stored locally. If you uninstall the extension, this premium license status will be permanently reset.
                     </p>
                   </div>
@@ -1609,8 +1609,8 @@ export default function StaysTravelsPage(): JSX.Element {
                             padding: '10px 14px',
                             borderRadius: '8px',
                             cursor: 'pointer',
-                            background: isSelected ? 'rgba(245, 158, 11, 0.08)' : 'rgba(255,255,255,0.01)',
-                            border: isSelected ? '1.5px solid #F59E0B' : '1.5px solid rgba(255,255,255,0.05)',
+                            background: isSelected ? 'rgba(245, 158, 11, 0.08)' : '#F8FAFC',
+                            border: isSelected ? '1.5px solid #C8860A' : '1.5px solid #E2E8F0',
                             boxShadow: isSelected ? '0 0 12px rgba(245, 158, 11, 0.15)' : 'none',
                             transition: 'all 0.15s'
                           }}
@@ -1620,16 +1620,16 @@ export default function StaysTravelsPage(): JSX.Element {
                               width: '12px',
                               height: '12px',
                               borderRadius: '50%',
-                              border: isSelected ? '3.5px solid #F59E0B' : '1.5px solid rgba(255,255,255,0.3)',
+                              border: isSelected ? '3.5px solid #C8860A' : '1.5px solid #CBD5E1',
                               background: 'transparent',
                               transition: 'all 0.15s'
                             }} />
-                            <span style={{ fontSize: '12.5px', fontWeight: 600, color: isSelected ? '#FBBF24' : 'white' }}>{app.name}</span>
+                            <span style={{ fontSize: '12.5px', fontWeight: 600, color: isSelected ? '#C8860A' : '#0F172A' }}>{app.name}</span>
                           </div>
                           <span style={{
                             fontSize: '9px',
-                            background: isSelected ? 'rgba(245, 158, 11, 0.15)' : 'rgba(255,255,255,0.04)',
-                            color: isSelected ? '#FBBF24' : 'rgba(255,255,255,0.4)',
+                            background: isSelected ? 'rgba(245, 158, 11, 0.15)' : '#E2E8F0',
+                            color: isSelected ? '#C8860A' : '#475569',
                             padding: '2px 5px',
                             borderRadius: '3px',
                             textTransform: 'uppercase',

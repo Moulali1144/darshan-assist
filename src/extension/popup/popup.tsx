@@ -239,7 +239,7 @@ export default function Popup(): JSX.Element {
                 }}
               >
                 {pilgrims.map((p) => (
-                  <option key={p.id} value={p.id} style={{ background:'#1A1A1A' }}>
+                  <option key={p.id} value={p.id} style={{ background:'#FFFFFF', color: '#0F172A' }}>
                     {p.name} ({p.relationship})
                   </option>
                 ))}

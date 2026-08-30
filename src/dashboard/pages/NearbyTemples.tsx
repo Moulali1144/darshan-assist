@@ -52,7 +52,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Men: Dhoti or pants + shirt (no shorts/bermuda). Women: Saree or churidar (no sleeveless tops, no jeans).',
     rating: 5.0,
     mapLink: 'https://maps.google.com/maps?q=Tirumala+Venkateswara+Temple',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Tirumala_temple.jpg/480px-Tirumala_temple.jpg',
+    image: 'temples/Sri Venkateswara Swamy Temple.jfif',
     ttdManaged: true,
     freeEntry: false,
     suggestedDuration: '3–6 hours (queue dependent)',
@@ -79,7 +79,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Same as main Tirumala temple dress code.',
     rating: 4.8,
     mapLink: 'https://maps.google.com/maps?q=Varahaswamy+Temple+Tirumala',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Varahaswamy_temple_Tirumala.jpg/480px-Varahaswamy_temple_Tirumala.jpg',
+    image: 'temples/Sri Varahaswamy Temple.jfif',
     ttdManaged: true,
     freeEntry: true,
     suggestedDuration: '30 minutes',
@@ -106,7 +106,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Casual — modest clothing recommended.',
     rating: 4.6,
     mapLink: 'https://maps.google.com/maps?q=Akasa+Ganga+Tirumala',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Akasa_Ganga_Tirumala.jpg/480px-Akasa_Ganga_Tirumala.jpg',
+    image: 'temples/Akasa Ganga Theertham.jfif',
     ttdManaged: true,
     freeEntry: true,
     suggestedDuration: '1 hour',
@@ -136,7 +136,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Same as Tirumala — traditional attire required.',
     rating: 4.9,
     mapLink: 'https://maps.google.com/maps?q=Padmavathi+Temple+Tiruchanur',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Padmavati_Ammavaru_temple_Tiruchanur.jpg/480px-Padmavati_Ammavaru_temple_Tiruchanur.jpg',
+    image: 'temples/Sri Padmavathi Ammavari Temple.jfif',
     ttdManaged: true,
     freeEntry: false,
     suggestedDuration: '1–2 hours',
@@ -164,7 +164,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Traditional clothing preferred. No shorts.',
     rating: 4.7,
     mapLink: 'https://maps.google.com/maps?q=Govindarajaswamy+Temple+Tirupati',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Govindarajaswamy_temple_Tirupati.jpg/480px-Govindarajaswamy_temple_Tirupati.jpg',
+    image: 'temples/Sri Govindarajaswamy Temple.jfif',
     ttdManaged: false,
     freeEntry: true,
     suggestedDuration: '1 hour',
@@ -191,7 +191,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Modest traditional attire.',
     rating: 4.5,
     mapLink: 'https://maps.google.com/maps?q=Kodandarama+Temple+Tirupati',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Kodanda_Ramaswamy_Temple_Tirupati.jpg/480px-Kodanda_Ramaswamy_Temple_Tirupati.jpg',
+    image: 'temples/Sri Kodandarama Swamy Temple.jfif',
     ttdManaged: false,
     freeEntry: true,
     suggestedDuration: '45 minutes',
@@ -219,7 +219,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Modest clothing. Men traditionally enter without shirt (dhoti only) for some rituals.',
     rating: 4.6,
     mapLink: 'https://maps.google.com/maps?q=Kapileswara+Temple+Tirupati',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Kapileswara_Tirupati.jpg/480px-Kapileswara_Tirupati.jpg',
+    image: 'temples/Sri Kapileswara Swamy Temple.jfif',
     ttdManaged: false,
     freeEntry: true,
     suggestedDuration: '1 hour',
@@ -249,7 +249,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Traditional attire. Same as Tirumala standards.',
     rating: 4.7,
     mapLink: 'https://maps.google.com/maps?q=Kalyana+Venkateswara+Temple+Srinivasa+Mangapuram',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kalyana_Venkateswara_temple_Srinivasa_Mangapuram.jpg/480px-Kalyana_Venkateswara_temple_Srinivasa_Mangapuram.jpg',
+    image: 'temples/Sri Kalyana Venkateswara Temple.jfif',
     ttdManaged: true,
     freeEntry: false,
     suggestedDuration: '1.5 hours',
@@ -277,7 +277,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Men: Dhoti only for entering main sanctum. Women: Traditional attire.',
     rating: 4.8,
     mapLink: 'https://maps.google.com/maps?q=Srikalahasti+Temple',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Sri_Kalahastisvara_temple.jpg/480px-Sri_Kalahastisvara_temple.jpg',
+    image: 'temples/Sri Kalahastiswara Temple.jfif',
     ttdManaged: false,
     freeEntry: false,
     suggestedDuration: '2–3 hours',
@@ -305,7 +305,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Modest traditional attire.',
     rating: 4.8,
     mapLink: 'https://maps.google.com/maps?q=Kanipakam+Vinayaka+Temple',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Kanipakam_temple.jpg/480px-Kanipakam_temple.jpg',
+    image: 'temples/Sri Kanipakam Vinayaka Temple.jfif',
     ttdManaged: false,
     freeEntry: false,
     suggestedDuration: '2 hours',
@@ -333,7 +333,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Comfortable walking clothes.',
     rating: 4.5,
     mapLink: 'https://maps.google.com/maps?q=Silathoranam+Tirumala',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Silathoranam_Tirumala.jpg/480px-Silathoranam_Tirumala.jpg',
+    image: 'temples/Sri Venkateswara Temple (Sila Thoranam).jfif',
     ttdManaged: true,
     freeEntry: true,
     suggestedDuration: '1 hour',
@@ -361,7 +361,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Modest clothing. Sleeveless not allowed.',
     rating: 4.6,
     mapLink: 'https://maps.google.com/maps?q=ISKCON+Temple+Tirupati',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/ISKCON_Tirupati.jpg/480px-ISKCON_Tirupati.jpg',
+    image: 'temples/Iskon Temple Tirupati.jfif',
     ttdManaged: false,
     freeEntry: true,
     suggestedDuration: '1.5 hours',
@@ -431,7 +431,10 @@ const ZONE_GRADIENTS: Record<string, string> = {
 // ─── Temple Image with no-flicker fallback ────────────────────────────────────
 function TempleImage({ temple }: { temple: Temple }) {
   const [failed, setFailed] = useState(false);
-  const zone = ZONE_LABELS[temple.zone];
+
+  const imgSrc = typeof chrome !== 'undefined' && chrome.runtime?.getURL
+    ? chrome.runtime.getURL(temple.image)
+    : temple.image;
 
   if (failed) {
     return (
@@ -456,7 +459,7 @@ function TempleImage({ temple }: { temple: Temple }) {
 
   return (
     <img
-      src={temple.image}
+      src={imgSrc}
       alt={temple.name}
       style={{ width: '100%', height: '130px', objectFit: 'cover', display: 'block' }}
       onError={() => setFailed(true)}

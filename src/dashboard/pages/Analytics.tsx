@@ -24,9 +24,9 @@ const STATUS_META: Record<string, { color: string; label: string; emoji: string 
 function CustomBarTooltip({ active, payload, label }: { active?: boolean; payload?: { value: number }[]; label?: string }) {
   if (!active || !payload?.length) return null;
   return (
-    <div style={{ background: '#1A1A1A', border: '1px solid rgba(200,134,10,0.3)', borderRadius: '10px', padding: '10px 16px', boxShadow: '0 8px 24px rgba(0,0,0,0.5)' }}>
-      <p style={{ color: '#F59E0B', fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '13px', margin: '0 0 4px' }}>{label}</p>
-      <p style={{ color: '#F5F5F0', fontFamily: "'Inter', sans-serif", fontSize: '13px', margin: 0 }}>{payload[0].value} booking{payload[0].value !== 1 ? 's' : ''}</p>
+    <div style={{ background: '#FFFFFF', border: '1px solid rgba(200,134,10,0.3)', borderRadius: '10px', padding: '10px 16px', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }}>
+      <p style={{ color: '#C8860A', fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '13px', margin: '0 0 4px' }}>{label}</p>
+      <p style={{ color: '#0F172A', fontFamily: "'Inter', sans-serif", fontSize: '13px', margin: 0, fontWeight: 600 }}>{payload[0].value} booking{payload[0].value !== 1 ? 's' : ''}</p>
     </div>
   );
 }
@@ -34,9 +34,9 @@ function CustomBarTooltip({ active, payload, label }: { active?: boolean; payloa
 function CustomPieTooltip({ active, payload }: { active?: boolean; payload?: { name: string; value: number }[] }) {
   if (!active || !payload?.length) return null;
   return (
-    <div style={{ background: '#1A1A1A', border: '1px solid rgba(200,134,10,0.3)', borderRadius: '10px', padding: '10px 16px', boxShadow: '0 8px 24px rgba(0,0,0,0.5)' }}>
-      <p style={{ color: '#F59E0B', fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '13px', margin: '0 0 4px' }}>{payload[0].name}</p>
-      <p style={{ color: '#F5F5F0', fontFamily: "'Inter', sans-serif", fontSize: '13px', margin: 0 }}>{payload[0].value} booking{payload[0].value !== 1 ? 's' : ''}</p>
+    <div style={{ background: '#FFFFFF', border: '1px solid rgba(200,134,10,0.3)', borderRadius: '10px', padding: '10px 16px', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }}>
+      <p style={{ color: '#C8860A', fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '13px', margin: '0 0 4px' }}>{payload[0].name}</p>
+      <p style={{ color: '#0F172A', fontFamily: "'Inter', sans-serif", fontSize: '13px', margin: 0, fontWeight: 600 }}>{payload[0].value} booking{payload[0].value !== 1 ? 's' : ''}</p>
     </div>
   );
 }

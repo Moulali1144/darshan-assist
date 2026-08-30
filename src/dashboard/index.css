@@ -12,13 +12,13 @@
   --color-primary-dark:  #9B6200;
   --color-crimson:       #8B0000;
   --color-surface:       #FFFFFF;
-  --color-bg:            #F9FAFB;
+  --color-bg:            #F8FAFC;
   --color-card:          #FFFFFF;
-  --color-border:        #E5E7EB;
-  --color-text:          #111827;
-  --color-text-muted:    #4B5563;
-  --color-text-faint:    #9CA3AF;
-  --shadow-card:         0 4px 20px rgba(0,0,0,0.06);
+  --color-border:        #E2E8F0;
+  --color-text:          #0F172A;
+  --color-text-muted:    #475569;
+  --color-text-faint:    #94A3B8;
+  --shadow-card:         0 4px 20px rgba(0,0,0,0.05);
   --shadow-glow:         0 0 20px rgba(200,134,10,0.25);
   --radius-card:         1rem;
   --radius-btn:          0.75rem;
@@ -26,17 +26,17 @@
 }
 
 .dark {
-  --color-primary:       #F59E0B;
-  --color-primary-light: #FCD34D;
-  --color-primary-dark:  #C8860A;
-  --color-surface:       #1A1A1A;
-  --color-bg:            #0F0F0F;
-  --color-card:          #1E1E1E;
-  --color-border:        rgba(255,255,255,0.08);
-  --color-text:          #F5F5F0;
-  --color-text-muted:    #9CA3AF;
-  --color-text-faint:    #6B7280;
-  --shadow-card:         0 4px 24px rgba(0,0,0,0.4);
+  --color-primary:       #C8860A;
+  --color-primary-light: #F59E0B;
+  --color-primary-dark:  #9B6200;
+  --color-surface:       #FFFFFF;
+  --color-bg:            #F8FAFC;
+  --color-card:          #FFFFFF;
+  --color-border:        #E2E8F0;
+  --color-text:          #0F172A;
+  --color-text-muted:    #475569;
+  --color-text-faint:    #94A3B8;
+  --shadow-card:         0 4px 20px rgba(0,0,0,0.05);
 }
 
 /* ─── Base ──────────────────────────────────────────────────────────────────── */

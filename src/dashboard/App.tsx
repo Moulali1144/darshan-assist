@@ -79,7 +79,7 @@ function AppShell(): JSX.Element {
             }}
           >
             {(Object.keys(LANGUAGE_NAMES) as Language[]).map((langKey) => (
-              <option key={langKey} value={langKey} style={{ background: '#1A1A1A', color: 'white' }}>
+              <option key={langKey} value={langKey} style={{ background: '#FFFFFF', color: '#0F172A' }}>
                 {LANGUAGE_NAMES[langKey]}
               </option>
             ))}

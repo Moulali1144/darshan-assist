@@ -394,17 +394,17 @@ function AddReleaseModal({ onClose, onAdd }: { onClose: () => void; onAdd: (r: R
     >
       <div
         style={{
-          background: '#1A1A1A', border: '1px solid rgba(200,134,10,0.25)',
+          background: '#FFFFFF', border: '1px solid #E2E8F0',
           borderRadius: '20px', padding: '28px', width: '100%', maxWidth: '500px',
           maxHeight: '90vh', overflowY: 'auto',
-          boxShadow: '0 20px 60px rgba(0,0,0,0.7)',
+          boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-          <h2 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '18px', color: '#F5F5F0', margin: 0 }}>
+          <h2 style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '18px', color: '#0F172A', margin: 0 }}>
             ➕ Add Custom Release
           </h2>
-          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.4)' }}>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#64748B' }}>
             <X size={20} />
           </button>
         </div>

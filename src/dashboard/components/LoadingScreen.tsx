@@ -6,7 +6,7 @@ export default function LoadingScreen(): JSX.Element {
       style={{
         position: 'fixed',
         inset: 0,
-        background: '#0F0F0F',
+        background: '#F8FAFC',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -24,7 +24,7 @@ export default function LoadingScreen(): JSX.Element {
           transform: 'translate(-50%, -50%)',
           width: '400px',
           height: '400px',
-          background: 'radial-gradient(circle, rgba(200,134,10,0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(200,134,10,0.08) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -69,7 +69,7 @@ export default function LoadingScreen(): JSX.Element {
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '36px',
-            boxShadow: '0 0 40px rgba(200,134,10,0.5), 0 0 80px rgba(200,134,10,0.15)',
+            boxShadow: '0 0 40px rgba(200,134,10,0.3), 0 0 80px rgba(200,134,10,0.1)',
             animation: 'da-pulse 2s ease-in-out infinite',
           }}
         >
@@ -97,8 +97,9 @@ export default function LoadingScreen(): JSX.Element {
         <p
           style={{
             fontFamily: "'Inter', sans-serif",
-            color: 'rgba(255,255,255,0.5)',
+            color: '#475569',
             fontSize: '14px',
+            fontWeight: 600,
             margin: 0,
             letterSpacing: '0.5px',
             animation: 'da-blink 1.5s ease-in-out infinite',

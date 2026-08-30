@@ -47,8 +47,8 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
       style={{
         width: open ? '260px' : '72px',
         minHeight: '100vh',
-        background: '#0F0F0F',
-        borderRight: '1px solid rgba(200,134,10,0.15)',
+        background: '#FFFFFF',
+        borderRight: '1px solid #E2E8F0',
         display: 'flex',
         flexDirection: 'column',
         transition: 'width 0.25s cubic-bezier(0.4,0,0.2,1)',
@@ -59,13 +59,14 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
         overflowX: 'hidden',
         flexShrink: 0,
         zIndex: 100,
+        boxShadow: '2px 0 12px rgba(0,0,0,0.03)',
       }}
     >
       {/* Logo */}
       <div
         style={{
           padding: open ? '28px 20px 24px' : '28px 0 24px',
-          borderBottom: '1px solid rgba(200,134,10,0.1)',
+          borderBottom: '1px solid #F1F5F9',
           display: 'flex',
           alignItems: 'center',
           gap: '12px',
@@ -110,10 +111,11 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: '10px',
-                color: 'rgba(255,255,255,0.35)',
+                color: '#64748B',
                 whiteSpace: 'nowrap',
                 marginTop: '2px',
                 letterSpacing: '0.4px',
+                fontWeight: 600,
               }}
             >
               {t.appSubtitle}
@@ -140,11 +142,11 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
               position: 'relative',
               transition: 'background 0.15s, color 0.15s',
               background: isActive
-                ? 'linear-gradient(90deg, rgba(200,134,10,0.2) 0%, rgba(200,134,10,0.08) 100%)'
+                ? 'linear-gradient(90deg, rgba(200,134,10,0.12) 0%, rgba(200,134,10,0.03) 100%)'
                 : 'transparent',
-              color: isActive ? '#F59E0B' : 'rgba(255,255,255,0.55)',
+              color: isActive ? '#C8860A' : '#475569',
               fontFamily: "'Inter', sans-serif",
-              fontWeight: isActive ? 600 : 400,
+              fontWeight: isActive ? 700 : 500,
               fontSize: '13.5px',
             })}
             className="sidebar-nav-link"
@@ -159,7 +161,7 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
                       left: 0,
                       top: 0,
                       bottom: 0,
-                      width: '3px',
+                      width: '3.5px',
                       background: 'linear-gradient(180deg, #C8860A, #F59E0B)',
                       borderRadius: '0 3px 3px 0',
                     }}
@@ -167,11 +169,10 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
                 )}
                 <Icon
                   size={18}
-                  strokeWidth={isActive ? 2.2 : 1.7}
+                  strokeWidth={isActive ? 2.2 : 1.8}
                   style={{
                     flexShrink: 0,
-                    color: isActive ? '#F59E0B' : 'rgba(255,255,255,0.45)',
-                    filter: isActive ? 'drop-shadow(0 0 6px rgba(245,158,11,0.5))' : 'none',
+                    color: isActive ? '#C8860A' : '#64748B',
                   }}
                 />
                 {open && (
@@ -187,7 +188,7 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
       <div
         style={{
           padding: '16px 0',
-          borderTop: '1px solid rgba(200,134,10,0.1)',
+          borderTop: '1px solid #F1F5F9',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -207,7 +208,7 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
-            color: 'rgba(200,134,10,0.7)',
+            color: '#C8860A',
             transition: 'all 0.2s',
             gap: '6px',
           }}
@@ -215,7 +216,7 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
         >
           {open ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
           {open && (
-            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#475569', fontWeight: 600 }}>
               Collapse
             </span>
           )}
@@ -226,11 +227,12 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '10px',
-              color: 'rgba(255,255,255,0.2)',
+              color: '#94A3B8',
               letterSpacing: '0.5px',
+              fontWeight: 500,
             }}
           >
-          Version 1.2.0
+          Version 1.2.3
           </div>
         )}
       </div>
@@ -238,8 +240,11 @@ export default function Sidebar({ open, onToggle }: SidebarProps): JSX.Element {
       {/* Hover style injected */}
       <style>{`
         .sidebar-nav-link:hover {
-          background: rgba(200,134,10,0.1) !important;
-          color: rgba(255,255,255,0.8) !important;
+          background: rgba(200,134,10,0.06) !important;
+          color: #0F172A !important;
+        }
+        .sidebar-nav-link:hover svg {
+          color: #C8860A !important;
         }
       `}</style>
     </aside>
