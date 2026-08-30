@@ -52,7 +52,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Men: Dhoti or pants + shirt (no shorts/bermuda). Women: Saree or churidar (no sleeveless tops, no jeans).',
     rating: 5.0,
     mapLink: 'https://maps.google.com/maps?q=Tirumala+Venkateswara+Temple',
-    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Tirumala_temple.jpg/480px-Tirumala_temple.jpg',
     ttdManaged: true,
     freeEntry: false,
     suggestedDuration: '3–6 hours (queue dependent)',
@@ -79,7 +79,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Same as main Tirumala temple dress code.',
     rating: 4.8,
     mapLink: 'https://maps.google.com/maps?q=Varahaswamy+Temple+Tirumala',
-    image: 'https://images.unsplash.com/photo-1605649461784-23c6f8f76c94?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Varahaswamy_temple_Tirumala.jpg/480px-Varahaswamy_temple_Tirumala.jpg',
     ttdManaged: true,
     freeEntry: true,
     suggestedDuration: '30 minutes',
@@ -106,7 +106,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Casual — modest clothing recommended.',
     rating: 4.6,
     mapLink: 'https://maps.google.com/maps?q=Akasa+Ganga+Tirumala',
-    image: 'https://images.unsplash.com/photo-1518791841217-8f162f1912da?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Akasa_Ganga_Tirumala.jpg/480px-Akasa_Ganga_Tirumala.jpg',
     ttdManaged: true,
     freeEntry: true,
     suggestedDuration: '1 hour',
@@ -136,7 +136,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Same as Tirumala — traditional attire required.',
     rating: 4.9,
     mapLink: 'https://maps.google.com/maps?q=Padmavathi+Temple+Tiruchanur',
-    image: 'https://images.unsplash.com/photo-1609766955699-f31e5efb7c2f?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Padmavati_Ammavaru_temple_Tiruchanur.jpg/480px-Padmavati_Ammavaru_temple_Tiruchanur.jpg',
     ttdManaged: true,
     freeEntry: false,
     suggestedDuration: '1–2 hours',
@@ -164,7 +164,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Traditional clothing preferred. No shorts.',
     rating: 4.7,
     mapLink: 'https://maps.google.com/maps?q=Govindarajaswamy+Temple+Tirupati',
-    image: 'https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Govindarajaswamy_temple_Tirupati.jpg/480px-Govindarajaswamy_temple_Tirupati.jpg',
     ttdManaged: false,
     freeEntry: true,
     suggestedDuration: '1 hour',
@@ -191,7 +191,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Modest traditional attire.',
     rating: 4.5,
     mapLink: 'https://maps.google.com/maps?q=Kodandarama+Temple+Tirupati',
-    image: 'https://images.unsplash.com/photo-1609766878971-c893c53a0d67?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Kodanda_Ramaswamy_Temple_Tirupati.jpg/480px-Kodanda_Ramaswamy_Temple_Tirupati.jpg',
     ttdManaged: false,
     freeEntry: true,
     suggestedDuration: '45 minutes',
@@ -219,7 +219,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Modest clothing. Men traditionally enter without shirt (dhoti only) for some rituals.',
     rating: 4.6,
     mapLink: 'https://maps.google.com/maps?q=Kapileswara+Temple+Tirupati',
-    image: 'https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Kapileswara_Tirupati.jpg/480px-Kapileswara_Tirupati.jpg',
     ttdManaged: false,
     freeEntry: true,
     suggestedDuration: '1 hour',
@@ -249,7 +249,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Traditional attire. Same as Tirumala standards.',
     rating: 4.7,
     mapLink: 'https://maps.google.com/maps?q=Kalyana+Venkateswara+Temple+Srinivasa+Mangapuram',
-    image: 'https://images.unsplash.com/photo-1622836454484-f6af68d25fcd?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kalyana_Venkateswara_temple_Srinivasa_Mangapuram.jpg/480px-Kalyana_Venkateswara_temple_Srinivasa_Mangapuram.jpg',
     ttdManaged: true,
     freeEntry: false,
     suggestedDuration: '1.5 hours',
@@ -277,7 +277,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Men: Dhoti only for entering main sanctum. Women: Traditional attire.',
     rating: 4.8,
     mapLink: 'https://maps.google.com/maps?q=Srikalahasti+Temple',
-    image: 'https://images.unsplash.com/photo-1605649461784-23c6f8f76c94?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Sri_Kalahastisvara_temple.jpg/480px-Sri_Kalahastisvara_temple.jpg',
     ttdManaged: false,
     freeEntry: false,
     suggestedDuration: '2–3 hours',
@@ -305,7 +305,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Modest traditional attire.',
     rating: 4.8,
     mapLink: 'https://maps.google.com/maps?q=Kanipakam+Vinayaka+Temple',
-    image: 'https://images.unsplash.com/photo-1618085219724-c59ba48e08cd?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Kanipakam_temple.jpg/480px-Kanipakam_temple.jpg',
     ttdManaged: false,
     freeEntry: false,
     suggestedDuration: '2 hours',
@@ -333,7 +333,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Comfortable walking clothes.',
     rating: 4.5,
     mapLink: 'https://maps.google.com/maps?q=Silathoranam+Tirumala',
-    image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Silathoranam_Tirumala.jpg/480px-Silathoranam_Tirumala.jpg',
     ttdManaged: true,
     freeEntry: true,
     suggestedDuration: '1 hour',
@@ -361,7 +361,7 @@ const TEMPLES: Temple[] = [
     dressCode: 'Modest clothing. Sleeveless not allowed.',
     rating: 4.6,
     mapLink: 'https://maps.google.com/maps?q=ISKCON+Temple+Tirupati',
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=350&fit=crop&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/ISKCON_Tirupati.jpg/480px-ISKCON_Tirupati.jpg',
     ttdManaged: false,
     freeEntry: true,
     suggestedDuration: '1.5 hours',
@@ -420,6 +420,60 @@ const ZONE_LABELS: Record<string, { label: string; color: string; bg: string }> 
   regional: { label: '🗺️ Regional',          color: '#7C3AED',  bg: 'rgba(124,58,237,0.1)' },
 };
 
+// ─── Zone gradient fallback colors ──────────────────────────────────────────
+const ZONE_GRADIENTS: Record<string, string> = {
+  tirumala: 'linear-gradient(135deg, #C8860A 0%, #F59E0B 50%, #78350F 100%)',
+  tirupati: 'linear-gradient(135deg, #1D4ED8 0%, #3B82F6 50%, #1E3A8A 100%)',
+  nearby:   'linear-gradient(135deg, #059669 0%, #10B981 50%, #065F46 100%)',
+  regional: 'linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #4C1D95 100%)',
+};
+
+// ─── Temple Image with no-flicker fallback ────────────────────────────────────
+function TempleImage({ temple }: { temple: Temple }) {
+  const [failed, setFailed] = useState(false);
+  const zone = ZONE_LABELS[temple.zone];
+
+  if (failed) {
+    return (
+      <div style={{
+        width: '100%', height: '130px',
+        background: ZONE_GRADIENTS[temple.zone] || ZONE_GRADIENTS.tirumala,
+        display: 'flex', flexDirection: 'column',
+        alignItems: 'center', justifyContent: 'center',
+        gap: '6px',
+      }}>
+        <div style={{ fontSize: '38px' }}>🛕</div>
+        <div style={{
+          fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.9)',
+          fontFamily: "'Inter', sans-serif", textAlign: 'center',
+          padding: '0 10px',
+        }}>
+          {temple.name.replace('Sri ', '')}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={temple.image}
+      alt={temple.name}
+      style={{ width: '100%', height: '130px', objectFit: 'cover', display: 'block' }}
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
+// ─── Car/Cab Options ─────────────────────────────────────────────────────────
+const CAB_OPTIONS = [
+  { name: 'OLA Cabs', icon: '🟢', type: 'App', contact: 'ola.com / OLA App', note: 'Auto + Cab available in Tirupati city' },
+  { name: 'Uber', icon: '⚫', type: 'App', contact: 'uber.com / Uber App', note: 'Limited availability — use in Tirupati town' },
+  { name: 'TTD Pilgrim Vehicles', icon: '🛕', type: 'Official', contact: '0877-2264444', note: 'Dedicated TTD buses & sharing vehicles to Tirumala' },
+  { name: 'Tirupati Cab Service', icon: '🚗', type: 'Local', contact: '+91 98857 00099', note: 'Local operators — full-day car hire to Srikalahasti, Kanipakam' },
+  { name: 'APSRTC Buses', icon: '🚌', type: 'State Bus', contact: '0877-2225099', note: 'Buses to Tirumala, Srikalahasti, Kanipakam (cheapest option)' },
+  { name: 'Red Taxi (Tirupati)', icon: '🚕', type: 'Local', contact: '+91 94403 08444', note: 'City taxis with fixed meter. Ask for pilgrim circuits.' },
+];
+
 // ─── Temple Card ──────────────────────────────────────────────────────────────
 function TempleCard({ temple }: { temple: Temple }) {
   const [expanded, setExpanded] = useState(false);
@@ -445,14 +499,9 @@ function TempleCard({ temple }: { temple: Temple }) {
         el.style.transform = '';
       }}
     >
-      {/* Header Image */}
+      {/* Header Image — state-based fallback, no flicker */}
       <div style={{ position: 'relative', height: '130px', overflow: 'hidden' }}>
-        <img
-          src={temple.image}
-          alt={temple.name}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1605649461784-23c6f8f76c94?w=500&h=350&fit=crop&q=80'; }}
-        />
+        <TempleImage temple={temple} />
         {/* Gradient overlay */}
         <div style={{
           position: 'absolute', inset: 0,
@@ -655,8 +704,61 @@ function TempleCard({ temple }: { temple: Temple }) {
 }
 
 // ─── Trip Plan Card ───────────────────────────────────────────────────────────
+const PLAN_SCHEDULES: Record<string, { day: string; activities: string[] }[]> = {
+  plan1: [
+    { day: 'Day 1 — Arrival', activities: ['5:00 AM — Sri Padmavathi Temple (Tiruchanur, 1–2 hrs)', '8:00 AM — Sri Govindarajaswamy Temple (Tirupati, 45 min)', '11:00 AM — Alipiri / Bus to Tirumala', '1:00 PM — Sri Varahaswamy darshan first (mandatory)', '2:00 PM — Main Temple Darshan (3–5 hrs)', 'Evening — Tirumala Prasadam & Rest'] },
+  ],
+  plan2: [
+    { day: 'Day 1 — Tirupati', activities: ['6:00 AM — Kapileswara Temple (Alipiri waterfall, 1 hr)', '8:30 AM — Sri Govindarajaswamy Temple (1 hr)', '10:30 AM — Sri Kodandarama Temple (45 min)', '12:00 PM — ISKCON Tirupati Lunch + Darshan', '3:00 PM — Sri Padmavathi Temple, Tiruchanur (1.5 hrs)', '5:30 PM — Rest at hotel'] },
+    { day: 'Day 2 — Tirumala + Mangapuram', activities: ['5:00 AM — Travel to Tirumala (bus/ghat road)', '6:00 AM — Varahaswamy + Main Darshan', 'Afternoon — Akasa Ganga spring', '4:00 PM — Kalyana Venkateswara Temple (Srinivasa Mangapuram, 15 km)', '6:30 PM — Return to Tirupati'] },
+  ],
+  plan3: [
+    { day: 'Day 1 — Tirupati Town', activities: ['6:00 AM — Kapileswara Shiva Temple', '8:00 AM — Govindarajaswamy Temple', '10:00 AM — Kodandarama Temple', '11:30 AM — ISKCON Tirupati (lunch)', '3:00 PM — Padmavathi Temple, Tiruchanur'] },
+    { day: 'Day 2 — Tirumala Full Day', activities: ['5:00 AM — Alipiri foot trek OR bus to Tirumala', '7:00 AM — Varahaswamy Temple (mandatory first)', '8:00 AM — Main Venkateswara Darshan', 'Afternoon — Silathoranam rock arch (1 km trek)', '4:00 PM — Akasa Ganga holy spring'] },
+    { day: 'Day 3 — Nearby Circuits', activities: ['7:00 AM — Kalyana Venkateswara, Mangapuram (15 km)', '10:00 AM — Srikalahasti Temple (36 km, Rahu-Ketu pooja)', '2:00 PM — River Swarnamukhi walk', '4:00 PM — Return to Tirupati / Depart'] },
+  ],
+  plan4: [
+    { day: 'Day 1 — Tirupati Town', activities: ['6:00 AM — Kapileswara Temple', '8:00 AM — Govindarajaswamy Temple', '10:00 AM — Kodandarama Temple + ISKCON', '3:00 PM — Padmavathi Temple, Tiruchanur'] },
+    { day: 'Day 2 — Tirumala Full Day', activities: ['5:00 AM — Bus/Cab to Tirumala', '7:00 AM — Varahaswamy + Main Darshan', 'Afternoon — Silathoranam + Akasa Ganga'] },
+    { day: 'Day 3 — Srikalahasti Circuit', activities: ['7:00 AM — Kalyana Venkateswara, Mangapuram', '11:00 AM — Srikalahasti Temple (Rahu-Ketu pooja)', 'Evening — Return to Tirupati'] },
+    { day: 'Day 4 — Kanipakam (70 km)', activities: ['6:00 AM — Drive to Kanipakam Vinayaka Temple (1.5 hrs)', '8:00 AM — Kanipakam Ganesha Darshan (2 hrs)', '11:00 AM — Return journey + Tirupati shopping', 'Afternoon — Depart'] },
+  ],
+};
+
+const PLAN_COSTS: Record<string, { item: string; est: string }[]> = {
+  plan1: [
+    { item: 'Cab (1 day, within city + Tirumala)', est: '₹800–1,500' },
+    { item: 'TTD Darshan Ticket (₹300 / Srivani)', est: '₹300–1,000/person' },
+    { item: 'Accommodation (1 night)', est: '₹800–2,500' },
+    { item: 'Food & Prasadam', est: '₹300–600' },
+  ],
+  plan2: [
+    { item: 'Cab (2 days)', est: '₹1,500–2,500' },
+    { item: 'TTD Darshan Ticket', est: '₹300–1,000/person' },
+    { item: 'Accommodation (2 nights)', est: '₹1,600–5,000' },
+    { item: 'Meals (2 days)', est: '₹600–1,200' },
+  ],
+  plan3: [
+    { item: 'Cab (3-day full hire)', est: '₹3,000–5,000' },
+    { item: 'TTD Darshan Ticket', est: '₹300–1,000/person' },
+    { item: 'Srikalahasti Pooja', est: '₹500–2,000' },
+    { item: 'Accommodation (3 nights)', est: '₹2,400–7,500' },
+    { item: 'Meals (3 days)', est: '₹900–1,800' },
+  ],
+  plan4: [
+    { item: 'Cab (4-day full hire incl. Kanipakam)', est: '₹4,500–7,500' },
+    { item: 'TTD Darshan + Poojas', est: '₹1,000–3,000/person' },
+    { item: 'Accommodation (4 nights)', est: '₹3,200–10,000' },
+    { item: 'Kanipakam entry + pooja', est: '₹200–500' },
+    { item: 'Meals (4 days)', est: '₹1,200–2,400' },
+  ],
+};
+
 function TripPlanCard({ plan }: { plan: typeof TRIP_PLANS[0] }) {
+  const [expanded, setExpanded] = useState(false);
   const temples = TEMPLES.filter(t => plan.templeIds.includes(t.id));
+  const schedule = PLAN_SCHEDULES[plan.id] || [];
+  const costs = PLAN_COSTS[plan.id] || [];
 
   return (
     <div style={{
@@ -665,6 +767,7 @@ function TripPlanCard({ plan }: { plan: typeof TRIP_PLANS[0] }) {
       borderRadius: '16px', padding: '18px',
       boxShadow: 'var(--shadow-card)',
     }}>
+      {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
         <div style={{
           width: '42px', height: '42px', borderRadius: '12px',
@@ -687,8 +790,9 @@ function TripPlanCard({ plan }: { plan: typeof TRIP_PLANS[0] }) {
       <p style={{ fontSize: '12px', color: 'var(--color-text-muted)', margin: '0 0 10px', fontFamily: "'Inter', sans-serif", lineHeight: 1.5 }}>
         {plan.description}
       </p>
-      {/* Temple list */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '10px' }}>
+
+      {/* Temple chips */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '12px' }}>
         {temples.map(t => (
           <span key={t.id} style={{
             fontSize: '10px', fontWeight: 600, color: 'var(--color-text-muted)',
@@ -700,17 +804,138 @@ function TripPlanCard({ plan }: { plan: typeof TRIP_PLANS[0] }) {
           </span>
         ))}
       </div>
+
+      {/* Tip */}
       <div style={{
         padding: '10px 12px', borderRadius: '10px',
         background: `${plan.color}08`, borderLeft: `3px solid ${plan.color}`,
         fontSize: '12px', color: 'var(--color-text)',
         fontFamily: "'Inter', sans-serif", lineHeight: 1.5,
+        marginBottom: '10px',
       }}>
         💡 <strong>Tip:</strong> {plan.tips}
       </div>
+
+      {/* Expand toggle */}
+      <button
+        onClick={() => setExpanded(s => !s)}
+        style={{
+          width: '100%', padding: '8px', borderRadius: '8px', cursor: 'pointer',
+          background: expanded ? `${plan.color}15` : 'var(--color-bg)',
+          border: `1px solid ${plan.color}30`,
+          color: plan.color, fontSize: '12px', fontWeight: 700,
+          fontFamily: "'Inter', sans-serif",
+          display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
+        }}
+      >
+        {expanded ? '▲ Hide Full Plan' : '▼ Show Day-by-Day Plan + Car Hire Info'}
+      </button>
+
+      {expanded && (
+        <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+
+          {/* Day-by-day schedule */}
+          <div>
+            <div style={{ fontSize: '11px', fontWeight: 800, color: plan.color, marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.6px', fontFamily: "'Inter', sans-serif" }}>
+              📅 Day-by-Day Schedule
+            </div>
+            {schedule.map((day, di) => (
+              <div key={di} style={{ marginBottom: '12px' }}>
+                <div style={{
+                  fontSize: '12px', fontWeight: 700, color: 'var(--color-text)',
+                  fontFamily: "'Poppins', sans-serif", marginBottom: '5px',
+                  background: `${plan.color}10`, padding: '5px 10px',
+                  borderRadius: '6px', borderLeft: `3px solid ${plan.color}`,
+                }}>
+                  {day.day}
+                </div>
+                {day.activities.map((act, ai) => (
+                  <div key={ai} style={{
+                    display: 'flex', gap: '6px', marginBottom: '3px',
+                    fontSize: '11px', color: 'var(--color-text)',
+                    fontFamily: "'Inter', sans-serif", paddingLeft: '4px',
+                  }}>
+                    <span style={{ color: plan.color, flexShrink: 0 }}>›</span> {act}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+
+          {/* Cost estimate */}
+          <div>
+            <div style={{ fontSize: '11px', fontWeight: 800, color: '#059669', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.6px', fontFamily: "'Inter', sans-serif" }}>
+              💰 Estimated Cost (per group)
+            </div>
+            <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
+              {costs.map((cost, ci) => (
+                <div key={ci} style={{
+                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                  padding: '8px 12px',
+                  background: ci % 2 === 0 ? 'var(--color-bg)' : 'var(--color-card)',
+                  fontSize: '12px', fontFamily: "'Inter', sans-serif",
+                }}>
+                  <span style={{ color: 'var(--color-text)' }}>{cost.item}</span>
+                  <span style={{ fontWeight: 700, color: '#059669' }}>{cost.est}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Car Hire / Travellers section */}
+          <div>
+            <div style={{ fontSize: '11px', fontWeight: 800, color: '#C8860A', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.6px', fontFamily: "'Inter', sans-serif" }}>
+              🚗 Car & Travel Options from Tirupati
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              {CAB_OPTIONS.map((cab, ci) => (
+                <div key={ci} style={{
+                  display: 'flex', alignItems: 'flex-start', gap: '10px',
+                  padding: '10px 12px', borderRadius: '10px',
+                  background: 'var(--color-bg)', border: '1px solid var(--color-border)',
+                }}>
+                  <span style={{ fontSize: '18px', flexShrink: 0 }}>{cab.icon}</span>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '2px' }}>
+                      <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-text)', fontFamily: "'Inter', sans-serif" }}>
+                        {cab.name}
+                      </span>
+                      <span style={{
+                        fontSize: '9px', fontWeight: 700,
+                        color: cab.type === 'Official' ? '#C8860A' : cab.type === 'App' ? '#1D4ED8' : '#059669',
+                        background: cab.type === 'Official' ? 'rgba(200,134,10,0.1)' : cab.type === 'App' ? 'rgba(29,78,216,0.1)' : 'rgba(5,150,105,0.1)',
+                        padding: '1px 6px', borderRadius: '100px',
+                        fontFamily: "'Inter', sans-serif",
+                      }}>
+                        {cab.type}
+                      </span>
+                    </div>
+                    <div style={{ fontSize: '11px', color: '#C8860A', fontFamily: "'Inter', sans-serif", fontWeight: 600, marginBottom: '2px' }}>
+                      📞 {cab.contact}
+                    </div>
+                    <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', fontFamily: "'Inter', sans-serif" }}>
+                      {cab.note}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div style={{
+              marginTop: '10px', padding: '10px 12px', borderRadius: '10px',
+              background: 'rgba(200,134,10,0.06)', border: '1px solid rgba(200,134,10,0.2)',
+              fontSize: '11px', color: 'var(--color-text-muted)',
+              fontFamily: "'Inter', sans-serif", lineHeight: 1.6,
+            }}>
+              💡 <strong>Pro Tip:</strong> For multi-day circuits (Srikalahasti + Kanipakam), negotiate a <strong>full-day car hire ₹2,500–4,000/day</strong> with local cabs. They know all the temple routes and can wait while you complete darshan.
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function NearbyTemplesPage(): JSX.Element {

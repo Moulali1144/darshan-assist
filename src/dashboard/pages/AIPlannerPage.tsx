@@ -195,30 +195,38 @@ export default function AIPlannerPage(): JSX.Element {
         );
       }
       if (line.startsWith('| ') && line.endsWith('|')) {
-        // Table row
-        const cells = line.split('|').filter(c => c.trim() !== '');
-        const isHeader = i > 0 && lines[i - 1]?.startsWith('| ');
-        if (cells.every(c => c.trim().match(/^-+$/))) return null; // separator row
+        // Parse table cells
+        const cells = line.split('|').map(c => c.trim()).filter(c => c !== '');
+        // Skip separator rows: | --- | :---: | ----: | etc.
+        if (cells.every(c => /^:?-{2,}:?$/.test(c))) return null;
+        // Detect header: next line is a separator row
+        const nextLine = lines[i + 1] || '';
+        const nextCells = nextLine.split('|').map(c => c.trim()).filter(c => c !== '');
+        const isHeader = nextCells.length > 0 && nextCells.every(c => /^:?-{2,}:?$/.test(c));
         return (
           <div key={i} style={{
             display: 'grid',
             gridTemplateColumns: `repeat(${cells.length}, 1fr)`,
             gap: '1px',
-            background: 'var(--color-border)',
-            borderRadius: i === 0 ? '8px 8px 0 0' : '',
+            background: 'rgba(200,134,10,0.15)',
           }}>
-            {cells.map((cell, j) => (
-              <div key={j} style={{
-                padding: '7px 12px',
-                background: isHeader ? 'rgba(200,134,10,0.1)' : 'var(--color-card)',
-                fontSize: '12px',
-                fontWeight: isHeader ? 700 : 400,
-                color: 'var(--color-text)',
-                fontFamily: "'Inter', sans-serif",
-              }}>
-                {cell.replace(/\*\*/g, '')}
-              </div>
-            ))}
+            {cells.map((cell, j) => {
+              // Remove ** bold markers, preserve ₹ and other symbols
+              const cleaned = cell.replace(/\*\*/g, '').trim();
+              return (
+                <div key={j} style={{
+                  padding: '8px 14px',
+                  background: isHeader ? 'rgba(200,134,10,0.12)' : 'var(--color-card)',
+                  fontSize: '13px',
+                  fontWeight: isHeader ? 700 : 400,
+                  color: isHeader ? '#C8860A' : 'var(--color-text)',
+                  fontFamily: "'Inter', sans-serif",
+                  lineHeight: 1.4,
+                }}>
+                  {cleaned}
+                </div>
+              );
+            })}
           </div>
         );
       }
