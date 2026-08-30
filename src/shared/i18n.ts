@@ -16,6 +16,7 @@ export interface Translations {
   settings: string;
   trekkingGuide: string;
   aiPlanner: string;
+  nearbyTemples: string;
 
   // Dashboard
   welcomeGreeting: string;
@@ -137,6 +138,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     noBookings: 'No bookings yet',
     language: 'Language',
     aiPlanner: 'AI Trip Planner',
+    nearbyTemples: 'Nearby Temples',
   },
 
   te: {
@@ -201,6 +203,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     noBookings: 'ఇంకా బుకింగ్‌లు లేవు',
     language: 'భాష',
     aiPlanner: 'AI ట్రిప్ ప్లానర్',
+    nearbyTemples: 'సమీప దేవాలయాలు',
   },
 
   ta: {
@@ -265,6 +268,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     noBookings: 'இன்னும் முன்பதிவுகள் இல்லை',
     language: 'மொழி',
     aiPlanner: 'AI பயண திட்டமிடல்',
+    nearbyTemples: 'அருகிலுள்ள கோவில்கள்',
   },
 
   hi: {
@@ -329,6 +333,7 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     noBookings: 'अभी तक कोई बुकिंग नहीं',
     language: 'भाषा',
     aiPlanner: 'AI यात्रा योजनाकार',
+    nearbyTemples: 'पास के मंदिर',
   },
 };
 

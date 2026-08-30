@@ -14,6 +14,7 @@ import NotificationsPage from './pages/Notifications';
 import AnalyticsPage from './pages/Analytics';
 import SettingsPage from './pages/Settings';
 import AIPlannerPage from './pages/AIPlannerPage';
+import NearbyTemplesPage from './pages/NearbyTemples';
 import LoadingScreen from './components/LoadingScreen';
 import { LANGUAGE_NAMES, Language } from '../shared/i18n';
 import { Globe } from 'lucide-react';
@@ -25,15 +26,16 @@ function AppShell(): JSX.Element {
   const { lang: currentLang, setLang } = useLanguage();
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  // Apply dark mode class to <html>
+  // Apply theme class to <html> — defaults to light if not explicitly set to dark
   useEffect(() => {
-    const theme = settings?.theme;
+    const theme = settings?.theme ?? 'light';
     const root  = document.documentElement;
     if (theme === 'dark') {
       root.classList.add('dark');
     } else if (theme === 'light') {
       root.classList.remove('dark');
     } else {
+      // 'system' — follow OS preference
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       prefersDark ? root.classList.add('dark') : root.classList.remove('dark');
     }
@@ -93,6 +95,7 @@ function AppShell(): JSX.Element {
           <Route path="/stays-travels" element={<StaysTravelsPage />} />
           <Route path="/trekking-guide"element={<TrekkingGuidePage />} />
           <Route path="/ai-planner"    element={<AIPlannerPage />} />
+          <Route path="/nearby-temples"element={<NearbyTemplesPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/analytics"     element={<AnalyticsPage />} />
           <Route path="/settings"      element={<SettingsPage />} />

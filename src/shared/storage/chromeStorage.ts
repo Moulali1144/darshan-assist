@@ -2,7 +2,7 @@ import type { AppSettings } from '../types';
 import { STORAGE_KEYS } from '../types';
 
 const DEFAULT_SETTINGS: AppSettings = {
-  theme: 'system',
+  theme: 'light',
   language: 'en',
   notificationsEnabled: true,
   autoBackupEnabled: false,
